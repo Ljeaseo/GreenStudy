@@ -1,0 +1,16 @@
+@charset "UTF-8";
+#a{
+	text-shadow:4px 4px grey;
+}
+#b{
+	text-shadow:4px 4px 4px;
+}
+#c{
+	text-shadow:-4px -4px 4px red;
+}
+#d{
+	text-shadow:1px 1px 5px yellow;
+	color:red;
+	background-color: black;
+	border-width:300px;
+}

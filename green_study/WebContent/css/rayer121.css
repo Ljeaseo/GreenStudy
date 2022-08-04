@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#wrap {
+	width: 1000px;
+	border: 1px solid;
+	margin: 0px auto;
+	padding: 5px;
+}
+
+#header {
+	margin-bottom: 10px;
+	border: 1px solid;
+}
+
+#sidebar {
+	width: 250px;
+	
+	float: left;
+	margin-bottom: 20px;
+	margin-right: 10px;
+	border: 1px solid;
+}
+
+#content {
+	width: 700px;
+	margin-bottom:20px;
+	float: right;
+	border: 1px solid;
+	
+}
+
+#footer {
+
+	clear:both;
+	
+	margin-top: 10px;
+	border: 1px solid;
+	
+}

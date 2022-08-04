@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>내부스타일CSS</title>
+<style type="text/css">
+/*태그 선택자 : p태그에 글자색(color)을 빨간색으로 적용*/
+/*
+선택자{
+      속성:값
+}
+*/
+
+p{
+  color:red;
+}
+/*클래스 선택자(.): class의 값이 hi인 것에 배경색(background-color)을 녹색(green)으로 적용*/
+.hi{
+   background-color:green;
+   color:yellow; 
+}
+/*id 선택자(#): id의 값이 h3인것에 글자색을 회색으로 적용*/
+#hi3{
+    color:grey;
+}
+            
+
+
+
+</style>
+</head>
+<body>
+<h1>내부스타일 CSS 적용</h1>
+<p id="hi1" class="hi">안녕하세요.</p>
+<p id="hi2" class="hi">안녕.</p>
+<p id="hi3" class="hello">hi</p>
+<p id="hi4" class="hello">hello</p>
+</body>
+</html>

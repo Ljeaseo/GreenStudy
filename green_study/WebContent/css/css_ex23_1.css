@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#full {
+	width: 1024px;
+	margin: 0 auto;
+	border: solid 1px black;
+}
+
+#header {
+	border: solid 1px black;
+
+	
+}
+
+#main {
+	border: solid 1px black;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    hight:400px;
+}
+
+#main-L {
+	border: solid 1px black;
+    width:500px;
+    float:left;
+    magin:5px;
+}
+
+#main-R {
+	border: solid 1px black;
+    width:500px;
+    float:right;
+    magin:5px;
+}
+#footer {
+	border: solid 1px black;
+	clear:both;
+	magin:5px;
+}

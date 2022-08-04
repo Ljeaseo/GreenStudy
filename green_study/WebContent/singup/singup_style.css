@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+h1{text-align: center;}
+
+.p1{text-align: center;}
+
+hr{border:solid 2px black;}
+
+span{color:red;}
+
+.td1{background-color: grey; margin:0px; padding:0px; border-collapse:collapse;}
+
+table{border-collapse:collapse;}
+
+#button{ width: 900px; text-align: center;}
+
