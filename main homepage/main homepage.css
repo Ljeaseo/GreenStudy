@@ -12,6 +12,28 @@ a {
   color: black;
 }
 
+#li{
+  padding: 2px 2px 2px 2px ;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  
+}
+
+li:after {/*after 가상요소*/
+  display:block;/*a요소를 블록 요소라고 선언*/
+  width:100%;/*카테고리 메뉴 밑줄의 크기를 동일하게 주기 위해 width 설정*/
+/*혹시 동일하지 않길 바란다면 width 삭제*/
+  content: '';
+  border-bottom: solid 1px rgb(0, 0, 0);
+  transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+  transition: transform 250ms ease-in-out; /*변형 방식*/
+  margin-top: 3px;
+}
+li:hover:after {
+  transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}
+
 .header{
   width: 100%;
   height:130px;
@@ -68,6 +90,8 @@ font-size: 16px;
 }
 #ul{
   padding-left: 20px;
+  list-style:none; 
+  cursor:pointer; 
 }
 #login {
   padding-left: 20px;
@@ -117,12 +141,18 @@ font-size: 16px;
   cursor: pointer;
   font-size: 20px;
 }
+.imgbox{
+  width: 1030px;
+  height: 80px;
+  display: flex; 
+  margin:8px 50px 5px 50px;
+  padding-top: 5px;
+  justify-content: center;
+  border-bottom:  1px solid #dee2e6;
+}
 #imglink{
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 8px;
-  padding-bottom: 3px;
-  width:100%px;
+  
+  width:1030px;
   height:80px;
 }
 #container{
@@ -146,18 +176,106 @@ font-size: 16px;
   margin-left: 5px;
   padding-right: 10px;
 }
+
 .taglink{
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
   width: 200px;
-  height: 400px;
-  margin:25px 5px 25px 20px;
+  height: 250px;
+  margin:25px 5px 0px 20px;
+  
+  
 }
-.googlesearch{
-  margin:25px 5px 25px 20px;
- 
+#tag{
+  margin-left: 20px;
+  margin-top: 5px;
+  border: 1px solid #dee2e6;
+  width: 195px;
+}
+#tag-list {
+  padding: 5px 5px 5px 5px;
+  margin: 10px;
+  height: 220px;
+}
+.taglink span{
+  font-size: 13px;
+  padding:3px 3px 3px 3px;
+  margin:4px 3px 8px 3px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  display: inline-block;
 }
 
+.jobtip{
+  border: 1px solid #dee2e6;
+  border-radius: 8px 8px 8px 8px;
+  margin:20px 0px 0px 20px;
+  padding:3px 3px 3px 3px;
+  width:200px;
+  height:250px;
+}
+
+.examdate{
+  border: 1px solid #dee2e6;
+  border-radius: 8px 8px 8px 8px;
+  margin:20px 0px 0px 20px;
+  padding:3px 3px 3px 3px;
+  width:200px;
+  height:250px;
+}
+
+.lefttitle{
+  border-bottom: 1px solid #dee2e6;
+  margin-left: 10px;
+  margin-right: 10px;
+  width:180px;
+  font-size: 15px;
+}
+.leftcontent{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding:3px 3px 3px 3px;
+  font-size: 13px;
+}
+.googlebox{
+  height: 60px;
+  margin-top: 45px;
+  margin-left:30px;
+  text-align: left;
+  display: flex; 
+  justify-content: center;
+}
+.googlesearch{
+  margin:0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px 8px 8px 8px;
+}
+  
+
+
+.googlebutton{
+  margin: 0px 1px 0px 1px;
+  padding:0px 0px 0px 0px;
+  border: none;
+  background-color: white;
+  
+  cursor: pointer;
+  
+  width:30px;
+  height: 30px;
+  
+}
+.googlebutton_img{
+  
+  width: 80%;
+  height: 80%;
+  background:no-repeat;
+  }
+  
 #google{
   size: 15px;
 }
@@ -201,10 +319,31 @@ font-size: 16px;
 
 .content{
   width:400px;
-  height:140px;
+  height:100%;
   margin: 1px 1px 1px 10px ;
 }
-
+.content_p{
+  height: 82px;
+}
+.usertag{
+  height: 22px;
+  border-top: 1px solid #dee2e6;
+  justify-content: center;
+  margin-right: 10px;
+}
+.usertag a{
+  font-size: 12px;
+  
+  
+  margin-left: 5px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  display: inline-block;
+}
+.usertag span{
+  font-size: 10px;
+}
 h3{
   margin: 5px 10px 1px 1px ;
   padding-bottom: 5px;
