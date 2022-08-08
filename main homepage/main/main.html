@@ -5,17 +5,19 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CSS 주소입니다. -->
-  <link rel="stylesheet" href="../main homepage/main homepage.css" />
-
-  <!-- JavaScript 주소입니다. -->
-  <script src="../main homepage/main homepage.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- 폰트 킷 주소입니다 -->
   <script src="https://kit.fontawesome.com/f8ebc57e81.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  
+  <!-- CSS 주소입니다. -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- JavaScript 주소입니다. -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  
 
   <!-- 타이틀입니다. -->
   <title>코딩 커뮤니티</title>
@@ -25,42 +27,42 @@
 </head>
 
 <body>
-  <div class="header">
-    <div class="navbar">
-
-      <!-- 로고 입니다. -->
-      <div class="navbar__logo">
-        <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
+    <div class="header">
+        <div class="navbar">
+    
+          <!-- 로고 입니다. -->
+          <div class="navbar__logo">
+            <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
+          </div>
+    
+          <!-- 메뉴 입니다.-->
+          <div class="navbar__menu">
+            <ul id="ul">
+              <li id="li"><a href="#">Home</a></li>
+              <li id="li"><a href="#">취업tip</a></li>
+              <li id="li"><a href="#">스터디</li>
+              <li id="li"><a href="#">지식공유</a></li>
+              <li id="li"><a href="#">Q&A</a></li>
+            </ul>
+          </div>
+          <!-- 로그인 회원가입 입니다.-->
+          <div class="navbar_loginsignin">
+            <ul>
+              <li id="li"><a href="#">로그인</a></li>
+              <li id="li"><a href="#">회원가입</a></li>
+            </ul>
+          </div>
+    
+        </div>
+        <!-- 검색창 입니다. -->
+    
+        <div class="search">
+          <input type="text" class="searchTerm" placeholder="키워드로 검색하세요">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
       </div>
-
-      <!-- 메뉴 입니다.-->
-      <div class="navbar__menu">
-        <ul id="ul">
-          <li id="li"><a href="#">Home</a></li>
-          <li id="li"><a href="#">취업tip</a></li>
-          <li id="li"><a href="#">스터디</li>
-          <li id="li"><a href="#">지식공유</a></li>
-          <li id="li"><a href="#">Q&A</a></li>
-        </ul>
-      </div>
-      <!-- 로그인 회원가입 입니다.-->
-      <div class="navbar_loginsignin">
-        <ul>
-          <li id="login"><a href="#">로그인</a></li>
-          <li id="singin"><a href="#">회원가입</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <!-- 검색창 입니다. -->
-
-    <div class="search">
-      <input type="text" class="searchTerm" placeholder="키워드로 검색하세요">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-      </button>
-    </div>
-  </div>
 
 
 
@@ -69,8 +71,7 @@
   <!-- 광고 및 이미지 -->
   <div class="imgbox">
     <a href="#">
-      <img id="imglink" src="https://adimg.nate.com/img/2022/06/wt/wt_0624_970x80.jpg" style="border-style:none;"
-        alt="광고">
+      <img id="imglink" src="../tomcat.png" style="border-style:none;" alt="광고">
     </a>
   </div>
 
@@ -97,27 +98,42 @@
           <a href="#"><span>#spring</span></a>
         </ul>
       </div>
+
+      <!-- 취업tip 시험일정 tap 메뉴-->
       
-      <div class="jobtip">
-        <div class="lefttitle">
-        취업 팁
-        </div> 
-        <div class="leftcontent">
-        취업 꿀팁내용입니다.
-        </div>  
-       </div> 
-
-
-      <div class="examdate">
-        <div class="lefttitle">
-        나의스터디일정
+      <div class="tab">
+        <ul class="tabnav">
+          <li><a href="#tab01">취업TIP</a></li>
+          <li><a href="#tab02">시험일정</a></li>
+        </ul>
+        <div class="tabcontent">
+          <div id="tab01">취업 tip tap 메뉴 내용입니다.</div>
+          <div id="tab02">
+            <table id="calendar">
+                <thead>
+                    <tr>
+                        <th><input class="monthbutton" name="preMon" type="image" src="../화살표왼쪽.png"></th>
+                        <th colspan="5" class="year_mon"></th>
+                        <th><input class="monthbutton" name="nextMon" type="image" src="../화살표오른쪽.png"></th>
+                    </tr>
+                    <tr>
+                        <th style="color: red;">일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+          </div>    
         </div>
-          <div class="leftcontent">
-          달력을 넣읍시다
-          </div> 
-      </div>
+        
+        </div><!--tab-->
     </div>
-  
       
       
    
@@ -127,8 +143,9 @@
 
     <!-- 중앙 -->
     <div id="centerbox">
-      <span style="margin-left: 15px; font-size: 11px;">실시간 인기글</span>
-
+     
+      <span class="blink" style="margin-left: 15px; font-size: 11px;">실시간 인기글</span>
+     
 
 
       <!-- 새로운 글 리스트-->
@@ -318,28 +335,50 @@
 
     <!-- 우측 -->
     <div id="rightbox">
-      <span style="margin-left: 20px; font-size: 11px;">메뉴별 인기글</span>
+      
+      <span class="blink" style="margin-left: 20px; font-size: 11px">메뉴별 인기글</span>
       <!-- 스터디 인기글-->
       <div class="card">
         <div class="card_head">
-          <strong>스터디 인기글</strong>
+           <input class="titlelogo" type="image" src="../연필로고 6.jpg">
+           <div>
+            <strong>스터디 인기글</strong>
+              </div>
         </div>
         <div class="card_content">
-          <a href="#">
-            <p class="p1">1. 1등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">2. 2등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">3. 3등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">4. 4등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">5. 5등 제목입니다.</p>
-          </a>
+            
+                <ol start="1">
+                    <li class="p1">
+                        <a href="#">
+                            1등 제목
+                        </a>
+                    </li>
+                    <li class="p2">
+                        <a href="#">
+                            1등 제목
+                        </a>
+                    </li>
+                    <li class="p2">
+                        <a href="#">
+                            1등 제목
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="p2">
+                        <a href="#">
+                            1등 제목
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="p2">
+                        <a href="#">
+                            1등 제목
+                        </a>
+                    </li>
+                </ol>
+            
         </div>
         <div>
           <a href="#">
@@ -350,24 +389,43 @@
       <!-- 지식공유 인기글-->
       <div class="card">
         <div class="card_head">
-          <strong>지식공유 인기글</strong>
+            <input class="titlelogo" type="image" src="../전구 로고.png">
+            <div>
+                <strong>지식 공유 인기글</strong>
+                  </div>
         </div>
         <div class="card_content">
-          <a href="#">
-            <p class="p1">1. 1등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">2. 2등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">3. 3등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">4. 4등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">5. 5등 제목입니다.</p>
-          </a>
+            <ol start="1">
+                <li class="p1">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                
+                
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                
+                
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+            </ol>
         </div>
         <div>
           <a href="#">
@@ -378,24 +436,43 @@
       <!-- Q&A 인기글-->
       <div class="card">
         <div class="card_head">
+            <input class="titlelogo" type="image" src="../Q&A로고.png">
+            <div>
           <strong>Q&A 인기글</strong>
+            </div>
         </div>
         <div class="card_content">
-          <a href="#">
-            <p class="p1">1. 1등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">2. 2등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">3. 3등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">4. 4등 제목입니다.</p>
-          </a>
-          <a href="#">
-            <p class="p2">5. 5등 제목입니다.</p>
-          </a>
+            <ol start="1">
+                <li class="p1">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                
+                
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+                
+                
+                <li class="p2">
+                    <a href="#">
+                        1등 제목
+                    </a>
+                </li>
+            </ol>
         </div>
         <div>
           <a href="#">
