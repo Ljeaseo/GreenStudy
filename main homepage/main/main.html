@@ -69,10 +69,54 @@
 
 
   <!-- 광고 및 이미지 -->
-  <div class="imgbox">
-    <a href="#">
-      <img id="imglink" src="../tomcat.png" style="border-style:none;" alt="광고">
-    </a>
+  <div class="section">
+    <input type="radio" name="slide" id="slide01" checked>
+    <input type="radio" name="slide" id="slide02" >
+    <input type="radio" name="slide" id="slide03" >
+    
+    <div class="slidewrap">
+      <ul class="slidelist">
+        <li>
+          <label for="slide03" class="left"><img src="../배너 화살표.png" class="L_img"></label>
+          <a href="https://tomcat.apache.org/">
+            <img class="banner" src="../tomcat.png" style="border-style:none;" alt="광고"></a>
+          </a>
+          <label for="slide02" class="right"><img src="../배너 화살표 - 복사본.png" class="R_img"></label>
+        </li>    
+        <li>
+          <label for="slide01"  class="left"><img src="../배너 화살표.png" class="L_img"></label>
+          <a href="https://www.w3schools.com/">
+            <img class="banner" src="../w3schools.jpg" style="border-style:none;" alt="광고">
+          </a>
+          <label for="slide03" class="right"><img src="../배너 화살표 - 복사본.png" class="R_img"></label>
+        </li>
+        <li>
+          <label for="slide02" class="left"><img src="../배너 화살표.png" class="L_img"></label>
+          <a href="https://www.acmicpc.net/">
+            <img class="banner" src="../백준.png" style="border-style:none;" alt="광고">
+          </a>
+          <label for="slide01" class="right"><img src="../배너 화살표 - 복사본.png" class="R_img"></label>
+        </li>
+        <div class="slide-control">
+          <div class="control01">
+            <label for="slide03" class="left"></label>
+            <label for="slide02" class="right"></label>
+            
+          </div>
+          <div class="control02">
+            <label for="slide01"  class="left"></label>
+            <label for="slide03" class="right"></label>
+            
+          </div>
+          <div class="control03">
+            <label for="slide02" class="left"></label>
+            <label for="slide01" class="right"></label>
+
+          </div>
+        </div>
+      </ul>
+    </div>
+      
   </div>
 
 
@@ -112,9 +156,9 @@
             <table id="calendar">
                 <thead>
                     <tr>
-                        <th><input class="monthbutton" name="preMon" type="image" src="../화살표왼쪽.png"></th>
+                        <th><input class="monthbutton" name="preMon" type="image" src="../next - 복사본.png"></th>
                         <th colspan="5" class="year_mon"></th>
-                        <th><input class="monthbutton" name="nextMon" type="image" src="../화살표오른쪽.png"></th>
+                        <th><input class="monthbutton" name="nextMon" type="image" src="../next.png"></th>
                     </tr>
                     <tr>
                         <th style="color: red;">일</th>
@@ -172,7 +216,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+          내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -201,7 +245,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+          내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -230,7 +274,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+          내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -259,7 +303,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+          내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -288,7 +332,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+           내용 입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -317,7 +361,7 @@
             <h3>제목</h3>
           </div>
           <div class="content_p">
-          <p>내용입니다.</p>
+          내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -337,44 +381,47 @@
     <div id="rightbox">
       
       <span class="blink" style="margin-left: 20px; font-size: 11px">메뉴별 인기글</span>
+      
       <!-- 스터디 인기글-->
       <div class="card">
         <div class="card_head">
-           <input class="titlelogo" type="image" src="../연필로고 6.jpg">
+           <input class="titlelogo" type="image" src="../pen.png">
            <div>
+            <a href="#">
             <strong>스터디 인기글</strong>
-              </div>
+            </a>    
+          </div>
         </div>
         <div class="card_content">
             
                 <ol start="1">
                     <li class="p1">
                         <a href="#">
-                            1등 제목
+                            조회수 1등 제목
                         </a>
                     </li>
                     <li class="p2">
                         <a href="#">
-                            1등 제목
+                            조회수 2등 제목
                         </a>
                     </li>
                     <li class="p2">
                         <a href="#">
-                            1등 제목
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="p2">
-                        <a href="#">
-                            1등 제목
+                            조회수 3등 제목
                         </a>
                     </li>
                     
                     
                     <li class="p2">
                         <a href="#">
-                            1등 제목
+                            조회수 4등 제목
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="p2">
+                        <a href="#">
+                            조회수 5등 제목
                         </a>
                     </li>
                 </ol>
@@ -389,10 +436,12 @@
       <!-- 지식공유 인기글-->
       <div class="card">
         <div class="card_head">
-            <input class="titlelogo" type="image" src="../전구 로고.png">
+            <input class="titlelogo" type="image" src="../lamp.png">
             <div>
+              <a href="#">
                 <strong>지식 공유 인기글</strong>
-                  </div>
+              </a>    
+              </div>
         </div>
         <div class="card_content">
             <ol start="1">
@@ -438,8 +487,10 @@
         <div class="card_head">
             <input class="titlelogo" type="image" src="../Q&A로고.png">
             <div>
+              <a href="#">
           <strong>Q&A 인기글</strong>
-            </div>
+              </a>    
+        </div>
         </div>
         <div class="card_content">
             <ol start="1">
