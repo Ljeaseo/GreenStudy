@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  
+
   <!-- CSS 주소입니다. -->
   <link rel="stylesheet" href="main.css">
 
   <!-- JavaScript 주소입니다. -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
-  
+
 
   <!-- 타이틀입니다. -->
   <title>코딩 커뮤니티</title>
@@ -27,42 +27,42 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="navbar">
-    
-          <!-- 로고 입니다. -->
-          <div class="navbar__logo">
-            <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
-          </div>
-    
-          <!-- 메뉴 입니다.-->
-          <div class="navbar__menu">
-            <ul id="ul">
-              <li id="li"><a href="#">Home</a></li>
-              <li id="li"><a href="#">취업tip</a></li>
-              <li id="li"><a href="#">스터디</li>
-              <li id="li"><a href="#">지식공유</a></li>
-              <li id="li"><a href="#">Q&A</a></li>
-            </ul>
-          </div>
-          <!-- 로그인 회원가입 입니다.-->
-          <div class="navbar_loginsignin">
-            <ul>
-              <li id="li"><a href="#">로그인</a></li>
-              <li id="li"><a href="#">회원가입</a></li>
-            </ul>
-          </div>
-    
-        </div>
-        <!-- 검색창 입니다. -->
-    
-        <div class="search">
-          <input type="text" class="searchTerm" placeholder="키워드로 검색하세요">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
+  <div class="header">
+    <div class="navbar">
+
+      <!-- 로고 입니다. -->
+      <div class="navbar__logo">
+        <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
       </div>
+
+      <!-- 메뉴 입니다.-->
+      <div class="navbar__menu">
+        <ul id="ul">
+          <li id="li"><a href="#">Home</a></li>
+          <li id="li"><a href="#">취업tip</a></li>
+          <li id="li"><a href="#">스터디</li>
+          <li id="li"><a href="#">지식공유</a></li>
+          <li id="li"><a href="#">Q&A</a></li>
+        </ul>
+      </div>
+      <!-- 로그인 회원가입 입니다.-->
+      <div class="navbar_loginsignin">
+        <ul>
+          <li id="li"><a href="#">로그인</a></li>
+          <li id="li"><a href="#">회원가입</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- 검색창 입니다. -->
+
+    <div class="search">
+      <input type="text" class="searchTerm" placeholder="키워드로 검색하세요">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
 
 
 
@@ -71,9 +71,9 @@
   <!-- 광고 및 이미지 -->
   <div class="section">
     <input type="radio" name="slide" id="slide01" checked>
-    <input type="radio" name="slide" id="slide02" >
-    <input type="radio" name="slide" id="slide03" >
-    
+    <input type="radio" name="slide" id="slide02">
+    <input type="radio" name="slide" id="slide03">
+
     <div class="slidewrap">
       <ul class="slidelist">
         <li>
@@ -82,9 +82,9 @@
             <img class="banner" src="../tomcat.png" style="border-style:none;" alt="광고"></a>
           </a>
           <label for="slide02" class="right"><img src="../배너 화살표 - 복사본.png" class="R_img"></label>
-        </li>    
+        </li>
         <li>
-          <label for="slide01"  class="left"><img src="../배너 화살표.png" class="L_img"></label>
+          <label for="slide01" class="left"><img src="../배너 화살표.png" class="L_img"></label>
           <a href="https://www.w3schools.com/">
             <img class="banner" src="../w3schools.jpg" style="border-style:none;" alt="광고">
           </a>
@@ -101,12 +101,12 @@
           <div class="control01">
             <label for="slide03" class="left"></label>
             <label for="slide02" class="right"></label>
-            
+
           </div>
           <div class="control02">
-            <label for="slide01"  class="left"></label>
+            <label for="slide01" class="left"></label>
             <label for="slide03" class="right"></label>
-            
+
           </div>
           <div class="control03">
             <label for="slide02" class="left"></label>
@@ -116,7 +116,7 @@
         </div>
       </ul>
     </div>
-      
+
   </div>
 
 
@@ -124,14 +124,14 @@
   <!-- 메인 화면-->
 
   <div id="container">
-    
-    
+
+
     <!-- 좌측-->
     <div id="leftbox">
-       
-      
+
+
       <!-- 해시태그 -->
-       <div class="taglink">
+      <div class="taglink">
         <ul id="tag-list">
           <a href="#"><span>#HTML</span></a>
           <a href="#"><span>#css</span></a>
@@ -144,7 +144,7 @@
       </div>
 
       <!-- 취업tip 시험일정 tap 메뉴-->
-      
+
       <div class="tab">
         <ul class="tabnav">
           <li><a href="#tab01">취업TIP</a></li>
@@ -154,42 +154,43 @@
           <div id="tab01">취업 tip tap 메뉴 내용입니다.</div>
           <div id="tab02">
             <table id="calendar">
-                <thead>
-                    <tr>
-                        <th><input class="monthbutton" name="preMon" type="image" src="../next - 복사본.png"></th>
-                        <th colspan="5" class="year_mon"></th>
-                        <th><input class="monthbutton" name="nextMon" type="image" src="../next.png"></th>
-                    </tr>
-                    <tr>
-                        <th style="color: red;">일</th>
-                        <th>월</th>
-                        <th>화</th>
-                        <th>수</th>
-                        <th>목</th>
-                        <th>금</th>
-                        <th>토</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
+              <thead>
+                <tr>
+                  <th><input class="monthbutton" name="preMon" type="image" src="../next - 복사본.png"></th>
+                  <th colspan="5" class="year_mon"></th>
+                  <th><input class="monthbutton" name="nextMon" type="image" src="../next.png"></th>
+                </tr>
+                <tr>
+                  <th style="color: red;">일</th>
+                  <th>월</th>
+                  <th>화</th>
+                  <th>수</th>
+                  <th>목</th>
+                  <th>금</th>
+                  <th>토</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
             </table>
-          </div>    
+          </div>
         </div>
-        
-        </div><!--tab-->
+
+      </div>
+      <!--tab-->
     </div>
-      
-      
-   
+
+
+
 
 
 
 
     <!-- 중앙 -->
     <div id="centerbox">
-     
+
       <span class="blink" style="margin-left: 15px; font-size: 11px;">실시간 인기글</span>
-     
+
 
 
       <!-- 새로운 글 리스트-->
@@ -197,14 +198,14 @@
       <div class="list">
         <!--사용자 프로필 사진과 아이디-->
         <div class="user">
-          
-            <div class="profile-box">
 
-              <a href="#">
-                <img class="profile" src="../다운로드.jpg">
-              </a>
-            </div>
-          
+          <div class="profile-box">
+
+            <a href="#">
+              <img class="profile" src="../다운로드.jpg">
+            </a>
+          </div>
+
           <div>
             <a href="#">
               <p class="userid">글쓴이 아이디</p>
@@ -213,10 +214,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-          내용입니다.
+            내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -242,10 +245,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-          내용입니다.
+            내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -271,10 +276,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-          내용입니다.
+            내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -300,10 +307,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-          내용입니다.
+            내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -329,10 +338,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-           내용 입니다.
+            내용 입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -358,10 +369,12 @@
         </div>
         <div class="content">
           <div>
-            <h3>제목</h3>
+            <a href="#">
+              <h3>제목</h3>
+            </a>
           </div>
           <div class="content_p">
-          내용입니다.
+            내용입니다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -379,53 +392,53 @@
 
     <!-- 우측 -->
     <div id="rightbox">
-      
+
       <span class="blink" style="margin-left: 20px; font-size: 11px">메뉴별 인기글</span>
-      
+
       <!-- 스터디 인기글-->
       <div class="card">
         <div class="card_head">
-           <input class="titlelogo" type="image" src="../pen.png">
-           <div>
+          <input class="titlelogo" type="image" src="../pen.png">
+          <div>
             <a href="#">
-            <strong>스터디 인기글</strong>
-            </a>    
+              <strong>스터디 인기글</strong>
+            </a>
           </div>
         </div>
         <div class="card_content">
-            
-                <ol start="1">
-                    <li class="p1">
-                        <a href="#">
-                            조회수 1등 제목
-                        </a>
-                    </li>
-                    <li class="p2">
-                        <a href="#">
-                            조회수 2등 제목
-                        </a>
-                    </li>
-                    <li class="p2">
-                        <a href="#">
-                            조회수 3등 제목
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="p2">
-                        <a href="#">
-                            조회수 4등 제목
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="p2">
-                        <a href="#">
-                            조회수 5등 제목
-                        </a>
-                    </li>
-                </ol>
-            
+
+          <ol start="1">
+            <li class="p1">
+              <a href="#">
+                조회수 1등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                조회수 2등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                조회수 3등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                조회수 4등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                조회수 5등 제목
+              </a>
+            </li>
+          </ol>
+
         </div>
         <div>
           <a href="#">
@@ -436,45 +449,45 @@
       <!-- 지식공유 인기글-->
       <div class="card">
         <div class="card_head">
-            <input class="titlelogo" type="image" src="../lamp.png">
-            <div>
-              <a href="#">
-                <strong>지식 공유 인기글</strong>
-              </a>    
-              </div>
+          <input class="titlelogo" type="image" src="../lamp.png">
+          <div>
+            <a href="#">
+              <strong>지식 공유 인기글</strong>
+            </a>
+          </div>
         </div>
         <div class="card_content">
-            <ol start="1">
-                <li class="p1">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                
-                
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                
-                
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-            </ol>
+          <ol start="1">
+            <li class="p1">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+          </ol>
         </div>
         <div>
           <a href="#">
@@ -485,45 +498,45 @@
       <!-- Q&A 인기글-->
       <div class="card">
         <div class="card_head">
-            <input class="titlelogo" type="image" src="../Q&A로고.png">
-            <div>
-              <a href="#">
-          <strong>Q&A 인기글</strong>
-              </a>    
-        </div>
+          <input class="titlelogo" type="image" src="../Q&A로고.png">
+          <div>
+            <a href="#">
+              <strong>Q&A 인기글</strong>
+            </a>
+          </div>
         </div>
         <div class="card_content">
-            <ol start="1">
-                <li class="p1">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                
-                
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-                
-                
-                <li class="p2">
-                    <a href="#">
-                        1등 제목
-                    </a>
-                </li>
-            </ol>
+          <ol start="1">
+            <li class="p1">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+
+
+            <li class="p2">
+              <a href="#">
+                1등 제목
+              </a>
+            </li>
+          </ol>
         </div>
         <div>
           <a href="#">
@@ -532,14 +545,14 @@
         </div>
       </div>
 
-        <!-- 구글 지원 검색창-->  
-        <div class="googlebox"> 
-        
-          <input class="googlesearch" type="text" placeholder="  google 지원" style="margin-right:5px;">
-          <button class="googlebutton"><img src="../Google__G__Logo.svg.png" class="googlebutton_img"></button>
-          
-        </div>
-  
+      <!-- 구글 지원 검색창-->
+      <div class="googlebox">
+
+        <input class="googlesearch" type="text" placeholder="  google 지원" style="margin-right:5px;">
+        <button class="googlebutton"><img src="../Google__G__Logo.svg.png" class="googlebutton_img"></button>
+
+      </div>
+
     </div>
 
   </div>
