@@ -7,7 +7,30 @@
 	<insert id="write">
 		insert into exboard(title, content, id)  
 		values(#{title},#{content},#{id})
-	</insert>  	
+	</insert>
+	
+	<select id="list" resultType="org.wow.model.BoardVo">
+		select * 
+		from exboard;
+	</select>  	
+	<select id="detail" resultType="org.wow.model.BoardVo">
+		select * 
+		from exboard 
+		where bno = #{bno}
+	</select>
+	
+	<update id="modify">
+		update exboard 
+		set title=#{title}, 
+			content=#{content} 
+		where bno= #{bno}
+	</update>
+	
+	<delete id="remove">
+		delete 
+		from exboard 
+		where bno=#{bno}
+	</delete>
 </mapper>
   
 		
