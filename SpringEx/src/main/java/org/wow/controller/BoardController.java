@@ -1,9 +1,12 @@
 package org.wow.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.wow.model.BoardVo;
+import org.wow.service.BoardService;
+
 
 @Controller
 public class BoardController {
@@ -14,6 +17,11 @@ public class BoardController {
 	}
 	//게시판 상세 페이지
 	//게시판 수정 및 삭제 페이지
+	
+	@Autowired         //BoardController 와 BoardService를 연결.
+	BoardService bs;
+	
+	
 	//게시판 글쓰기 페이지(화면)
 	@RequestMapping(value="/board/write", method = RequestMethod.GET)
 	public String write() { 
@@ -21,8 +29,10 @@ public class BoardController {
 	}
 	//게시판 글쓰기 페이지(insert가 이루어짐)
 	@RequestMapping(value="/board/write", method = RequestMethod.POST)
-	public void writePost(BoardVo bvo) { 
+	public void writePost(BoardVo board) { 
+		// 비즈니스 영역 연결한 후 BoardService에 있는 write 메소드를 호출
+		bs.write(board);
 		
-		System.out.println(bvo);
+		
 	}
 }
