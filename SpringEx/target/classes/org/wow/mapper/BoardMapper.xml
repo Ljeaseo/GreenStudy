@@ -10,8 +10,33 @@
 	</insert>
 	
 	<select id="list" resultType="org.wow.model.BoardVo">
-		select * 
-		from exboard;
+		select *
+        	from(
+				select @rownum:=@rownum+1 rownum, b.* 
+				from exboard b, (select @rownum:=0) as tmp
+				
+				<if test="keyword != null">
+				
+					<choose>
+						<when test="type=='T'.toString()">
+						where title like concat('%',#{keyword},'%')
+						</when>
+						<when test="type=='C'.toString()">
+						where content like concat('%',#{keyword},'%')
+						</when>
+						<otherwise>
+						where title like concat('%',#{keyword},'%')
+						or content like concat('%',#{keyword},'%')
+						</otherwise>
+					</choose>
+					
+    			</if>
+    			
+    			order by bno desc
+			)as boardlist
+			<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]>
 	</select>  	
 	<select id="detail" resultType="org.wow.model.BoardVo">
 		select * 
@@ -31,6 +56,30 @@
 		from exboard 
 		where bno=#{bno}
 	</delete>
+	<select id="total" resultType="int">
+		select count(*) from exboard
+			<if test="keyword != null">
+				
+					<choose>
+						<when test="type=='T'.toString()">
+						where title like concat('%',#{keyword},'%')
+						</when>
+						<when test="type=='C'.toString()">
+						where content like concat('%',#{keyword},'%')
+						</when>
+						<otherwise>
+						where title like concat('%',#{keyword},'%')
+						or content like concat('%',#{keyword},'%')
+						</otherwise>
+					</choose>
+					
+    			</if>
+	</select>
+	<update id="cntup">
+		update exboard
+		set cnt = cnt+1
+		where bno = #{bno}
+	</update>
 </mapper>
   
 		

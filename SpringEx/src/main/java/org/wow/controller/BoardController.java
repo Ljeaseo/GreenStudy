@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.wow.model.BoardVo;
+import org.wow.model.CriteriaVO;
+import org.wow.model.PageVO;
 import org.wow.service.BoardService;
 
 
@@ -37,12 +39,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/board/list", method = RequestMethod.GET)	
-	public String list(Model model) {
-		//boardlist.jsp 실행할때 select된 결과를 가져라갈.
-		model.addAttribute("list", bs.list());
-		bs.list();
-		//board폴더 안에 있는 
-		return"board/list";
+	public String list(Model model, CriteriaVO cri) {
+		//boardlist.jsp 실행할때 select된 결과를 가져와라.
+		model.addAttribute("list", bs.list(cri));
+		//list.jsp 실행 할 때 PageVO에 저장되어 있는 데이터를 가져와라.
+		//                           생성자 호출(매개변수가 없는 생성자)
+		//                           board테이블에 전체 건수를 대입
+		bs.total(cri);
+		model.addAttribute("paging", new PageVO(cri,bs.total(cri)));
+		return "board/list";
 	}
 	@RequestMapping(value="/board/boarddetail", method = RequestMethod.GET)
 	//public String detail(int bno) -> 가능
@@ -57,7 +62,7 @@ public class BoardController {
 		bs.modify(board);
 		rttr.addAttribute("bno", board.getBno());
 		//detail에서 수정한 내용을 보기 위해 list.jsp로 이동
-		return "redirect:/board/boarddetail";
+		return "redirect:/board/list";
 	}
 	@RequestMapping(value="/board/remove", method = RequestMethod.POST)
 	public String remove(BoardVo board) {

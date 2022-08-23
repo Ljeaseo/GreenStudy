@@ -12,6 +12,7 @@
 	Hello world!  
 </h1>
 
-<P>Main page입니다.</P>
+<a href="/board/write">게시판 글쓰기</a>
+<a href="/board/list">게시판 목록</a>
 </body>
 </html>

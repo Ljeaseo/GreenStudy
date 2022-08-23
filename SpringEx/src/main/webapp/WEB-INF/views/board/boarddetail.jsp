@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/reply.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -27,18 +29,23 @@
 		<input type="submit" value="삭제" formaction="/board/remove">
 	    </td>
 	    </tr>
-	    <tr>
-	    <td>
-	    <input type="text" name="commentwrite" value="${comment.comment}">
-	    </td>
-	    </tr>
+	   
 	</table>
-	<table>
-		<tr>
-			<td><input type="text" name="comment" placeholder="댓글 달기"></td>
-		    <td><input type="submit" value="댓글쓰기" formaction="/commemt/commentwrite">
-		</tr>
-	</table>
+	
 </form>
+<div>
+<label>댓글</label>
+</div>
+<div>
+	<textarea rows="3" cols="50" id="reply"></textarea>
+</div>
+<div>
+	<input id="add" type="button" value="댓글쓰기">
+</div>	
+<div id="chat">
+	<ul id="replyUL">
+	
+	</ul>
+</div>
 </body>
 </html>

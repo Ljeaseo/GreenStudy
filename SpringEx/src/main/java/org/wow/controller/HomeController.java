@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class HomeController {
 	
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/",method = RequestMethod.GET)
     // 접근제어자 반환타입 메서드명(매개변수, 매개변수)
 	public String main(Locale locale,Model model) {
 		return "home";
