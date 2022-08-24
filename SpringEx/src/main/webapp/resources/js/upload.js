@@ -59,8 +59,11 @@ $(document).ready(function(){
 			url:"/uploadAjaxAction",
 			data:formData,
 			contentType:false,
-			processData:false
-			
+			processData:false,
+			dataType:"json",
+			success:function(result){
+				console.log(result)
+			}
 		})
 		
 	})

@@ -31,6 +31,8 @@ public class UploadController {
 			System.out.println(multipartFile.getSize());
 			
 			// 파일저장
+			
+			
 			//                       어느폴더에(D:\\upload),      어떠 파일 이름으로()
 			File saveFile = new File(uploadFolder,multipartFile.getOriginalFilename());
 			
