@@ -9,7 +9,8 @@ public class AttachFileVO {
 	private String uuid;	//4dc8e41a-66aa-47fc-a447-83177afaaa24_
 	// 업로드된 파일이 이미지파일인지 아닌지
 	private boolean imageType;	//private boolean checkImageType
-	
+	// 게시판이랑 연결해줄 bno 생성
+	private int bno;
 	
 	public String getUploadPath() {
 		return uploadPath;
@@ -35,13 +36,18 @@ public class AttachFileVO {
 	public void setImageType(boolean imageType) {
 		this.imageType = imageType;
 	}
-	
-	
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 	@Override
 	public String toString() {
 		return "AttachFileVO [uploadPath=" + uploadPath + ", fileName=" + fileName + ", uuid=" + uuid + ", imageType="
-				+ imageType + "]";
+				+ imageType + ", bno=" + bno + "]";
 	}
+	
 }
 	
 	

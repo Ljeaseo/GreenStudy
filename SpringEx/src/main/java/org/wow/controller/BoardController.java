@@ -33,6 +33,7 @@ public class BoardController {
 	@RequestMapping(value="/board/write", method = RequestMethod.POST)
 	public String writePost(BoardVo board) { 
 		// 비즈니스 영역 연결한 후 BoardService에 있는 write 메소드를 호출
+		
 		bs.write(board);
 		
 		return "redirect:/board/list";

@@ -11,9 +11,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -130,5 +134,53 @@ public class uploadAjaxController {
 			}
 		} //for 문 끝
 		return new ResponseEntity<>(list,HttpStatus.OK);
+	}//uploadAjax 끝...
+	// 이미지 주소 생성
+	@RequestMapping(value="/display", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> getFile(String fileName){
+		System.out.println(fileName);
+		
+		File file = new File("D:\\upload\\"+fileName);
+		
+		ResponseEntity<byte[]> result = null;
+		
+		HttpHeaders headers = new HttpHeaders();  // 업로드할 파일이 이미지 파일인지 아닌지 확인하기 위함.   
+		
+		try {
+			headers.add("Content-Type", Files.probeContentType(file.toPath()));
+			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file),
+					headers,HttpStatus.OK);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return result;
+		
+	}//display 끝...
+	
+	//다운로드 주소 생성
+	@RequestMapping(value="/download", method = RequestMethod.GET)
+	public ResponseEntity<Resource> downloadFile(String fileName){
+		
+		Resource resource = new FileSystemResource("D:\\upload\\"+fileName);
+		
+		//다운로드시 파일의 이름을 처리
+		String resourceName=resource.getFilename();
+		
+		HttpHeaders headers = new HttpHeaders();
+		
+		try {
+			// 다운로드 파일이름이 한글일때 깨지지않게 하기위한 설정
+			headers.add("Content-Disposition","attachment;filename="
+						+new String(resourceName.getBytes("UTF-8"),"ISO-8859-1"));
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return new ResponseEntity<>(resource,headers,HttpStatus.OK);
+		
 	}
 }
+	
+	
+	
+	

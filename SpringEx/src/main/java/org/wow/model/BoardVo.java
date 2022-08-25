@@ -1,5 +1,7 @@
 package org.wow.model;
 
+import java.util.ArrayList;
+
 public class BoardVo {
 	//게시판 번호 bno
 	private int bno;
@@ -13,7 +15,21 @@ public class BoardVo {
 	private int cnt;
 	//아이디 id
 	private String id;
+	
+	
+	//AttachFileVO(파일 업로드 관련 model)
+	private ArrayList<AttachFileVO> attach;
 		
+	
+	public ArrayList<AttachFileVO> getAttach() {
+		return attach;
+	}
+	public void setAttach(ArrayList<AttachFileVO> attach) {
+		this.attach = attach;
+	}
+	
+	
+	
 	//getter&setter메소드 -> Source 'create getter setter'
 	public int getBno() {
 		return bno;
@@ -52,11 +68,10 @@ public class BoardVo {
 		this.id = id;
 	}
 	
-	//Source 'create toString'
 	@Override
 	public String toString() {
 		return "BoardVo [bno=" + bno + ", title=" + title + ", content=" + content + ", regdate=" + regdate + ", cnt="
-				+ cnt + ", id=" + id + "]";
+				+ cnt + ", id=" + id + ", attach=" + attach + "]";
 	}
 	
 	

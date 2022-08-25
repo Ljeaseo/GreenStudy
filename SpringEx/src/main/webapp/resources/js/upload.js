@@ -32,6 +32,7 @@ $(document).ready(function(){
 	
 	//파일 전송버튼을 클릭하면(id="uploadBtn")
 	$("#uploadBtn").on("click",function(){
+		
 		//alert("aaa");
 		//파일 업로드 관련 로직 처리
 		var formData = new FormData();
@@ -63,12 +64,37 @@ $(document).ready(function(){
 			dataType:"json",
 			success:function(result){
 				console.log(result)
+				
+				var str="";
+				$(result).each(function(i,obj){
+					//console.log(obj)
+					//console.log(obj.fileName)
+					
+					//만약에 이미지 결과가 true이면 
+					if(obj.imageType){       //obj.image의 결과값 자체가 true,false 값이기 때문에 조건식을 따로 넣을 필요가 없다.
+					//아래를 실행
+					//섬네일 파일의 파일경로 완성.
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+"S_"+obj.fileName)
+						console.log(filePath)
+					
+						str+="<li><img src='/display?fileName="+filePath+"'>"+obj.fileName+"</li>"
+					//그렇지 않으면
+					}else{
+						//다운로드 할수 있도록 실행.
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName)
+						str+="<li><a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a></li>"
+					}
+				})
+					
+				$("#uploadResult ul").html(str);
 			}
 		})
 		
 	})
 	
 })
+				
+				
 			
 			
 	
