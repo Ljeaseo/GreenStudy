@@ -10,16 +10,13 @@
 </head>
 <body>
 <h1>게시판 글쓰기 화면</h1>
-<form action="/board/write" method="post">
+<form action="/board/write" method="post" id="form">
 제목<input type="text" name="title">
 내용<input type="text" name="content">
 <input type="button" id="uploadBtn" value="글쓰기">
 <input type="file" name="uploadFile" multiple><br>
 
-<input type="text" name="fileName" value="${}"><br>
-<input type="text" name="uuid" value="${}"><br>
-<input type="text" name="uploadPath" value="${}"><br>
-<input type="text" name="imageType" value="${}"><br>
+
 
 	<div id="uploadResult">
 		<ul>

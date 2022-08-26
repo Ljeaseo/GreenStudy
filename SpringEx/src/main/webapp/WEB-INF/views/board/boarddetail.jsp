@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/js/reply.js"></script>
+<script type="text/javascript" src="/resources/js/attach.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -31,8 +32,14 @@
 	    </tr>
 	   
 	</table>
-	
 </form>
+	
+	<div id="uploadResult">
+		<ul>
+		
+		</ul>
+	</div>
+
 <div>
 <label>댓글</label>
 </div>

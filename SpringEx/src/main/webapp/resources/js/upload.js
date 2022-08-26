@@ -66,10 +66,14 @@ $(document).ready(function(){
 				console.log(result)
 				
 				var str="";
+				var input = "";
 				$(result).each(function(i,obj){
 					//console.log(obj)
 					//console.log(obj.fileName)
-					
+					input+="<input type='hidden' name = 'attach["+i+"].fileName' value='"+obj.fileName+"'>"
+					input+="<input type='hidden' name = 'attach["+i+"].uploadPath' value='"+obj.uploadPath+"'>"
+					input+="<input type='hidden' name = 'attach["+i+"].uuid' value='"+obj.uuid+"'>"
+					input+="<input type='hidden' name = 'attach["+i+"].imageType' value='"+obj.imageType+"'>"
 					//만약에 이미지 결과가 true이면 
 					if(obj.imageType){       //obj.image의 결과값 자체가 true,false 값이기 때문에 조건식을 따로 넣을 필요가 없다.
 					//아래를 실행
@@ -87,6 +91,7 @@ $(document).ready(function(){
 				})
 					
 				$("#uploadResult ul").html(str);
+				$("#form").append(input).submit();
 			}
 		})
 		

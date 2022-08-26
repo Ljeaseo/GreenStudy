@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.wow.mapper.BoardAttachMapper;
 import org.wow.mapper.BoardMapper;
+import org.wow.model.AttachFileVO;
 import org.wow.model.BoardVo;
 import org.wow.model.CriteriaVO;
 
@@ -15,7 +17,9 @@ import org.wow.model.CriteriaVO;
 public class BoardServiceimpl implements BoardService {
 	
 	@Autowired
-	BoardMapper bm;
+	BoardMapper bm;// board 테이블mapper
+	@Autowired
+	BoardAttachMapper bam;
 	
 	//BoardService에서 설계되어진 write추상메서드를 구현
     @Override
@@ -23,6 +27,14 @@ public class BoardServiceimpl implements BoardService {
 		// BoardMapper에 있는 write메서드를 호출
     	// 메서드의 매개변수를 통해 BoardVo값을 BoardMapper의 write메서드로 전달
     	bm.write(board);
+    	board.getAttach().forEach(attach -> {
+    		
+    		//AttachFileVO의 bno에 BoardVO의 bno를 저장해라
+    		attach.setBno(board.getBno());
+    		
+    		bam.insert(attach);
+    	});
+    		
 	}
     
     //BoardService에서 설계되어진 list추상메서드를 구현
@@ -56,6 +68,10 @@ public class BoardServiceimpl implements BoardService {
 	}
 	public int total(CriteriaVO cri) {
 		return bm.total(cri);
+	}
+	// 첨부파일 조회 설계
+	public ArrayList<AttachFileVO> attachlist(int bno){
+		return bam.attachlist(bno);
 	}
 }
 
