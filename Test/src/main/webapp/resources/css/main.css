@@ -523,12 +523,7 @@ th {
 
 }
 
-.googlebutton_img {
 
-  width: 80%;
-  height: 80%;
-  background: no-repeat;
-}
 
 #google {
   size: 15px;
@@ -585,7 +580,7 @@ th {
 
 .content_p {
   height: 82px;
-  overflow: hidden;
+  overflow: auto;
   font-size: 13px;
 }
 

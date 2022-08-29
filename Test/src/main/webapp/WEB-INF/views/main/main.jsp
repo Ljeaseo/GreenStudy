@@ -19,8 +19,19 @@
   <!-- JavaScript 주소입니다. -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+	
 
-
+	<!-- 구글검색 javascript -->
+	<script>
+	function searchFunction(){
+		var addr = "https://www.google.com/search?q=";
+		var txt = document.getElementById("googleinput").value;
+		var openNewWindow = window.open("about:blank");
+		
+		openNewWindow.location.href = addr.concat(txt);
+	}
+	</script>
+		
   <!-- 타이틀입니다. -->
   <title>코딩 커뮤니티</title>
 
@@ -81,21 +92,21 @@
       <ul class="slidelist">
         <li>
           <label for="slide03" class="left"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표.png" class="L_img"></label>
-          <a href="https://tomcat.apache.org/">
+          <a href="https://tomcat.apache.org/" target="_blank">
             <img class="banner" src="${pageContext.request.contextPath}/resources/img/tomcat.png" style="border-style:none;" alt="광고"></a>
           </a>
           <label for="slide02" class="right"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표 - 복사본.png" class="R_img"></label>
         </li>
         <li>
           <label for="slide01" class="left"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표.png" class="L_img"></label>
-          <a href="https://www.w3schools.com/">
+          <a href="https://www.w3schools.com/" target="_blank">
             <img class="banner" src="${pageContext.request.contextPath}/resources/img/w3schools.jpg" style="border-style:none;" alt="광고">
           </a>
           <label for="slide03" class="right"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표 - 복사본.png" class="R_img"></label>
         </li>
         <li>
           <label for="slide02" class="left"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표.png" class="L_img"></label>
-          <a href="https://www.acmicpc.net/">
+          <a href="https://www.acmicpc.net/" target="_blank">
             <img class="banner" src="${pageContext.request.contextPath}/resources/img/백준.png" style="border-style:none;" alt="광고">
           </a>
           <label for="slide01" class="right"><img src="${pageContext.request.contextPath}/resources/img/배너 화살표 - 복사본.png" class="R_img"></label>
@@ -151,7 +162,7 @@
       <div class="tab">
         <ul class="tabnav">
           <li><a href="#tab01">취업TIP</a></li>
-          <li><a href="#tab02">시험일정</a></li>
+          <li><a href="#tab02">달 력</a></li>
         </ul>
         <div class="tabcontent">
           <div id="tab01">취업 tip tap 메뉴 내용입니다.</div>
@@ -253,7 +264,13 @@
             </a>
           </div>
           <div class="content_p">
-            내용입니다.
+            여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다. ====> 이 글은 예를 보이기 위한 것이므로 읽을 필요가 없다.
+
+		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
+		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
+		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
+		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
+		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
           </div>
           <div class="usertag">
             <a href="#"><span>#글쓴이가</span></a>
@@ -413,7 +430,7 @@
           <ol start="1">
             <li class="p1">
               <a href="#">
-                조회수 1등 제목
+            조회수 1등 제목
               </a>
             </li>
             <li class="p2">
@@ -549,14 +566,16 @@
       </div>
 
       <!-- 구글 지원 검색창-->
-      <div class="googlebox">
-
-        <input class="googlesearch" name="google_search_link" type="text"
+      
+		<form action="javascript:searchFunction()" method="post">
+        <div class="googlebox">
+        <input class="googlesearch" id="googleinput" name="google_search_link" type="text"
                placeholder="  google 지원" style="margin-right:5px;">
-        <button class="googlebutton" onclick="getValueInput()"><img src="${pageContext.request.contextPath}/resources/img/Google__G__Logo.svg.png" class="googlebutton_img"></button>
-
-      </div>
-
+        
+        <input type="image" class="googlebutton" src="${pageContext.request.contextPath}/resources/img/Google__G__Logo.svg.png">
+        </div>
+		</form>
+	  
     </div>
 
   </div>

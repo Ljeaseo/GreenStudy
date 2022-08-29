@@ -24,10 +24,39 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<resource-ref>
+
+    <description>DB Connection</description>
+
+    <res-ref-name>jdbc/JDBCtest</res-ref-name>
+
+    <res-type>javax.sql.DataSource</res-type>
+
+    <res-auth>Container</res-auth>
+
+  </resource-ref>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	 <!-- 한글깨짐 방지 --> 
+    <!-- filter와 filter-mapping을 만들어 준다. -->
+    <filter> 
+        <!-- filter안에는 filter-name, filter-class, init-param을 추가해 준다.
+              filter-name은 원하는대로 지정해도됨 -->
+        <filter-name>encodingFilter</filter-name> 
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param> 
+            <!-- encoidng값을 UTF-8로 만들어 준다. -->
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>
