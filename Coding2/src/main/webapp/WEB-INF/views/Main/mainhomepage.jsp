@@ -21,15 +21,7 @@
   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 
   	<!-- 구글검색 javascript -->
-	<script>
-	function searchFunction(){
-		var addr = "https://www.google.com/search?q=";
-		var txt = document.getElementById("googleinput").value;
-		var openNewWindow = window.open("about:blank");
-		
-		openNewWindow.location.href = addr.concat(txt);
-	}
-	</script>
+
   <!-- 타이틀입니다. -->
   <title>코딩 커뮤니티</title>
 
@@ -53,7 +45,7 @@
           <li id="li"><a href="#">취업tip</a></li>
           <li id="li"><a href="#">스터디</a></li>
           <li id="li"><a href="#">지식공유</a></li>
-          <li id="li"><a href="#">Q&A</a></li>
+          <li id="li"><a href="/board/list">Q&A</a></li>
         </ul>
       </div>
       <!-- 로그인 회원가입 입니다.-->
@@ -61,18 +53,35 @@
 		
 		<c:choose>
 			<c:when test = "${sessionScope.login==null}">
+				<div class="loginbox">
 				<a href="login">로그인</a>
+				</div>
+				<div class="signupbox">
 				<a href="join">회원가입</a>
+				</div>
 			</c:when>
 			
 			
 			
 			
 			<c:otherwise>
-				${sessionScope.login.id}님 환영합니다. <br>
-				<a href="logout">로그아웃</a>
+			
+			<div class="profile_card">
+            <a href="#">
+              <img class="loginprofile" src="${pageContext.request.contextPath}/resources/img/다운로드.jpg">
+            </a>
+          	</div>
+				<div>
+				${sessionScope.login.id}님 
+				<br>
+				<a class="mypage_a" href="#">마이페이지</a>
+				<a class="logaout_a" href="logout">로그아웃</a>
+				</div>
+		
 			</c:otherwise>	
 		</c:choose>      
+				
+				
 		
 					
       	
@@ -175,7 +184,7 @@
       <div class="tab">
         <ul class="tabnav">
           <li><a href="#tab01">취업TIP</a></li>
-          <li><a href="#tab02">시험일정</a></li>
+          <li><a href="#tab02">달    력 </a></li>
         </ul>
         <div class="tabcontent">
           <div id="tab01">취업 tip tap 메뉴 내용입니다.</div>
@@ -221,8 +230,8 @@
 
 
       <!-- 새로운 글 리스트-->
-
-      <div class="list">
+	<c:forEach var="item" items="${mainlist}">
+      <div class="list" data-id="${item.bno}">
         
         <!--사용자 프로필 사진과 아이디-->
       
@@ -236,46 +245,40 @@
          <div class="cardtitle_username">
          	<div>
             <a href="#">
-              <font class="userid">글쓴이 아이디</font>
+              <font class="userid"><td>${item.id}</td></font>
             </a>
               <span>
               <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">-</font>
               </font>
               </span>
-              <font class="userid">업로드 날짜</font>
+              <font class="userid"><td>${item.regdate}</td></font>
               <input type="image" class="outcardimage" 
+              	
               	src="${pageContext.request.contextPath}/resources/img/icon-x.png">
-              <input type="image" class="morecardimage" 
+              <input type="image" id="textbox-url" class="morecardimage"          
                 src="${pageContext.request.contextPath}/resources/img/icon-more.png">
-              
+               
+              <input type="hidden" id="data-area" class="data-area" 
+               	value="http://localhost:8080/detail?bno=${item.bno}">
+             
             </div>
             <div class="listtitle">
-            <a href="#">
-              <h3>제목제목제목제목제목제목제목제목목제목제목제목제목제목제목제목제목제목</h3>
+            <a class = "data-url" href="http://localhost:8080/detail?bno=${item.bno}">
+            <h3><td>${item.title}</td></h3>
             </a>
+            
             </div>
           </div>
           </div>
         
         <div class="content">
           <div class="content_p">
-            여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다. ====> 이 글은 예를 보이기 위한 것이므로 읽을 필요가 없다.
-
-		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
-		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
-		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
-		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
-		여기는 DIV 스타일에 overflow: auto; 속성을 주었다. 내용의 양이 DIV 영역보다 많으면 스클롤바가 표시되고 적으면 표시되지 않는다.
-          </div>
-          <div class="usertag">
-            <a href="#"><span>#글쓴이가</span></a>
-            <a href="#"><span>#태그한</span></a>
-            <a href="#"><span>#해쉬태그</span></a>
+           <td>${item.content}</td>
           </div>
         </div>
       </div>
-
+	</c:forEach>
     </div>  <!--중앙 컨테이너 끝 -->
 
 
@@ -289,12 +292,12 @@
       <!-- 스터디 인기글-->
       <div class="card">
         <div class="card_head">
+            <a href="#">
           <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/pen.png">
           <div>
-            <a href="#">
               <strong>스터디 인기글</strong>
-            </a>
           </div>
+            </a>
         </div>
         <div class="card_content">
 
@@ -340,12 +343,12 @@
       <!-- 지식공유 인기글-->
       <div class="card">
         <div class="card_head">
+            <a href="#">
           <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/lamp.png">
           <div>
-            <a href="#">
               <strong>지식 공유 인기글</strong>
-            </a>
           </div>
+            </a>
         </div>
         <div class="card_content">
           <ol start="1">
@@ -389,12 +392,12 @@
       <!-- Q&A 인기글-->
       <div class="card">
         <div class="card_head">
-          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/Q&A로고.png">
+            <a href="/board/list">
+          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/Q&A로고.png" >
           <div>
-            <a href="#">
               <strong>Q&A 인기글</strong>
-            </a>
           </div>
+            </a>
         </div>
         <div class="card_content">
           <ol start="1">
@@ -430,7 +433,7 @@
           </ol>
         </div>
         <div>
-          <a href="#">
+          <a href="/board/list">
             <p class="more">더보기</p>
           </a>
         </div>

@@ -1,3 +1,4 @@
+/* mainhomepage css */
 body {               
   margin: 0% auto;
   font-family: "Source Sans Pro", sans-serif;
@@ -19,7 +20,7 @@ a {
   text-align: center;
 
 }
-
+/* 실시간 인기글, 메뉴별 인기글 글씨 반짝임 */
 @keyframes blink-effect {
   50% {
     opacity: 0.7;
@@ -30,7 +31,7 @@ a {
   animation: blink-effect 0.4s step-end infinite;
 
 }
-
+/* 헤더 메뉴 이펙트 */
 #li:after {
   /*after 가상요소*/
   display: block;
@@ -52,6 +53,7 @@ a {
   /*a 속성에 hover시 기존 크기로*/
 }
 
+/* 헤더 설정 */
 .header {
   width: 100%;
   height: 130px;
@@ -90,7 +92,16 @@ a {
   padding: 0%;
   text-align: center;
 }
-
+.logaout_a{
+	font-size:10px;
+	text-align: right;
+	padding-left : 10px;
+}
+.mypage_a{
+	font-size:10px;
+	text-align: right;
+	
+}
 .navbar__menu li {
   display: inline-block;
   padding: 20px;
@@ -100,14 +111,28 @@ a {
 .navbar_loginsignin {
   position: relative;
   list-style: none;
-  margin: 0%;
+  margin-top: 5px;
   padding: 20px 30px 20px 30px;
   left: 150px;
   display: flex;
   justify-content: center;
+  width:200px;
+  
 
 }
-
+.loginbox{
+	margin-left : 30px;
+}
+.signupbox{
+	margin-left : 50px;
+}
+.loginprofile{
+	width: 30px;
+  height: 30px;
+  object-fit: cover;
+   border-radius: 30px 30px 30px 30px;
+ 
+}
 #ul {
   padding-left: 20px;
   list-style: none;
@@ -156,7 +181,10 @@ a {
   cursor: pointer;
   font-size: 20px;
 }
+/* 헤더부터 검색창 css 끝 */
 
+
+/* 광고및 이미지 슬라이드 설정 */
 .section {
   width: 1130px;
 
@@ -184,6 +212,7 @@ a {
   text-align: center;
   display: inline-block;
 }
+
 
 .section input {
   display: none;
@@ -301,7 +330,10 @@ label .left {
 .section [id="slide03"]:checked~.slidewrap .control03 {
   display: block;
 }
+/* 광고 및 이미지 슬라이드 css 끝 */
 
+
+/* 메인화면 컨테이너 설청 */
 #container {
   display: grid;
   grid-template-columns: 2fr 5fr 3fr;
@@ -324,6 +356,7 @@ label .left {
   padding-right: 10px;
 }
 
+/* 왼쪽 태그 설정 */
 .taglink {
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
@@ -357,6 +390,8 @@ label .left {
   display: inline-block;
 }
 
+
+/* 취업 팁과 달력 탭 메뉴 */
 .tab {
   float: left;
   width: 200px;
@@ -489,6 +524,7 @@ th {
   font-size: 13px;
 }
 
+/* 구글 검색 지원 css  */
 .googlebox {
   height: 60px;
   margin-top: 45px;
@@ -522,12 +558,12 @@ th {
 
 }
 
-
-
 #google {
   size: 15px;
 }
 
+
+/* 실시간 인기글 css */
 .list {
 
  
@@ -607,34 +643,12 @@ th {
   font-size: 13px;
 }
 
-.usertag {
-  height: 22px;
-  border-top: 1px solid #dee2e6;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.usertag a {
-  font-size: 12px;
-
-
-  margin-left: 5px;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  background-color: #f8f9fa;
-  display: inline-block;
-}
-
-.usertag span {
-  font-size: 10px;
-}
-
-
-
 p {
   margin: 1px 10px 1px 1px;
 }
 
+
+/* 메뉴별 인기글 조회수순 top 5 css */
 .card {
   border: 1px solid #dee2e6;
   margin-bottom: 4px;
@@ -664,7 +678,7 @@ p {
 
 }
 
-.card_content {
+.card_contnet {
   text-align: left;
   margin-right: 10px;
   margin-left: 10px;
@@ -698,6 +712,8 @@ p {
   text-align: right;
 }
 
+
+/* footer css */
 .footer {
   background-color: #f8f9fa;
   height: 100px;
