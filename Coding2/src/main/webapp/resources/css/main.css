@@ -356,41 +356,101 @@ label .left {
   padding-right: 10px;
 }
 
-/* 왼쪽 태그 설정 */
-.taglink {
+/* 최근 검색어 */
+.recent_searches {
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
   width: 200px;
-  height: 250px;
+  height: auto;
   margin: 25px 5px 0px 20px;
-
-
-}
-
-#tag {
-  margin-left: 20px;
-  margin-top: 5px;
-  border: 1px solid #dee2e6;
-  width: 195px;
-}
-
-#tag-list {
-  padding: 5px 5px 5px 5px;
-  margin: 10px;
-  height: 220px;
-}
-
-.taglink span {
-  font-size: 13px;
-  padding: 3px 3px 3px 3px;
-  margin: 4px 3px 8px 3px;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  background-color: #f8f9fa;
-  display: inline-block;
 }
 
 
+.recent_searches_title{
+	 border-bottom: 1px solid #dee2e6;
+	  background-color: #f8f9fa;
+	padding : 2px 5px 2px 10px;
+	border-radius: 8px 8px 0px 0px;
+}
+.recent_searches_title span{
+	font-size: 11px;
+}
+.recent_searches_title input{
+	float: right;
+	width: 50px;
+  height: 20px;
+  font-size: 3px;
+  padding : 0;
+  background-color:rgba(0,0,0,0);
+  border:0;
+  opacity: 0.7;
+}
+
+.recent_searches_title input:hover{
+	float: right;
+	width: 50px;
+  	height: 20px;
+  	font-size: 3px;
+  	padding : 0;
+  	background-color:rgba(0,0,0,0);
+  	border:0;
+  	font-weight:bolder;
+}
+.recent_searches_word ul{
+	padding : 8px 5px 10px 25px;
+	margin : 0;
+}
+.recent_searches_word li{
+	font-size: 13px;
+	margin-bottom: 3px;
+}
+
+.recent_searches_button{
+	float: right;
+	width: 25px;
+  height: 20px;
+  font-size: 1px;
+  padding : 0;
+  background-color:rgba(0,0,0,0);
+  border:0;
+	opacity: 0.7;  
+	
+}
+
+.Favorites_img{
+	float: right;
+	width: 12px;
+  height: 12px;
+  font-size: 1px;
+  padding : 0;
+  background-color: transparent;
+
+  border:0;
+	
+}
+
+.Favorites_img:focus{
+	float: right;
+	width: 12px;
+  height: 12px;
+  font-size: 1px;
+  padding : 0;
+  background-color: transparent;
+
+  border:0;
+	
+}
+
+.recent_searches_button:hover{
+	float: right;
+	width: 25px;
+  	height: 20px;
+  	font-size: 1px;
+  	padding : 0;
+  	background-color:rgba(0,0,0,0);
+  	border:0;
+  	font-weight:bolder;
+}
 /* 취업 팁과 달력 탭 메뉴 */
 .tab {
   float: left;
@@ -399,6 +459,7 @@ label .left {
   margin: 25px 20px 20px 20px;
   position: relative;
 }
+
 
 .tabnav {
   font-size: 0;
@@ -618,7 +679,7 @@ th {
 }
 .listtitle{
 	width:auto;
-	height:25px;
+	height:30px;
 	overflow: hidden;
 }
 .listtitle h3{
@@ -651,33 +712,71 @@ p {
 /* 메뉴별 인기글 조회수순 top 5 css */
 .card {
   border: 1px solid #dee2e6;
+ 
   margin-bottom: 4px;
   margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 8px 8px 8px 8px;
-  height: 297px;
+  height: 275px;
   width: auto;
 }
 
 .titlelogo {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   background-color: #f8f9fa;
   margin: auto;
+  
 
 }
 
 .card_head {
-  width: 256.750px;
-  padding: 5px 20px 5px 20px;
+  width: auto;
+  padding: 5px 48.375px 5px 48.375px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
-  text-align: center;
+  height:29px;
   grid-template-columns: 1fr 1fr;
+  justify-content : center;
+  border-radius: 8px 8px 0px 0px;
 
 }
 
+.card_head_img{
+	height: 29px;
+	float:left;
+	margin-top: 3px;
+	
+}
+.card_head_title{
+	width: 152px;
+	height: 29px;
+	float:left;
+	margin-top: 3px;
+	padding-left: 2px;
+	padding-right: 2px;
+	
+}
+
+.card_head_img2{
+	height: 29px;
+	float:right;
+	margin-top: 3px;
+	
+}
+.card_head a{
+	height: 29px;
+	width:128px;
+	text-align: center;
+	
+}
+.card_head span{
+	text-align:center;
+	height :29px;
+	width : 50px;
+	font-weight: bold;
+}
 .card_contnet {
   text-align: left;
   margin-right: 10px;
@@ -708,8 +807,11 @@ p {
 }
 
 .more {
+  border-top : 1px solid #dee2e6;
   font-size: 11px;
   text-align: right;
+  margin: 2px 0px 1px 0px;
+  padding-right: 10px;
 }
 
 

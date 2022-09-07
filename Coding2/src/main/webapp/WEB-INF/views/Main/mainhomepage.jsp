@@ -164,19 +164,94 @@
 
     <!-- 좌측-->
     <div id="leftbox">
-
-
-      <!-- 해시태그 -->
-      <div class="taglink">
-        <ul id="tag-list">
-          <a href="#"><span>#HTML</span></a>
-          <a href="#"><span>#css</span></a>
-          <a href="#"><span>#javascript</span></a>
-          <a href="#"><span>#JAVA</span></a>
-          <a href="#"><span>#Mysql</span></a>
-          <a href="#"><span>#python</span></a>
-          <a href="#"><span>#spring</span></a>
+	<!-- 관심항목 -->
+	  <div class="recent_searches">
+        <div class="recent_searches_title">
+        <span class="blink">Favorites</span>
+        
+        </div>
+        <div class="recent_searches_word" >
+        <ul>
+        <li>
+        	HTML <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	CSS <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	javaScript <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+       	 	JAVA <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	MySQL <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	Spring <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	python <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	front end <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	backend <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	빅데이터 <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	아두이노 <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
+        <li>
+        	Ajax <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        </li>
         </ul>
+        </div>
+      </div>
+
+      <!-- 최근검색어 -->
+      <div class="recent_searches">
+        <div class="recent_searches_title">
+        <span class="blink">최근 검색어</span>
+        <input type="button" value="전체삭제">
+        </div>
+        <div class="recent_searches_word" >
+        <ul>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input  class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+       	 	최근검색 <input  class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input  class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input  class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        <li>
+        	최근검색 <input class="recent_searches_button" type="button" value="삭제">
+        </li>
+        </ul>
+        </div>
       </div>
 
       <!-- 취업tip 시험일정 tap 메뉴-->
@@ -293,9 +368,14 @@
       <div class="card">
         <div class="card_head">
             <a href="#">
+            <div class="card_head_img">
           <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/pen.png">
-          <div>
-              <strong>스터디 인기글</strong>
+          </div>
+          <div class="card_head_title">
+              <span>스터디 인기글</span>
+          </div>
+           <div class="card_head_img2">
+          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/pen.png">
           </div>
             </a>
         </div>
@@ -344,9 +424,14 @@
       <div class="card">
         <div class="card_head">
             <a href="#">
+            <div class="card_head_img">
           <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/lamp.png">
-          <div>
-              <strong>지식 공유 인기글</strong>
+          </div>
+          <div class="card_head_title">
+              <span>지식공유 인기글</span>
+          </div>
+           <div class="card_head_img2">
+          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/lamp.png">
           </div>
             </a>
         </div>
@@ -391,11 +476,16 @@
       </div>
       <!-- Q&A 인기글-->
       <div class="card">
-        <div class="card_head">
-            <a href="/board/list">
-          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/Q&A로고.png" >
-          <div>
-              <strong>Q&A 인기글</strong>
+       <div class="card_head">
+            <a href="#">
+            <div class="card_head_img">
+          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/Q&A로고.png">
+          </div>
+          <div class="card_head_title">
+              <span>Q&A 인기글</span>
+          </div>
+           <div class="card_head_img2">
+          <input class="titlelogo" type="image" src="${pageContext.request.contextPath}/resources/img/Q&A로고.png">
           </div>
             </a>
         </div>
