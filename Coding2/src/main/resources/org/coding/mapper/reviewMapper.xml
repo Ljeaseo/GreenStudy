@@ -4,11 +4,6 @@
 <mapper namespace="org.coding.mapper.reviewMapper">
 	
 	<insert id="write">
-		<!-- insert 하기 전에 select 먼저 실행해라 (bno값을 먼저 가져와라) -->
-  		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-  			select max(bno)+1 bno from board
-  		</selectKey>
-		
 		insert into board(title, content, id)
 		values(#{title},#{content},#{id})
 	</insert>
@@ -49,8 +44,4 @@
     	</if>
   	</select>
   	
-  	<!-- 조회수 올리기 -->
-	<update id="count">
-		update board set cnt = cnt + 1 where bno = #{bno}
-	</update>
 </mapper>

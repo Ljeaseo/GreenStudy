@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
+
+
 #list_container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.search {
-	margin-bottom:50px;
-}
+
 
 h1 {
 	margin-bottom:50px;
@@ -20,7 +20,7 @@ h1 {
 }
 
 
-#list th, td {
+th, td {
 	padding: 8px;
 	text-align: center;
     border-bottom: 1px solid #ddd;
@@ -45,16 +45,4 @@ th {
 	background-color:black;
 	color:white;
 	border:none;
-}
-
-#btn {
-	display: flex;
-	width: 1000px;
-	justify-content: right;
-	margin-left: 64px;
-	align-items: center;
-}
-
-#page a:hover {
-	color:rgb(153,153,153);
 }

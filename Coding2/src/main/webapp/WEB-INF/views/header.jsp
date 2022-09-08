@@ -18,17 +18,11 @@
 
   <!-- CSS 주소입니다. -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css">
-  <link rel="stylesheet" href="<c:url value='/resources/css/write.css'/>">
-  <link rel="stylesheet" href="<c:url value='/resources/css/detail.css'/>">
-  <link rel="stylesheet" href="<c:url value='/resources/css/list.css'/>">
-  
+
   <!-- JavaScript 주소입니다. -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="/resources/js/main.js"></script>
-  <script type="text/javascript" src="/resources/js/write.js"></script>
-  <script type="text/javascript" src="/resources/js/reply.js"></script>
-  <script type="text/javascript" src="/resources/js/attach.js"></script>
-  <script type="text/javascript" src="/resources/js/list.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+
 
   <!-- 타이틀입니다. -->
   <title>코딩 커뮤니티</title>
@@ -61,16 +55,56 @@
 		
 		<c:choose>
 			<c:when test = "${sessionScope.login==null}">
+				<div class="loginbox">
 				<a href="/login">로그인</a>
+				</div>
+				<div class="signupbox">
 				<a href="/join">회원가입</a>
+				</div>
 			</c:when>
-						
+			
+			
+			
+			
 			<c:otherwise>
-				${sessionScope.login.id}님 환영합니다. <br>
-				<a href="/logout">로그아웃</a>
+			
+			<div class="profile_card">
+            <a href="#">
+              <img class="loginprofile" src="${pageContext.request.contextPath}/resources/img/다운로드.jpg">
+            </a>
+          	</div>
+				<div>
+				${sessionScope.login.id}님 
+				<br>
+				<a class="mypage_a" href="#">마이페이지</a>
+				<a class="logaout_a" href="/logout">로그아웃</a>
+				</div>
+		
 			</c:otherwise>	
-		</c:choose>      
-
+		</c:choose>    
       </div>
 
     </div>
+        
+      <!-- 메뉴 입니다.
+
+ <div class="search">
+  <input type="text" class="searchTerm" placeholder="키워드로 검색하세요">
+  <button type="submit" class="searchButton">
+    <i class="fa fa-search"></i>
+ </button>
+</div> -->
+  
+
+
+
+
+
+
+</body>
+</html>
+</head>
+<body>
+
+</body>
+</html>

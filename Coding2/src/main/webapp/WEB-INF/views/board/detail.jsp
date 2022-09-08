@@ -7,9 +7,21 @@
     request.setCharacterEncoding("UTF-8");
  
 %>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <%@ include file="../header.jsp"%>
-<h2 style="text-align: center;">상세보기</h2>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/reply.js"></script>
+<link rel="stylesheet" href="<c:url value='/resources/css/detail.css'/>">
+
+</head>
+<body>
+
+<h1 style="text-align: center;">상세보기</h1>
 <div id = "detail_container">
 <form action="/board/modify" method="post">
  <table border=1 class="detail">
@@ -23,8 +35,7 @@
         <tbody>
             <tr>
                 <th>제목</th>
-                <td>
-                	<input name="title" value="${detail.title}" style="border:none; width:100%; text-align:center">
+                <td><input name="title" value="${detail.title}">
 					<input type="hidden" value="${detail.bno}" name="bno"></td>
                 <th>조회수</th>
                 <td>${detail.cnt}</td>
@@ -37,42 +48,28 @@
             </tr>
             <tr class="content">
                 <th>내용</th>
-                <td colspan="3" id="ci">
-                    <input name="content" value="${detail.content}" style="border:none; float:left;"><br><br><br>	
-                </td>
-            </tr>
-            <tr class="attach">
-                <th>첨부파일</th>
-                <td colspan="3" id="upload">
-                	<div id="attach_img">
-                		<label>< 이미지 ></label>
-                    	<ul id="uploadimg">
-							<!-- 이미지 리스트 -->
-						</ul>
-					</div>
-					<div id="attach_down">
-						<label>< 다운로드 ></label>
-						<ul id="uploadResult">
-							<!-- 다운로드 리스트 -->
-						</ul>	
-					</div>
+                <td colspan="3">
+                    <input name="content" value="${detail.content}">
                 </td>
             </tr>
         </tbody>
     </table>
 	<div>
-    	<c:if test="${sessionScope.login.id != null}">
-    	<input type = "button" id="modify" style="float: right;" onclick="location.href='/board/modify?bno=${detail.bno}'" value="수정하기">
-    	</c:if>
-    	<input type = "button" id="tolist" style="float: right;" onclick="location.href='http://localhost:8080/board/list'" value="목록으로">
+    		<input type = "button" id="tolist" style="float: right;" onclick="location.href='http://localhost:8080/board/list'" value="목록으로">
+    		<c:if test="${sessionScope.login.id != null}">
+    		<input type = "button" id="modify" style="float: right;" onclick="location.href='/board/modify?bno=${detail.bno}'" value="수정하기">
+    		</c:if>
     </div>
 </form>
 </div>
 
-<div id="reply_container">
 
+<div id="reply_container">
+	<div>
+		<label>댓글</label>
+	</div>
 	<div id="textarea">
-		<textarea rows="5" cols="134" id="reply" placeholder="댓글을 입력하세요."></textarea>
+		<textarea rows="5" cols="134" id="reply"></textarea>
 	</div>
 	<div>
 		<input type="button" value="댓글쓰기" id="add">

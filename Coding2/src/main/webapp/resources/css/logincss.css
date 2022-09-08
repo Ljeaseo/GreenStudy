@@ -9,6 +9,10 @@
     background-image:#34495e;
   }
 
+.fa-bilibili:before{
+	color:black;
+}
+
   .loginForm {
     position:absolute;
     width:400px;

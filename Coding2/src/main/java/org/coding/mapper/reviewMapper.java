@@ -25,7 +25,4 @@ public interface reviewMapper {
 	
 	//board테이블 전체건수 DB설계
 	public int total(CriteriaVO cri);
-	
-	//조회수 증가시키는 DB설계
-	public int count(BoardVO board);
 }

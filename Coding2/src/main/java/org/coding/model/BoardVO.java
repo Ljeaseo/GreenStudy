@@ -1,9 +1,5 @@
 package org.coding.model;
 
-import java.util.ArrayList;
-
-import org.coding.model.AttachVO;
-
 public class BoardVO {
 	// 게시판번호(bno)
 	private int bno;
@@ -17,8 +13,6 @@ public class BoardVO {
 	private String regdate;
 	// 조회수(cnt)
 	private int cnt;
-	// AttachFileVO (파일업로드 관련 모델) 포함시키기
-	private ArrayList<AttachVO> attach;  // 배열로 저장
 	
 	// getter&setter 메소드
 	public int getBno() {
@@ -57,17 +51,12 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
-	public ArrayList<AttachVO> getAttach() {
-		return attach;
-	}
-	public void setAttach(ArrayList<AttachVO> attach) {
-		this.attach = attach;
-	}
+	
 	// 제대로 데이터가 들어갔는지 확인하는 메소드
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", id=" + id + ", title=" + title + ", content=" + content + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", attach=" + attach + "]";
+				+ regdate + ", cnt=" + cnt + "]";
 	}
 	
 }

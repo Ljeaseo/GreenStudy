@@ -1,4 +1,4 @@
-
+/* mainhomepage css */
 body {               
   margin: 0% auto;
   font-family: "Source Sans Pro", sans-serif;
@@ -20,7 +20,7 @@ a {
   text-align: center;
 
 }
-
+/* 실시간 인기글, 메뉴별 인기글 글씨 반짝임 */
 @keyframes blink-effect {
   50% {
     opacity: 0.7;
@@ -31,7 +31,7 @@ a {
   animation: blink-effect 0.4s step-end infinite;
 
 }
-
+/* 헤더 메뉴 이펙트 */
 #li:after {
   /*after 가상요소*/
   display: block;
@@ -53,6 +53,7 @@ a {
   /*a 속성에 hover시 기존 크기로*/
 }
 
+/* 헤더 설정 */
 .header {
   width: 100%;
   height: 130px;
@@ -91,7 +92,16 @@ a {
   padding: 0%;
   text-align: center;
 }
-
+.logaout_a{
+	font-size:10px;
+	text-align: right;
+	padding-left : 10px;
+}
+.mypage_a{
+	font-size:10px;
+	text-align: right;
+	
+}
 .navbar__menu li {
   display: inline-block;
   padding: 20px;
@@ -101,14 +111,28 @@ a {
 .navbar_loginsignin {
   position: relative;
   list-style: none;
-  margin: 0%;
+  margin-top: 5px;
   padding: 20px 30px 20px 30px;
   left: 150px;
   display: flex;
   justify-content: center;
+  width:200px;
+  
 
 }
-
+.loginbox{
+	margin-left : 30px;
+}
+.signupbox{
+	margin-left : 50px;
+}
+.loginprofile{
+	width: 30px;
+  height: 30px;
+  object-fit: cover;
+   border-radius: 30px 30px 30px 30px;
+ 
+}
 #ul {
   padding-left: 20px;
   list-style: none;
@@ -123,10 +147,10 @@ a {
 }
 
 .search {
-  width: 593PX;
+  width: 592PX;
   display: flex;
   position: relative;
-  padding: 7px 268.5px 7px 268.5px;
+  padding: 7px 268px 7px 268px;
   border-bottom: 1px solid #dee2e6;
   background: white;
 }
@@ -157,7 +181,10 @@ a {
   cursor: pointer;
   font-size: 20px;
 }
+/* 헤더부터 검색창 css 끝 */
 
+
+/* 광고및 이미지 슬라이드 설정 */
 .section {
   width: 1130px;
 
@@ -185,6 +212,7 @@ a {
   text-align: center;
   display: inline-block;
 }
+
 
 .section input {
   display: none;
@@ -302,7 +330,10 @@ label .left {
 .section [id="slide03"]:checked~.slidewrap .control03 {
   display: block;
 }
+/* 광고 및 이미지 슬라이드 css 끝 */
 
+
+/* 메인화면 컨테이너 설청 */
 #container {
   display: grid;
   grid-template-columns: 2fr 5fr 3fr;
@@ -325,39 +356,102 @@ label .left {
   padding-right: 10px;
 }
 
-.taglink {
+/* 최근 검색어 */
+.recent_searches {
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
   width: 200px;
-  height: 250px;
+  height: auto;
   margin: 25px 5px 0px 20px;
-
-
 }
 
-#tag {
-  margin-left: 20px;
-  margin-top: 5px;
-  border: 1px solid #dee2e6;
-  width: 195px;
+
+.recent_searches_title{
+	 border-bottom: 1px solid #dee2e6;
+	  background-color: #f8f9fa;
+	padding : 2px 5px 2px 10px;
+	border-radius: 8px 8px 0px 0px;
+}
+.recent_searches_title span{
+	font-size: 11px;
+}
+.recent_searches_title input{
+	float: right;
+	width: 50px;
+  height: 20px;
+  font-size: 3px;
+  padding : 0;
+  background-color:rgba(0,0,0,0);
+  border:0;
+  opacity: 0.7;
 }
 
-#tag-list {
-  padding: 5px 5px 5px 5px;
-  margin: 10px;
-  height: 220px;
+.recent_searches_title input:hover{
+	float: right;
+	width: 50px;
+  	height: 20px;
+  	font-size: 3px;
+  	padding : 0;
+  	background-color:rgba(0,0,0,0);
+  	border:0;
+  	font-weight:bolder;
+}
+.recent_searches_word ul{
+	padding : 8px 5px 10px 25px;
+	margin : 0;
+}
+.recent_searches_word li{
+	font-size: 13px;
+	margin-bottom: 3px;
 }
 
-.taglink span {
-  font-size: 13px;
-  padding: 3px 3px 3px 3px;
-  margin: 4px 3px 8px 3px;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  background-color: #f8f9fa;
-  display: inline-block;
+.recent_searches_button{
+	float: right;
+	width: 25px;
+  height: 20px;
+  font-size: 1px;
+  padding : 0;
+  background-color:rgba(0,0,0,0);
+  border:0;
+	opacity: 0.7;  
+	
 }
 
+.Favorites_img{
+	float: right;
+	width: 12px;
+  height: 12px;
+  font-size: 1px;
+  padding : 0;
+  background-color: transparent;
+
+  border:0;
+	
+}
+
+.Favorites_img:focus{
+	float: right;
+	width: 12px;
+  height: 12px;
+  font-size: 1px;
+  padding : 0;
+  background-color: transparent;
+
+  border:0;
+	
+}
+
+.recent_searches_button:hover{
+	float: right;
+	width: 25px;
+  	height: 20px;
+  	font-size: 1px;
+  	padding : 0;
+  	background-color:rgba(0,0,0,0);
+  	border:0;
+  	font-weight:bolder;
+}
+/* 취업 팁과 달력 탭 메뉴 */
 .tab {
   float: left;
   width: 200px;
@@ -365,6 +459,7 @@ label .left {
   margin: 25px 20px 20px 20px;
   position: relative;
 }
+
 
 .tabnav {
   font-size: 0;
@@ -421,7 +516,7 @@ label .left {
 }
 
 .tabcontent {
-  height: 280px;
+  height: 260px;
   width: 201px;
   border: 1px solid #dee2e6;
   border-top: none;
@@ -490,10 +585,14 @@ th {
   font-size: 13px;
 }
 
+/* 구글 검색 지원 css  */
+.googleform{
+	width: 220px;
+}
 .googlebox {
   height: 60px;
   margin-top: 45px;
-  margin-left: 30px;
+  margin-left: 20px;
   text-align: left;
   display: flex;
   justify-content: center;
@@ -502,7 +601,7 @@ th {
 .googlesearch {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 200px;
+  width: 165px;
   height: 30px;
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
@@ -523,22 +622,17 @@ th {
 
 }
 
-.googlebutton_img {
-
-  width: 80%;
-  height: 80%;
-  background: no-repeat;
-}
-
 #google {
   size: 15px;
 }
 
+
+/* 실시간 인기글 css */
 .list {
 
-  display: grid;
-
-  grid-template-columns: 1fr 3fr;
+ 
+  height: auto;
+  width: 505px;
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
   margin-top: 5px;
@@ -547,111 +641,151 @@ th {
   margin-right: 10px;
 }
 
-.user {
-  text-align: center;
-  width: 100px;
-  height: 140px;
-  margin: 1px 1px 1px 1px;
-  border-right: 1px solid #dee2e6;
-  justify-content: center;
-  background-color: #f8f9fa;
+.cardhead{
+	 width: 100%;
+	 height: 50px;
+	 display: flex;
+	  border-bottom: 1px solid #dee2e6;
 }
 
-.userid {
-  font-size: 13px;
-  margin-left: 5px;
-  margin-right: 5px;
+.outcardimage{
+	float: right;
+	margin-right:5px;
+	width: 10px;
+	 height: 10px;
+	 padding-top:5px;
 }
-
-.profile-box {
-  width: 70px;
-  height: 70px;
-  border-radius: 70%;
-  overflow: hidden;
-  margin: 15px 15px 7px 15px;
+.morecardimage{
+	float: right;
+		width: 15px;
+	 height: 15px;
+	  padding-top:3px;
+	  margin-right:5px;
 }
-
+.profile_card{
+	width: 50px;
+  height: 50px;
+}
 .profile {
-  width: 100%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
+  margin-left :10px;
+  margin-top :10px;
 }
-
+.cardtitle_username{
+	width: 455px;
+}
+.userid{
+	margin-top :4px;
+	font-size:3px;
+}
+.listtitle{
+	width:auto;
+	height:30px;
+	overflow: hidden;
+}
+.listtitle h3{
+	margin: 5px 10px 1px 1px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  
+}
+.list_a{
+	width: 30px;
+  height: 30px;
+}
 .content {
-  width: 400px;
-  height: 100%;
+  width: 95%;
+  height: auto;
   margin: 1px 1px 1px 10px;
 }
 
 .content_p {
-  height: 82px;
+  height: auto;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
   font-size: 13px;
-}
-
-.usertag {
-  height: 22px;
-  border-top: 1px solid #dee2e6;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.usertag a {
-  font-size: 12px;
-
-
-  margin-left: 5px;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  background-color: #f8f9fa;
-  display: inline-block;
-}
-
-.usertag span {
-  font-size: 10px;
-}
-
-h3 {
-  margin: 5px 10px 1px 1px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dee2e6;
-
+  line-height: 25px;
 }
 
 p {
   margin: 1px 10px 1px 1px;
 }
 
+
+/* 메뉴별 인기글 조회수순 top 5 css */
 .card {
   border: 1px solid #dee2e6;
+ 
   margin-bottom: 4px;
   margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 8px 8px 8px 8px;
-  height: 297px;
+  height: 275px;
   width: auto;
 }
 
 .titlelogo {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   background-color: #f8f9fa;
   margin: auto;
+  
 
 }
 
 .card_head {
-  width: 256.750px;
-  padding: 5px 20px 5px 20px;
+  width: auto;
+  padding: 5px 48.375px 5px 48.375px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
-  text-align: center;
+  height:29px;
   grid-template-columns: 1fr 1fr;
+  justify-content : center;
+  border-radius: 8px 8px 0px 0px;
 
 }
 
-.card_content {
+.card_head_img{
+	height: 29px;
+	float:left;
+	margin-top: 3px;
+	
+}
+.card_head_title{
+	width: 152px;
+	height: 29px;
+	float:left;
+	margin-top: 3px;
+	padding-left: 2px;
+	padding-right: 2px;
+	
+}
+
+.card_head_img2{
+	height: 29px;
+	float:right;
+	margin-top: 3px;
+	
+}
+.card_head a{
+	height: 29px;
+	width:128px;
+	text-align: center;
+	
+}
+.card_head span{
+	text-align:center;
+	height :29px;
+	width : 50px;
+	font-weight: bold;
+}
+.card_contnet {
   text-align: left;
   margin-right: 10px;
   margin-left: 10px;
@@ -681,10 +815,15 @@ p {
 }
 
 .more {
+  border-top : 1px solid #dee2e6;
   font-size: 11px;
   text-align: right;
+  margin: 2px 0px 1px 0px;
+  padding-right: 10px;
 }
 
+
+/* footer css */
 .footer {
   background-color: #f8f9fa;
   height: 100px;

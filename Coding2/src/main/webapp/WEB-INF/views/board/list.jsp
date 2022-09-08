@@ -6,8 +6,20 @@
     request.setCharacterEncoding("UTF-8");
  
 %>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시글</title>
 <%@ include file="../header.jsp"%>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/js/list.js"></script>
+<link rel="stylesheet" href="<c:url value='/resources/css/list.css'/>">
+
+</head>
+<body>
+
 
 <form id="searchForm" action="/board/list" method="get">
 <div class="search">
@@ -19,7 +31,6 @@
 	<input type="hidden" name="amount" value="${paging.cri.amount}"> 
 </div>
 </form>
-
 <!-- 111 ${sessionScope.login.id}  222 -->
 <h1 style="text-align: center;">Q & A</h1>
  
@@ -46,7 +57,7 @@
 			</tr>
 		</c:forEach>
 			<tr>
-				<td colspan = 5 style='letter-spacing:10px' id="page">
+				<td colspan = 5 style='letter-spacing:10px'>
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 					<c:if test="${paging.prev}">
 						<a href="/board/list?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>

@@ -7,10 +7,17 @@
     request.setCharacterEncoding("UTF-8");
  
 %>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <%@ include file="../header.jsp"%>
+<link rel="stylesheet" href="<c:url value='/resources/css/detail.css'/>">
+</head>
+<body>
 
-<h2 style="text-align: center;">수정하기</h2>
+<h1 style="text-align: center;">수정하기</h1>
 <div id = "detail_container">
 <form method="post">
  <table border=1 class="detail">
@@ -24,8 +31,8 @@
         <tbody>
             <tr>
                 <th>제목</th>
-                <td id="ti">
-                	<input type="text" name="title" style="float:left; width:100%;" value="${detail.title}">
+                <td>
+                	<input type="text" name="title" value="${detail.title}">
 					<input type="hidden" value="${detail.bno}" name="bno"></td>
                 <th>조회수</th>
                 <td>${detail.cnt}</td>
@@ -38,8 +45,8 @@
             </tr>
             <tr class="content">
                 <th>내용</th>
-                <td colspan="3" id="ci">
-                    <textarea name="content" rows="25" style="float:left; width:100%;">${detail.content}</textarea>
+                <td colspan="3">
+                    <textarea name="content" rows="3">${detail.content}</textarea>
                 </td>
             </tr>
         </tbody>

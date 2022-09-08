@@ -1,21 +1,16 @@
 package org.coding.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.coding.model.BoardVO;
 import org.coding.service.reviewService;
-import org.coding.model.AttachVO;
 import org.coding.model.PageVO;
 import org.coding.model.CriteriaVO;
 import org.coding.service.reviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,8 +46,6 @@ public class reviewController {
 	// public String detail(int bno){
 	public String detail (BoardVO board, Model model) {
 		System.out.println(board);
-		// 조회수 증가
-		bs.count(board);
 		// bs.detail(bno);
 		model.addAttribute("detail", bs.detail(board));
 		return "board/detail";
@@ -100,17 +93,9 @@ public class reviewController {
 	// 모델 사용해 데이터 수집하기 -> 메모리 효율적 관리 가능
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String writePost (BoardVO board) {
-		System.out.println(board);
 		// 비즈니스 영역 연결한 후 BoardService
 		bs.write(board);
 		return "redirect:/board/list";
-	}
-	
-	// 해당 게시물의 첨부파일의 데이터를 ajax로 전송
-	@RequestMapping(value = "/attachlist", method = RequestMethod.GET)
-	public ResponseEntity<ArrayList<AttachVO>> uploadAjaxPost(int bno) {
-		
-		return new ResponseEntity<>(bs.attachlist(bno),HttpStatus.OK);
 	}
 	
 }
