@@ -35,7 +35,7 @@
 
       <!-- 로고 입니다. -->
       <div class="navbar__logo">
-        <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
+        <a href="/"><i class="fa-brands fa-bilibili fa-3x"></i></a>
       </div>
 
       <!-- 메뉴 입니다.-->
@@ -80,6 +80,7 @@
 		
 			</c:otherwise>	
 		</c:choose>      
+      </div>
 				
 				
 		
@@ -87,7 +88,6 @@
       	
     	
   
-      </div>
 
     </div>
     <!-- 검색창 입니다. -->
@@ -167,46 +167,58 @@
 	<!-- 관심항목 -->
 	  <div class="recent_searches">
         <div class="recent_searches_title">
-        <span class="blink">Favorites</span>
+        <span class="blink">♡Favorites♡</span>
         
         </div>
         <div class="recent_searches_word" >
         <ul>
         <li>
-        	HTML <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>HTML</span>
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	CSS <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>CSS</span>
+            <input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	javaScript <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>javaScript</span> 
+        	<input class="Favorites_img" type="checkbox">
         </li>
         <li>
-       	 	JAVA <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+       	 	<span>JAVA</span> 
+       	 	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	MySQL <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>MySQL</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	Spring <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>Spring</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	python <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>python</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	front end <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>front end</span> 
+        	<input class="Favorites_img" type="checkbox">
         </li>
         <li>
-        	backend <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>backend</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	빅데이터 <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>빅데이터</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	아두이노 <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>아두이노</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         <li>
-        	Ajax <input class="Favorites_img" type="image" src="${pageContext.request.contextPath}/resources/img/하트2.png">
+        	<span>Ajax</span> 
+        	<input class="Favorites_img" type="checkbox" >
         </li>
         </ul>
         </div>
@@ -253,8 +265,22 @@
         </ul>
         </div>
       </div>
-
-      <!-- 취업tip 시험일정 tap 메뉴-->
+      
+      
+	       <!-- 구글 지원 검색창-->
+      
+		<form class="googleform" action="javascript:searchFunction()" method="post">
+        <div class="googlebox">
+        <input class="googlesearch" id="googleinput" name="google_search_link" type="text"
+               placeholder="  google 검색 지원" style="margin-right:5px;">
+        
+        <input type="image" class="googlebutton" src="${pageContext.request.contextPath}/resources/img/Google__G__Logo.svg.png">
+        </div>
+		</form>
+		
+		
+		
+      <!-- 취업tip 달력 메뉴-->
 
       <div class="tab">
         <ul class="tabnav">
@@ -528,24 +554,13 @@
           </a>
         </div>
       </div>
-
-     <!-- 구글 지원 검색창-->
-      
-		<form action="javascript:searchFunction()" method="post">
-        <div class="googlebox">
-        <input class="googlesearch" id="googleinput" name="google_search_link" type="text"
-               placeholder="  google 지원" style="margin-right:5px;">
-        
-        <input type="image" class="googlebutton" src="${pageContext.request.contextPath}/resources/img/Google__G__Logo.svg.png">
-        </div>
-		</form>
-
     </div>
 
+<!-- footer -->
   </div>
   <div class="footer">
     <div class="footer-content">
-      greenstudy.220608.team01@coding
+      greenstudy.220608.team01@cod1ng
     </div>
     <div class="team-email">
       <p>lee jeaseo : ljseo0111@naver.com</p>
@@ -559,5 +574,6 @@
 
 
 </body>
+
 
 </html>

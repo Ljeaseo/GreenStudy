@@ -20,6 +20,7 @@
 </head>
 <body>
 
+
 <form id="searchForm" action="/board/list" method="get">
 <div class="search">
   <input type="text" class="searchTerm" placeholder="키워드로 검색하세요" name="keyword"> 

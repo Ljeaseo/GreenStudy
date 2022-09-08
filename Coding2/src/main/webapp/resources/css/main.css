@@ -147,10 +147,10 @@ a {
 }
 
 .search {
-  width: 593PX;
+  width: 592PX;
   display: flex;
   position: relative;
-  padding: 7px 268.5px 7px 268.5px;
+  padding: 7px 268px 7px 268px;
   border-bottom: 1px solid #dee2e6;
   background: white;
 }
@@ -516,7 +516,7 @@ label .left {
 }
 
 .tabcontent {
-  height: 280px;
+  height: 260px;
   width: 201px;
   border: 1px solid #dee2e6;
   border-top: none;
@@ -586,10 +586,13 @@ th {
 }
 
 /* 구글 검색 지원 css  */
+.googleform{
+	width: 220px;
+}
 .googlebox {
   height: 60px;
   margin-top: 45px;
-  margin-left: 30px;
+  margin-left: 20px;
   text-align: left;
   display: flex;
   justify-content: center;
@@ -598,7 +601,7 @@ th {
 .googlesearch {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 200px;
+  width: 165px;
   height: 30px;
   border: 1px solid #dee2e6;
   border-radius: 8px 8px 8px 8px;
@@ -700,8 +703,13 @@ th {
 
 .content_p {
   height: auto;
-  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
   font-size: 13px;
+  line-height: 25px;
 }
 
 p {

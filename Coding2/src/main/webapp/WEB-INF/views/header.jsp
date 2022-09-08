@@ -37,7 +37,7 @@
 
       <!-- 로고 입니다. -->
       <div class="navbar__logo">
-        <a href="#"><i class="fa-brands fa-bilibili fa-3x"></i></a>
+        <a href="/"><i class="fa-brands fa-bilibili fa-3x"></i></a>
       </div>
 
       <!-- 메뉴 입니다.-->
@@ -47,7 +47,7 @@
           <li id="li"><a href="#">취업tip</a></li>
           <li id="li"><a href="#">스터디</a></li>
           <li id="li"><a href="#">지식공유</a></li>
-          <li id="li"><a href="#">Q&A</a></li>
+          <li id="li"><a href="/board/list">Q&A</a></li>
         </ul>
       </div>
       <!-- 로그인 회원가입 입니다.-->
@@ -55,16 +55,33 @@
 		
 		<c:choose>
 			<c:when test = "${sessionScope.login==null}">
+				<div class="loginbox">
 				<a href="/login">로그인</a>
+				</div>
+				<div class="signupbox">
 				<a href="/join">회원가입</a>
+				</div>
 			</c:when>
-						
+			
+			
+			
+			
 			<c:otherwise>
-				${sessionScope.login.id}님 환영합니다. <br>
-				<a href="/logout">로그아웃</a>
+			
+			<div class="profile_card">
+            <a href="#">
+              <img class="loginprofile" src="${pageContext.request.contextPath}/resources/img/다운로드.jpg">
+            </a>
+          	</div>
+				<div>
+				${sessionScope.login.id}님 
+				<br>
+				<a class="mypage_a" href="#">마이페이지</a>
+				<a class="logaout_a" href="/logout">로그아웃</a>
+				</div>
+		
 			</c:otherwise>	
-		</c:choose>      
-
+		</c:choose>    
       </div>
 
     </div>
