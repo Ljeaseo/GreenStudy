@@ -56,7 +56,7 @@
 			<h4>FS <span style="color:red;">L</span>ines</h4>
 			<ul>
 				<li>
-					<a href="/FS3">FS3</a>
+					<a href="/FSX3">FS3</a>
 				</li>
 				<li>
 					<a href="/FSX3">FSX3</a>
@@ -75,7 +75,7 @@
 			<img src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
 		</div>
 		<div class="detail_box_content">
-			<h3>FG3</h3>
+			<h3>FS3</h3>
 			<h5>$1,338.60</h5>
 			<div class="detail_box_content_span">
 			<span>The original Yamaha FG body delivers a full, punchy low end,<br>
@@ -101,15 +101,15 @@
 		</div>
 	</div>
 		<div class="detail_more_img">
-			<img id="img_1" src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_1.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_2.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_9.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_10.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_11.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_12.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_13.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_15.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_16.jpg">
+			<img id="img_1" src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_1.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_2.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_9.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_10.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_11.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_12.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_15.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_17.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FS3_16.jpg">
 			<img src="${pageContext.request.contextPath}/resources/img/red_spec.jpg">
 		</div>	
 </div>

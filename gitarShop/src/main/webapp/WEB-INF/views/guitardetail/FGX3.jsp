@@ -47,7 +47,7 @@
 					<a href="/FG5">FG5</a>
 				</li>
 				<li>
-					<a>FGX5</a>
+					<a href="/FGX5">FGX5</a>
 				</li>	
 			</ul>
 		</div>
@@ -56,16 +56,16 @@
 			<h4>FS <span style="color:red;">L</span>ines</h4>
 			<ul>
 				<li>
-					<a>FS3</a>
+					<a href="/FS3">FS3</a>
 				</li>
 				<li>
-					<a>FSX3</a>
+					<a href="/FSX3">FSX3</a>
 				</li>
 				<li>
-					<a>FS5</a>
+					<a href="/FS5">FS5</a>
 				</li>
 				<li>
-					<a>FSX5</a>
+					<a href="/FSX5">FSX5</a>
 				</li>	
 			</ul>
 		</div>

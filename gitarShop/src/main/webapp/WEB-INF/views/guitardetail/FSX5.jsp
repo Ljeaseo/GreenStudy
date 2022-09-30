@@ -72,11 +72,11 @@
 	</div>
 	<div class="detail_box">
 		<div class="detail_box_img">
-			<img src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/FGX5.jpg">
 		</div>
 		<div class="detail_box_content">
-			<h3>FG3</h3>
-			<h5>$1,338.60</h5>
+			<h3>FSX5</h3>
+			<h5>$2,651.40</h5>
 			<div class="detail_box_content_span">
 			<span>The original Yamaha FG body delivers a full, punchy low end,<br>
 			well-suited for strumming and flatpicking, and 1960s aesthetics and<br> 
@@ -90,7 +90,9 @@
 				<li>Acoustic Resonance Enhancement (A.R.E.) Treatment Imparts the Sound and Sustain of Aged Wood</li>
 				<li>All-Solid Construction with a Sitka Spruce Top, Mahogany Back and Sides</li>
 				<li>Ebony Fingerboard and Bridge</li>
-				<li>Hard Bag Included</li>
+				<li>Bone Nut and Saddle</li>
+				<li>Made in Japan</li>
+				<li>Hardshell Case Included</li>
 			</ul>
 			</div>
 			
@@ -101,15 +103,15 @@
 		</div>
 	</div>
 		<div class="detail_more_img">
-			<img id="img_1" src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_1.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_2.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_9.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_10.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_11.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_12.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_13.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_15.jpg">
-			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FG3_16.jpg">
+			<img id="img_1" src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_1.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_2.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_9.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_10.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_11.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_12.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_15.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_14_1.jpg">
+			<img src="${pageContext.request.contextPath}/resources/img/yamaha-FSX5_17.jpg">
 			<img src="${pageContext.request.contextPath}/resources/img/red_spec.jpg">
 		</div>	
 </div>

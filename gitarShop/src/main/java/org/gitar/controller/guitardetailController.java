@@ -30,4 +30,29 @@ public class guitardetailController {
 		
 		return "guitardetail/FGX5";
 	}
+	
+	@RequestMapping(value = "/FS3", method = RequestMethod.GET)
+	public String FS3 () {
+		
+		return "guitardetail/FS3";
+	}
+	
+	@RequestMapping(value = "/FSX3", method = RequestMethod.GET)
+	public String FSX3 () {
+		
+		return "guitardetail/FSX3";
+	}
+	
+	@RequestMapping(value = "/FS5", method = RequestMethod.GET)
+	public String FS5 () {
+		
+		return "guitardetail/FS5";
+	}
+	
+	@RequestMapping(value = "/FSX5", method = RequestMethod.GET)
+	public String FSX5 () {
+		
+		return "guitardetail/FSX5";
+	}
+	
 }

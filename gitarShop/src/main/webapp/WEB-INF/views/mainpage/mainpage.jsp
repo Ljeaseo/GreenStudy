@@ -6,14 +6,9 @@
 <head>
 <meta charset="UTF-8">
 
-
-
-
-
 <!-- CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/mainpage.css">
-
 
 <!-- JavaScript -->
 <script type="text/javascript"
@@ -23,7 +18,6 @@
 	src="${pageContext.request.contextPath}/resources/js/mainpage.js"></script>
 
 <!-- bxclider -->
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script
@@ -127,10 +121,10 @@
 			<div class="login_modalBox">
 				<div class="login_modalBox_content">
 					<h1>Sign <span style="color: red;">I</span>n</h1>
-					<p>E-mail</p>
-					<input type="text" placeholder="Enter email address">
-					<p>Password</p>
-					<input type="password"
+					<p>E-mail<span style="color:red;">*</span ><span id="error_msg_email" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input class="email_input" id="user_email" type="text" placeholder="Enter email address">
+					<p>Password<span style="color:red;">*</span><span id="error_msg_password" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input type="password" id="user_password"
 						placeholder="Enter password (8-20 characters)">
 					<button class="forgot_button">Forgot Password?</button>
 					<button class="singin_button">Sing In</button>
@@ -155,19 +149,19 @@
 			<div class="signup_modalBox">
 				<div class="signup_modalBox_content">
 					<h1>Please sign up <span style="color: red;">H</span>ere</h1>
-					<p>Email</p>
-					<input type="text" placeholder="Enter email address">
-					<p>Password</p>
-					<input type="text" placeholder="Enter password (8-20 characters)">
-					<p>First Name</p>
-					<input type="text" placeholder="Enter first name">
-					<p>Last Name</p>
-					<input type="text" placeholder="Enter last name">
+					<p>E-mail<span style="color:red;">*</span ><span id="error_msg_account_email" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input type="text" id="account_email" placeholder="Enter email address">
+					<p>Password<span style="color:red;">*</span ><span id="error_msg_account_password" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input type="text" id="account_password" placeholder="Enter password (8-20 characters)">
+					<p>First Name<span style="color:red;">*</span ><span id="error_msg_account_firstname" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input type="text" id="account_firstname" placeholder="Enter first name">
+					<p>Last Name<span style="color:red;">*</span ><span id="error_msg_account_lastname" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					<input type="text" id="account_lastname" placeholder="Enter last name">
 				</div>
 				<div class="signup_modalBox_checkbox">
 					<input type="checkbox"><label>I am at least 18
 						years old.</label><br> <input type="checkbox"><label>I agree
-						to the terms of the Privacy Policy, which I    have read and
+						to the terms of the <a href="/privacypolicy" target='_blank' style="color:red;">Privacy Policy</a>, which I have read and
 						understood. </label><br> <input type="checkbox"><label>I want
 						to receive updates from Yamaha Corporation    of America on the
 						latest products, services and    marketing promotions. </label>
@@ -216,8 +210,111 @@
 			  document.querySelector(".account_box_button").addEventListener("click", open_signup);
 				 
 			  document.querySelector(".signup_bg").addEventListener("click", close_singup);
-			  </script>
+			  
 
+			  /* 로그인 정규식 */
+			  $('#user_email').focusout(function(){
+				  
+			  	var email = $('#user_email').val();
+			    var emailJ = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+
+			  	
+			  	if(email == ""){	
+			  		$('#error_msg_email').text("Required");
+			  		$('#error_msg_email').css("color","red");
+			  	}
+			  	else if (emailJ.test(email) == false) {
+			  		$('#error_msg_email').text("This email doesn't look correct");		
+			  		$('#error_msg_email').css("color","red");
+			  	}
+			  	if (emailJ.test(email) == true) {
+			  		$('#error_msg_email').text("success");
+			  		$('#error_msg_email').css("color","black");
+			  	}
+			  	
+			  })
+			  /* 비밀 번호 */
+			  $('#user_password').focusout(function(){
+				  
+				  var password = $('#user_password').val();
+				  
+				  if(password == ""){
+					  $('#error_msg_password').text("Required");
+					  $('#error_msg_password').css("color","red");
+				  }else{
+					  $('#error_msg_password').text("success");
+				  		$('#error_msg_password').css("color","black");
+				  }
+				  
+			  })
+			  /*로그인 버튼*/
+			 
+			  
+			  /*회원가입*/
+			  $('#account_email').focusout(function(){
+				  
+			  	var acemail = $('#account_email').val();
+			    var acemailJ = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+
+			  	
+			  	if(acemail == ""){	
+			  		$('#error_msg_account_email').text("Required");
+			  		$('#error_msg_account_email').css("color","red");
+			  	}
+			  	else if (acemailJ.test(acemail) == false) {
+			  		$('#error_msg_account_email').text("This email doesn't look correct");
+			  		$('#error_msg_account_email').css("color","red");
+			  	}
+			  	if (acemailJ.test(acemail) == true) {
+			  		$('#error_msg_account_email').text("success");
+			  		$('#error_msg_account_email').css("color","black");
+			  	}
+			  	
+			  })
+			  $('#account_password').focusout(function(){
+				  
+			  	var acpassword = $('#account_password').val();
+			   
+			  	if(acpassword == ""){	
+			  		$('#error_msg_account_password').text("Required");
+			  		$('#error_msg_account_password').css("color","red");	
+			  	}
+			  	else if(acpassword.length < 8 || acpassword.length > 20) {
+			  		$('#error_msg_account_password').text("Must be 8-20 characters");
+			  		$('#error_msg_account_password').css("color","red");	
+			  	}else{
+			  		$('#error_msg_account_password').text("success");
+			  		$('#error_msg_account_password').css("color","black");	
+			  	}
+			  	
+			  })
+			  $('#account_firstname').focusout(function(){
+				  
+				  var acfirstname = $('#account_firstname').val();
+				  
+				  if(acfirstname == ""){
+				  	$('#error_msg_account_firstname').text("Required");
+				  	$('#error_msg_account_firstname').css("color","red");	
+				  }else{
+					$('#error_msg_account_firstname').text("success");
+				  	$('#error_msg_account_firstname').css("color","black");	
+				  }
+				  
+			  })
+			  $('#account_lastname').focusout(function(){
+				  
+				  var aclastname = $('#account_lastname').val();
+				  
+				  if(aclastname == ""){
+				  	$('#error_msg_account_lastname').text("Required");
+				  	$('#error_msg_account_lastname').css("color","red");	
+				  }else{
+					$('#error_msg_account_lastname').text("success");
+				  	$('#error_msg_account_lastname').css("color","black");	
+				  }
+				  
+			  })
+			  </script>
 	</div>
 
 	<!-- 이미지 슬라이드 -->
@@ -482,16 +579,18 @@
 			</h1>
 			<div class="guitar_lines_box">
 				<div class="guitar_lines_box1">
+					<a href="/FS3">
 					<img src="${pageContext.request.contextPath}/resources/img/FS3.jpg">
-
+					</a>
 					<p>YAMAHA FS3</p>
 
 					<h3>$1,338.60</h3>
 				</div>
 				<div class="guitar_lines_box2">
+					<a href="/FSX3">
 					<img
 						src="${pageContext.request.contextPath}/resources/img/FSX3.jpg">
-
+					</a>
 					<p>YAMAHA FSX3</p>
 
 					<h3>$1,664.20</h3>
@@ -500,16 +599,18 @@
 
 			<div class="guitar_lines_box">
 				<div class="guitar_lines_box1">
+					<a href="/FS5">
 					<img src="${pageContext.request.contextPath}/resources/img/FS5.jpg">
-
+					</a>
 					<p>YAMAHA FS5</p>
 
 					<h3>$2,216.60</h3>
 				</div>
 				<div class="guitar_lines_box2">
+					<a href="/FSX5">
 					<img
 						src="${pageContext.request.contextPath}/resources/img/FSX5.jpg">
-
+					</a>
 					<p>YAMAHA FSX5</p>
 
 					<h3>$2,651.40</h3>
