@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.gitar.mapper.MemberMapper">
+  <!-- 회원가입 -->
+
+  	<insert id="memberjoin">
+  		insert into member (user_email, user_password , user_firstname, user_lastname)
+  		values(#{user_email},#{user_password},#{user_firstname},#{user_lastname})
+  	</insert>
+  	
+  </mapper>
