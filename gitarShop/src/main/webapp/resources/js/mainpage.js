@@ -1,6 +1,8 @@
 /**
  * 
  */
+
+
 $(function () {
 	$('#a_menu1').click(function (){		
 		$('html, body').stop().animate({ scrollTop : 860 }, 1100);		
@@ -36,8 +38,5 @@ $(document).ready(function(){
 	});
 });
 
-$(".signup_modalBox_button").click(function(){
 
-		 alert("dd");
-   })
-})
+

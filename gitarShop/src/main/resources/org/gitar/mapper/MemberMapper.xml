@@ -10,5 +10,14 @@
   		insert into member (user_email, user_password , user_firstname, user_lastname)
   		values(#{user_email},#{user_password},#{user_firstname},#{user_lastname})
   	</insert>
+  
+    <!-- 로그인 -->
+
+  	<select id="login" resultType="org.gitar.model.MemberVO">
+  			select *
+  			from member
+  			where user_email=#{user_email}
+  			and user_password=#{user_password}	
+  	</select>
   	
   </mapper>

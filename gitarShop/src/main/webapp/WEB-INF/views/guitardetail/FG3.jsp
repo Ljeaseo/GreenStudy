@@ -8,6 +8,12 @@
 <!-- CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/guitardetail.css">
 
+<!-- JavaScript -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/guitardetail.js"></script>
+
 <title>Insert title here</title>
 </head>
 
@@ -30,7 +36,90 @@
 	<div class="login_box">
 		<button><img src="${pageContext.request.contextPath}/resources/img/profile.png"></button>
 	</div>
+	
+
+		<!-- 모달 장바구니 -->
+		<div class="modal_basket hidden">
+			<div class="basket_bg"></div>
+			<div class="basket_modalBox">
+				<p>You have no items in your shopping cart.</p>
+			</div>
+		</div>
+
+
+
+		<div class="login_box">
+			<button id="open_login">
+				<img
+					src="${pageContext.request.contextPath}/resources/img/profile.png">
+			</button>
+		</div>
+
+
+		<!-- 모달 로그인 -->
+		<div class="modal_login hidden">
+			<div class="login_bg"></div>
+			<div class="login_modalBox">
+			<c:choose>
+				<c:when test="${sessionScope.login==null}">
+		<form action="/" id="login" method="post" onsubmit="return loginform()">
+				<div class="login_modalBox_content">
+					<h1>Sign <span style="color: red;">I</span>n</h1>
+					
+					<p>E-mail<span style="color:red;">*</span ><span id="error_msg_email" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					
+					<input class="email_input" id="user_email" type="text" name="user_email" placeholder="Enter email address">
+					
+					<p>Password<span style="color:red;">*</span><span id="error_msg_password" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
+					
+					<input type="password" id="user_password" name="user_password" placeholder="Enter password (8-20 characters)">
+					
+					<button class="forgot_button">Forgot Password?</button>
+					<button type="submit" class="singin_button">Sing In</button>
+				</div>
+		</form>
+				<div class="account_box">
+					<h1>Create an <span style="color: red;">A</span>ccount</h1>
+					<button class="account_box_button" onclick = "location.href = '/singup' ">Click here to sign up</button>
+				</div>
+				<div class="social_login">
+					<h1>Sign in or <span style="color: red;">S</span>ign Up via <span style="color: red;">S</span>ocial</h1>
+					<div class="social_login_button_box">
+					<button class="facebook">facebook</button>
+					<button class="google">google</button>
+					</div>					
+				</div>
+				</c:when>
+				
+				
+				<c:otherwise>
+				<div class="login_modalBox_content"> 
+				<div>
+				<div>
+				<h1>welcome back!</h1>
+				</div>
+				<div>
+				<a href="logout" style="color:black; font-size: 15px;">logout</a>
+				</div>
+				</div>
+				</div>
+				</c:otherwise>
+			</c:choose>
+			</div>
+		</div>
+
+
+	
 </div>
+
+
+
+
+
+
+
+
+
 
 <div class="container">
 	<div class="guitar_menu">

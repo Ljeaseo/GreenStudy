@@ -20,19 +20,10 @@
 		<img src="${pageContext.request.contextPath}/resources/img/yamaha_redlabel_logo.png">
 		</a>
 	</div>
-
-	<div class="search_box">
-		<input type="text" placeholder="search">
-		<button><img src="${pageContext.request.contextPath}/resources/img/lens200.png"></button>
-	</div>
-	<div class="shopping_basket_box">
-		<button><img src="${pageContext.request.contextPath}/resources/img/basket.png"></button>
-	</div>
-	<div class="login_box">
-		<button><img src="${pageContext.request.contextPath}/resources/img/profile.png"></button>
-	</div>
 </div>
 
+
+<!-- 내용 -->
 <div class="policy_box">
 	<img src="${pageContext.request.contextPath}/resources/img/usa.yamaha.com_privacy_policy_.png">
 </div>

@@ -57,7 +57,7 @@
 
 <!-- bxclider -->
 
-<title>Insert title here</title>
+<title>Yamaha Red Label</title>
 </head>
 <body>
 	<!-- 헤더 -->
@@ -116,23 +116,30 @@
 
 
 		<!-- 모달 로그인 -->
-		
 		<div class="modal_login hidden">
 			<div class="login_bg"></div>
 			<div class="login_modalBox">
+			<c:choose>
+				<c:when test="${sessionScope.login==null}">
+		<form action="/" id="login" method="post" onsubmit="return loginform()">
 				<div class="login_modalBox_content">
 					<h1>Sign <span style="color: red;">I</span>n</h1>
+					
 					<p>E-mail<span style="color:red;">*</span ><span id="error_msg_email" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input class="email_input" id="user_email" type="text" placeholder="Enter email address">
+					
+					<input class="email_input" id="user_email" type="text" name="user_email" placeholder="Enter email address">
+					
 					<p>Password<span style="color:red;">*</span><span id="error_msg_password" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input type="password" id="user_password"
-						placeholder="Enter password (8-20 characters)">
+					
+					<input type="password" id="user_password" name="user_password" placeholder="Enter password (8-20 characters)">
+					
 					<button class="forgot_button">Forgot Password?</button>
-					<button class="singin_button">Sing In</button>
+					<button type="submit" class="singin_button">Sing In</button>
 				</div>
+		</form>
 				<div class="account_box">
 					<h1>Create an <span style="color: red;">A</span>ccount</h1>
-					<button class="account_box_button">Click here to sign up</button>
+					<button class="account_box_button" onclick = "location.href = '/singup' ">Click here to sign up</button>
 				</div>
 				<div class="social_login">
 					<h1>Sign in or <span style="color: red;">S</span>ign Up via <span style="color: red;">S</span>ocial</h1>
@@ -141,39 +148,25 @@
 					<button class="google">google</button>
 					</div>					
 				</div>
-			</div>
-		</div>
-		
-		<!-- 모달 회원가입 -->
-		<form action="/" method="post" id="joinform" onsubmit="return joinform()">
-		<div class="modal_signup hidden">
-			<div class="signup_bg"></div>
-			<div class="signup_modalBox">
-				<div class="signup_modalBox_content">
-					<h1>Please sign up <span style="color: red;">H</span>ere</h1>
-					<p>E-mail<span style="color:red;">*</span ><span id="error_msg_account_email" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input type="text" id="account_email" placeholder="Enter email address" name="user_email">
-					<p>Password<span style="color:red;">*</span ><span id="error_msg_account_password" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input type="text" id="account_password" placeholder="Enter password (8-20 characters)" name="user_password">
-					<p>First Name<span style="color:red;">*</span ><span id="error_msg_account_firstname" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input type="text" id="account_firstname" placeholder="Enter first name" name="user_firstname">
-					<p>Last Name<span style="color:red;">*</span ><span id="error_msg_account_lastname" style="color:red; font-size: 15px; padding-left: 10px;"></span></p>
-					<input type="text" id="account_lastname" placeholder="Enter last name" name="user_lastname">
-				</div>
-				<div class="signup_modalBox_checkbox">
-					<input type="checkbox"><label>I am at least 18
-						years old.</label><br> <input type="checkbox"><label>I agree
-						to the terms of the <a href="/privacypolicy" target='_blank' style="color:red;">Privacy Policy</a>, which I have read and
-						understood. </label><br> <input type="checkbox"><label>I want
-						to receive updates from Yamaha Corporation    of America on the
-						latest products, services and    marketing promotions. </label>
+				</c:when>
+				
+				
+				<c:otherwise>
+				<div class="login_modalBox_content"> 
+				<div>
+				<div>
+				<h1>welcome back!</h1>
 				</div>
 				<div>
-					<button type="submit" class="signup_modalBox_button">Sign Up to My Account</button>
+				<a href="logout" style="color:black; font-size: 15px;">logout</a>
 				</div>
+				</div>
+				</div>
+				</c:otherwise>
+			</c:choose>
 			</div>
 		</div>
-		</form>
+
 		<!-- 모달 Javascript -->
 		<script>
 			  /*장바구니*/
@@ -190,13 +183,7 @@
 			  const close_login = () => {
 				 document.querySelector(".modal_login").classList.add("hidden");
 			  }
-			  /*회원가입*/
-			  const open_signup = () => {
-				 document.querySelector(".modal_signup").classList.remove("hidden");
-			  }
-			  const close_singup = () => {
-				 document.querySelector(".modal_signup").classList.add("hidden");
-			  }
+			
 			  
 			  
 			  
@@ -209,9 +196,7 @@
 			 
 			  document.querySelector(".login_bg").addEventListener("click", close_login);
 			 
-			  document.querySelector(".account_box_button").addEventListener("click", open_signup);
-				 
-			  document.querySelector(".signup_bg").addEventListener("click", close_singup);
+			 
 			  
 
 			  /* 로그인 정규식 */
@@ -249,78 +234,9 @@
 				  }
 				  
 			  })
-			  /*로그인 버튼*/
-			 
-			  
-			  /*회원가입*/
-			  $('#account_email').focusout(function(){
-				  
-			  	var acemail = $('#account_email').val();
-			    var acemailJ = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
-
-			  	
-			  	if(acemail == ""){	
-			  		$('#error_msg_account_email').text("Required");
-			  		$('#error_msg_account_email').css("color","red");
-			  	}
-			  	else if (acemailJ.test(acemail) == false) {
-			  		$('#error_msg_account_email').text("This email doesn't look correct");
-			  		$('#error_msg_account_email').css("color","red");
-			  	}
-			  	if (acemailJ.test(acemail) == true) {
-			  		$('#error_msg_account_email').text("success");
-			  		$('#error_msg_account_email').css("color","black");
-			  	}
-			  	
-			  })
-			  
-			  $('#account_password').focusout(function(){
-				  
-			  	var acpassword = $('#account_password').val();
-			   
-			  	if(acpassword == ""){	
-			  		$('#error_msg_account_password').text("Required");
-			  		$('#error_msg_account_password').css("color","red");	
-			  	}
-			  	else if(acpassword.length >= 8 || acpassword.length <= 20) {
-			  		$('#error_msg_account_password').text("Must be 8-20 characters");
-			  		$('#error_msg_account_password').css("color","red");		
-			  	}else{
-			  		$('#error_msg_account_password').text("success");
-			  		$('#error_msg_account_password').css("color","black");	
-			  	}
-			  	
-			  })
-			  $('#account_firstname').focusout(function(){
-				  
-				  var acfirstname = $('#account_firstname').val();
-				  
-				  if(acfirstname == ""){
-				  	$('#error_msg_account_firstname').text("Required");
-				  	$('#error_msg_account_firstname').css("color","red");	
-				  }else{
-					$('#error_msg_account_firstname').text("success");
-				  	$('#error_msg_account_firstname').css("color","black");	
-				  }
-				  
-			  })
-			  $('#account_lastname').focusout(function(){
-				  
-				  var aclastname = $('#account_lastname').val();
-				  
-				  if(aclastname == ""){
-				  	$('#error_msg_account_lastname').text("Required");
-				  	$('#error_msg_account_lastname').css("color","red");	
-				  }else{
-					$('#error_msg_account_lastname').text("success");
-				  	$('#error_msg_account_lastname').css("color","black");	
-				  }
-				  
 		
-			  
-    });
-			  </script>
-	</div>
+</script>
+</div>
 
 	<!-- 이미지 슬라이드 -->
 	<div class="adv">
