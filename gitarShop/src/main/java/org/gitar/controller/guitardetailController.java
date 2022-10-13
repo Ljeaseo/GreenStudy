@@ -1,14 +1,32 @@
 package org.gitar.controller;
 
+
+
+
+import org.gitar.model.commentVO;
+import org.gitar.model.qnaVO;
+import org.gitar.service.CommentService;
+import org.gitar.service.GuitarService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+
+
 
 @Controller
 public class guitardetailController {
 
+	@Autowired
+	CommentService CS;
+	
 	@RequestMapping(value = "/FG3", method = RequestMethod.GET)
-	public String FG3 () {
+	public String FG3(Model model, commentVO commentvo, qnaVO qnavo) {
+		
+		model.addAttribute("comment", CS.comment(commentvo));
+		model.addAttribute("qna", CS.qna(qnavo));
 		
 		return "guitardetail/FG3";
 	}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="org.gitar.mapper.CommentMapper">
+    	<select id="comment" resultType="org.gitar.model.commentVO">  
+		select * from comment where guitar_no = #{guitar_no}	
+		</select>
+		
+		<select id="qna" resultType="org.gitar.model.qnaVO">  
+		select * from qna where guitar_no = #{guitar_no}	
+		</select>
+    
+    </mapper>

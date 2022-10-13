@@ -334,12 +334,14 @@ a{
 	width: 250px;
 	height: auto;
 	transition: all 0.2s linear; 
+	padding-top: 40px;
 }
 
 .guitar_lines_box2 img{
 	width: 250px;
 	height: auto; 
 	transition: all 0.2s linear;
+	padding-top: 40px;
 }
 
 .guitar_lines_box1:hover img{

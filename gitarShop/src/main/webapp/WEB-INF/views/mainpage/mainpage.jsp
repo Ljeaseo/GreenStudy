@@ -74,9 +74,8 @@
 				<li class="header_menu_li"><a href="#menu2" id="a_menu2">
 						Sound Samples </a></li>
 				<li class="header_menu_li"><a href="#menu3" id="a_menu3">
-						FG Lines </a></li>
-				<li class="header_menu_li"><a href="#menu4" id="a_menu4">
-						FS Lines </a></li>
+						RED Lines </a></li>
+				
 			</ul>
 		</div>
 
@@ -120,7 +119,7 @@
 			<div class="login_bg"></div>
 			<div class="login_modalBox">
 			<c:choose>
-				<c:when test="${sessionScope.login==null}">
+				<c:when  test="${sessionScope.login eq null}">
 		<form action="/" id="login" method="post" onsubmit="return loginform()">
 				<div class="login_modalBox_content">
 					<h1>Sign <span style="color: red;">I</span>n</h1>
@@ -155,7 +154,7 @@
 				<div class="login_modalBox_content"> 
 				<div>
 				<div>
-				<h1>welcome back!</h1>
+				<h1>welcome back! ${sessionScope.login.user_email}!</h1>
 				</div>
 				<div>
 				<a href="logout" style="color:black; font-size: 15px;">logout</a>
@@ -452,95 +451,32 @@
 		<!-- FG Lines -->
 		<div class="guitar_lines" id="menu3">
 			<h1 style="background-color: white; color: black;">
-				FG <span style="color: red;">L</span>ines
+				RED <span style="color: red;">L</span>ines
 			</h1>
 			<div class="guitar_lines_box">
+				<c:forEach var="GSline" items="${GSline}">
 				<div class="guitar_lines_box1">
-					<a href="/FG3"> <img
+					<a href="/${GSline.guitar_name}?guitar_no=${GSline.guitar_no}"> <img
 						src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
+					<p style="color:black;">YAMAHA <td>${GSline.guitar_name}</td></p>
 					</a>
-					<p>YAMAHA FG3</p>
 
-					<h3>$1,338.60</h3>
+					<h3>$<td>${GSline.guitar_price}</td></h3>
 				</div>
+				</c:forEach>
+				<c:forEach var="GSXline" items="${GSXline}">
 				<div class="guitar_lines_box2">
-					<a href="/FGX3"> <img
+					<a href="/${GSXline.guitar_name}?guitar_no=${GSXline.guitar_no}"> <img
 						src="${pageContext.request.contextPath}/resources/img/FGX3.jpg">
+					<p  style="color:black;">YAMAHA  <td>${GSXline.guitar_name}</td></p>
 					</a>
-					<p>YAMAHA FGX3</p>
 
-					<h3>$1,664.20</h3>
+					<h3>$<td>${GSXline.guitar_price}</td></h3>
 				</div>
-			</div>
-
-			<div class="guitar_lines_box">
-				<div class="guitar_lines_box1">
-					<a href="/FG5"> <img
-						src="${pageContext.request.contextPath}/resources/img/FG5.jpg">
-					</a>
-					<p>YAMAHA FG5</p>
-
-					<h3>$2,216.60</h3>
-				</div>
-				<div class="guitar_lines_box2">
-					<a href="/FGX5"> <img
-						src="${pageContext.request.contextPath}/resources/img/FGX5.jpg">
-					</a>
-					<p>YAMAHA FGX5</p>
-
-					<h3>$2,651.40</h3>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 
-		<!-- FS Lines -->
-		<div class="guitar_lines" id="menu4">
-			<h1 style="background-color: white; color: black;">
-				FS <span style="color: red;">L</span>ines
-			</h1>
-			<div class="guitar_lines_box">
-				<div class="guitar_lines_box1">
-					<a href="/FS3">
-					<img src="${pageContext.request.contextPath}/resources/img/FS3.jpg">
-					</a>
-					<p>YAMAHA FS3</p>
-
-					<h3>$1,338.60</h3>
-				</div>
-				<div class="guitar_lines_box2">
-					<a href="/FSX3">
-					<img
-						src="${pageContext.request.contextPath}/resources/img/FSX3.jpg">
-					</a>
-					<p>YAMAHA FSX3</p>
-
-					<h3>$1,664.20</h3>
-				</div>
-			</div>
-
-			<div class="guitar_lines_box">
-				<div class="guitar_lines_box1">
-					<a href="/FS5">
-					<img src="${pageContext.request.contextPath}/resources/img/FS5.jpg">
-					</a>
-					<p>YAMAHA FS5</p>
-
-					<h3>$2,216.60</h3>
-				</div>
-				<div class="guitar_lines_box2">
-					<a href="/FSX5">
-					<img
-						src="${pageContext.request.contextPath}/resources/img/FSX5.jpg">
-					</a>
-					<p>YAMAHA FSX5</p>
-
-					<h3>$2,651.40</h3>
-				</div>
-			</div>
-			<P style="color: #909090; padding: 0px 0px 40px 40px; margin: 0;">The
-				colors and finishes shown may vary from those on the actual
-				products.</P>
-		</div>
 
 	</div>
 	<!-- 푸터 -->
