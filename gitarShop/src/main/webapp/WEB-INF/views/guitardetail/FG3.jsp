@@ -118,17 +118,17 @@
 		<!-- 모달 Javascript -->
 		<script>
 			  /*장바구니*/
-			  const open_basket = () => {
+			  const open_basket =()=>{
 			    document.querySelector(".modal_basket").classList.remove("hidden");
 			  }
-			  const close_basket = () => {
+			  const close_basket =()=>{
 			    document.querySelector(".modal_basket").classList.add("hidden");
 			  }
 			  /*로그인*/  
-			  const open_login = () => {
+			  const open_login =()=>{
 				 document.querySelector(".modal_login").classList.remove("hidden");
 			  }
-			  const close_login = () => {
+			  const close_login =()=>{
 				 document.querySelector(".modal_login").classList.add("hidden");
 			  }
 			
@@ -183,6 +183,7 @@
 				  
 			  })
 		
+
 </script>
 	
 </div>
@@ -284,14 +285,23 @@
 <div class="table_review">
 	<table>
 	<caption>상품후기</caption>
-	<thead>
+		<tr>
+	<!-- 후기 작성 -->
+		<td colspan=4>
+			<input type="hidden" name="g_no" value=1>
+			<input type="hidden" id="user_email" value="${sessionScope.login.user_email}">
+			<textarea style="width: 880px;height: 25px;" id="commemt_content"></textarea>
+			<input type="button" id="add_commemt" value="후기작성">
+		</td>
+		</tr>
+	
 		<tr>
 			<th>번호</th>
 			<th>후기</th>
 			<th>작성자</th>
 			<th>등록일</th>
 		</tr>
-	</thead>
+	
 	
 	<tbody>
 	<c:forEach var="comment" items="${comment}">
@@ -302,6 +312,21 @@
 			<td>${comment.commemt_regdate}</td>
 		</tr>
 	</c:forEach>	
+		<tr>
+				<td colspan = 5 style='letter-spacing:10px' id="page">
+					<c:if test="${paging.prev}">
+						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" style="color:black;">이전</a>
+					</c:if>
+
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+ 						<a href="/FG3?type=${paging.cri.type}&pageNum=${num}&amount=${paging.cri.amount}" style="color:black;">${num}</a>
+					</c:forEach>
+					
+					<c:if test="${paging.next}">
+						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" style="color:black;">다음</a>
+					</c:if>
+				</td>
+			</tr>
 	</tbody>	
 	</table>
 </div>
@@ -309,14 +334,21 @@
 <div class="table_qna">
 	<table>
 		<caption>상품Q&A</caption>
-		<thead>
+		<!-- QNA 작성 -->
+		<tr>
+		<td colspan=4>	
+			<textarea style="width: 880px;height: 25px;" id="qna_content"></textarea>
+			<input type="button" id="add_qna" value="QNA작성">
+		</td>
+		</tr>
+		
 		<tr>
 			<th>번호</th>
 			<th>Q&A</th>
 			<th>작성자</th>
 			<th>등록일</th>
 		</tr>
-		</thead>
+		
 	
 		<tbody>
 	<c:forEach var="qna" items="${qna}">
@@ -326,7 +358,22 @@
 			<td>${qna.user_email}</td>
 			<td>${qna.qna_regdate}</td>
 		</tr>
-	</c:forEach>	
+	</c:forEach>
+			<tr>
+				<td colspan = 5 style='letter-spacing:10px' id="qnapage">
+					<c:if test="${qnapaging.qprev}">
+						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qstartPage-1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">이전</a>
+					</c:if>
+
+					<c:forEach begin="${qnapaging.qstartPage}" end="${qnapaging.qendPage}" var="num">
+ 						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${num}&qamount=${qnapaging.qcri.qamount}" style="color:black;">${num}</a>
+					</c:forEach>
+					
+					<c:if test="${qnapaging.qnext}">
+						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qendPage+1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">다음</a>
+					</c:if>
+				</td>
+			</tr>	
 		</tbody>	
 	</table>
 </div>

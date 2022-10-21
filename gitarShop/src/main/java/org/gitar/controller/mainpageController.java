@@ -46,7 +46,7 @@ public class mainpageController {
 			System.out.println("로그인성공");
 			
 			rttr.addFlashAttribute("msg", "success");
-			return "mainpage/mainpage";
+			return "redirect:/";
 		}else{
 			System.out.println("로그인 실패");
 			rttr.addFlashAttribute("msg","fail");

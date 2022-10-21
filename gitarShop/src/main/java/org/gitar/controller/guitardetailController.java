@@ -3,10 +3,11 @@ package org.gitar.controller;
 
 
 
-import org.gitar.model.commentVO;
-import org.gitar.model.qnaVO;
+import org.gitar.model.CriteriaVO;
+import org.gitar.model.PageVO;
+import org.gitar.model.qnaCriteriaVO;
+import org.gitar.model.qnaPageVO;
 import org.gitar.service.CommentService;
-import org.gitar.service.GuitarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +24,16 @@ public class guitardetailController {
 	CommentService CS;
 	
 	@RequestMapping(value = "/FG3", method = RequestMethod.GET)
-	public String FG3(Model model, commentVO commentvo, qnaVO qnavo) {
+	public String FG3(Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
 		
-		model.addAttribute("comment", CS.comment(commentvo));
-		model.addAttribute("qna", CS.qna(qnavo));
+		model.addAttribute("comment", CS.comment(cri));
+		model.addAttribute("qna", CS.qna(qcri));
+		
+		int total = CS.total(cri);
+		int qtotal = CS.qtotal(qcri);
+		
+		model.addAttribute("paging", new PageVO(cri, total));
+		model.addAttribute("qnapaging", new qnaPageVO(qcri, qtotal));
 		
 		return "guitardetail/FG3";
 	}
