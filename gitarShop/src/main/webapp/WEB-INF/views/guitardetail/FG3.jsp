@@ -16,7 +16,7 @@
 	src="${pageContext.request.contextPath}/resources/js/guitardetail.js"></script>
 
 
-<title>Insert title here</title>
+<title>FG3</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@
 			<div class="login_modalBox">
 			<c:choose>
 				<c:when test="${sessionScope.login eq null}">
-		
+		<form action="/" id="login" method="post" onsubmit="return loginform()">
 				<div class="login_modalBox_content">
 					<h1>Sign <span style="color: red;">I</span>n</h1>
 					
@@ -84,7 +84,7 @@
 					<button class="forgot_button">Forgot Password?</button>
 					<button type="submit" class="singin_button">Sing In</button>
 				</div>
-	
+		</form>
 				<div class="account_box">
 					<h1>Create an <span style="color: red;">A</span>ccount</h1>
 					<button class="account_box_button" onclick = "location.href = '/singup' ">Click here to sign up</button>
@@ -235,8 +235,8 @@
 			<img src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
 		</div>
 		<div class="detail_box_content">
-			<h3><span>${guitarlist.guitar_name}</span></h3>
-			<h5><span>$</span><span>${guitarlist.guitar_price}</span></h5>
+			<h3>FG3</h3>
+			<h5>$1339</h5>
 			<div class="detail_box_content_span">
 			<span>The original Yamaha FG body delivers a full, punchy low end,<br>
 			well-suited for strumming and flatpicking, and 1960s aesthetics and<br> 

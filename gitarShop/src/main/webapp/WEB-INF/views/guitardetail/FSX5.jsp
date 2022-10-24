@@ -15,7 +15,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/guitardetail.js"></script>
 
-<title>Insert title here</title>
+<title>FSX5</title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
 			<div class="login_modalBox">
 			<c:choose>
 				<c:when test="${sessionScope.login eq null}">
-		
+		<form action="/" id="login" method="post" onsubmit="return loginform()">
 				<div class="login_modalBox_content">
 					<h1>Sign <span style="color: red;">I</span>n</h1>
 					
@@ -81,7 +81,7 @@
 					<button class="forgot_button">Forgot Password?</button>
 					<button type="submit" class="singin_button">Sing In</button>
 				</div>
-	
+	</form>
 				<div class="account_box">
 					<h1>Create an <span style="color: red;">A</span>ccount</h1>
 					<button class="account_box_button" onclick = "location.href = '/singup' ">Click here to sign up</button>
@@ -273,25 +273,48 @@
 <div class="table_review">
 	<table>
 	<caption>상품후기</caption>
-	<thead>
 		<tr>
+	<!-- 후기 작성 -->
+		<td colspan=4>
+			<input type="hidden" name="g_no" value=8>
+			<input type="hidden" id="user_email" value="${sessionScope.login.user_email}">
+			<textarea style="width: 880px;height: 25px;" id="commemt_content"></textarea>
+			<input type="button" id="add_commemt" value="후기작성">
+		</td>
+		</tr>
+	
+		<tr>
+			<th>번호</th>
 			<th>후기</th>
 			<th>작성자</th>
 			<th>등록일</th>
 		</tr>
-	</thead>
+	
 	
 	<tbody>
+	<c:forEach var="comment" items="${comment}">
 		<tr>
-			<td>wwwwwwwwww</td>
-			<td>123456</td>
-			<td>1/1</td>
+			<td>${comment.commemt_cno}</td>
+			<td>${comment.commemt_content}</td>
+			<td>${comment.user_email}</td>
+			<td>${comment.commemt_regdate}</td>
 		</tr>
+	</c:forEach>	
 		<tr>
-			<td>wwwwwwwwww</td>
-			<td>123456</td>
-			<td>1/1</td>
-		</tr>
+				<td colspan = 5 style='letter-spacing:10px' id="page">
+					<c:if test="${paging.prev}">
+						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" style="color:black;">이전</a>
+					</c:if>
+
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+ 						<a href="/FG3?type=${paging.cri.type}&pageNum=${num}&amount=${paging.cri.amount}" style="color:black;">${num}</a>
+					</c:forEach>
+					
+					<c:if test="${paging.next}">
+						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" style="color:black;">다음</a>
+					</c:if>
+				</td>
+			</tr>
 	</tbody>	
 	</table>
 </div>
@@ -299,25 +322,46 @@
 <div class="table_qna">
 	<table>
 		<caption>상품Q&A</caption>
-		<thead>
+		<!-- QNA 작성 -->
 		<tr>
+		<td colspan=4>	
+			<textarea style="width: 880px;height: 25px;" id="qna_content"></textarea>
+			<input type="button" id="add_qna" value="QNA작성">
+		</td>
+		</tr>
+		
+		<tr>
+			<th>번호</th>
 			<th>Q&A</th>
 			<th>작성자</th>
 			<th>등록일</th>
 		</tr>
-		</thead>
+		
 	
 		<tbody>
+	<c:forEach var="qna" items="${qna}">
 		<tr>
-			<td>wwwwwwwwww</td>
-			<td>123456</td>
-			<td>1/1</td>
+			<td>${qna.qna_qno}</td>
+			<td>${qna.qna_content}</td>
+			<td>${qna.user_email}</td>
+			<td>${qna.qna_regdate}</td>
 		</tr>
-		<tr>
-			<td>wwwwwwwwww</td>
-			<td>123456</td>
-			<td>1/1</td>
-		</tr>
+	</c:forEach>
+			<tr>
+				<td colspan = 5 style='letter-spacing:10px' id="qnapage">
+					<c:if test="${qnapaging.qprev}">
+						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qstartPage-1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">이전</a>
+					</c:if>
+
+					<c:forEach begin="${qnapaging.qstartPage}" end="${qnapaging.qendPage}" var="num">
+ 						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${num}&qamount=${qnapaging.qcri.qamount}" style="color:black;">${num}</a>
+					</c:forEach>
+					
+					<c:if test="${qnapaging.qnext}">
+						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qendPage+1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">다음</a>
+					</c:if>
+				</td>
+			</tr>	
 		</tbody>	
 	</table>
 </div>

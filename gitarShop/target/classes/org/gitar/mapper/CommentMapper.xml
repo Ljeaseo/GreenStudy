@@ -21,7 +21,7 @@
 		from(
 		select @rownum:=@rownum+1 rownum, c.*
 		from comment c, (select @rownum:=0) as tmp
-
+		where guitar_no=${guitar_no}
 		order by commemt_cno desc
 		) as commentlist
 		<![CDATA[
@@ -34,7 +34,7 @@
 		from(
 		select @rownum:=@rownum+1 rownum, q.*
 		from qna q, (select @rownum:=0) as qtmp
-
+		where guitar_no=${guitar_no}
 		order by qna_qno desc
 		) as qnalist
 		<![CDATA[
@@ -44,12 +44,12 @@
 
 
 	<select id="total" resultType="int">
-		select count(*) from comment
+		select count(*) from comment where guitar_no=${guitar_no}
 
 	</select>
 
 	<select id="qtotal" resultType="int">
-		select count(*) from qna
+		select count(*) from qna where guitar_no=${guitar_no}
 
 	</select>
 

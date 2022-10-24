@@ -5,7 +5,7 @@ public class qnaCriteriaVO {
 	private int qamount;   // 한 페이지당 게시물 갯수
 	private String keyword;  // 키워드를 통해 검색
 	private String qtype;  // 키워드 기준
-	
+	private int guitar_no;
 	// 생성자
 	public qnaCriteriaVO() {
 		this(1,10);  // 컨트롤러에서pageNum은 1로, amount는 10으로 초기화		
@@ -37,6 +37,13 @@ public class qnaCriteriaVO {
 	}
 	public void setQtype(String qtype) {
 		this.qtype = qtype;
+	}
+	
+	public int getGuitar_no() {
+		return guitar_no;
+	}
+	public void setGuitar_no(int guitar_no) {
+		this.guitar_no = guitar_no;
 	}
 	@Override
 	public String toString() {
