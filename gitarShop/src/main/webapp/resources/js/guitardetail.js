@@ -2,7 +2,28 @@
  * 
  */
 
-			  
+$(document).on("click","#in_basket",function(){
+	
+	
+	var user_emailValue=$("#user_email").val();
+	
+	if(user_emailValue === ""){
+		alert("Please log in first");
+	}
+	else{
+		var guitar_noValue=$("input[name=g_no]").val();
+		var guitar_nameValue=$("#gi_name").val();
+		var guitar_priceValue=$("#gi_price").val();
+	
+	in_cart({guitar_no:guitar_noValue,guitar_name:guitar_nameValue,guitar_price:guitar_priceValue});
+	
+	}
+
+});
+
+
+
+
 $(document).on("click","#add_commemt",function(){
 	
    		var guitar_noValue=$("input[name=g_no]").val();
@@ -30,7 +51,27 @@ $(document).on("click","#add_qna",function(){
 	
 });
 
-		
+
+function in_cart(cartvo){
+	
+	$.ajax({
+		type:"post",
+		url:"/cartin/new",
+		data:JSON.stringify(cartvo),
+		contentType:"application/json; charset=utf-8",
+		success: function(result){
+			if(result=="SUCCESS"){
+				alert("장바구니 성공");
+			}else{
+				alert("안됨");
+			}
+		}
+	})	
+	
+};
+
+
+
 
 function add_commemt(commentvo){
 	

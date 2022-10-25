@@ -235,8 +235,8 @@
 			<img src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
 		</div>
 		<div class="detail_box_content">
-			<h3>FG3</h3>
-			<h5>$1339</h5>
+			<h3>FG3</h3><input type="hidden" id="gi_name" value="FG3">
+			<h5>$1339</h5><input type="hidden" id="gi_price" value=1339>
 			<div class="detail_box_content_span">
 			<span>The original Yamaha FG body delivers a full, punchy low end,<br>
 			well-suited for strumming and flatpicking, and 1960s aesthetics and<br> 
