@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import org.gitar.model.MemberVO;
 import org.gitar.model.guitarlistVO;
-import org.gitar.service.GuitarService;
 import org.gitar.service.MainpageService;
 import org.gitar.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;

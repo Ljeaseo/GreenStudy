@@ -3,13 +3,15 @@ package org.gitar.controller;
 
 
 
-import javax.servlet.http.HttpSession;
+
 
 import org.gitar.model.CriteriaVO;
-import org.gitar.model.MemberVO;
+
 import org.gitar.model.PageVO;
+import org.gitar.model.cartVO;
 import org.gitar.model.qnaCriteriaVO;
 import org.gitar.model.qnaPageVO;
+import org.gitar.service.CartService;
 import org.gitar.service.CommentService;
 import org.gitar.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +35,16 @@ public class guitardetailController {
 	@Autowired
 	MemberService MS;
 	
+	@Autowired
+	CartService CTS;
+	
 	@RequestMapping(value = "/FG3", method = RequestMethod.GET)
-	public String FG3(Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FG3(Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
+		
 		
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);

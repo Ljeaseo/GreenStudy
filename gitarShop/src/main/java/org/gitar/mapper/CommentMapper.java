@@ -19,4 +19,7 @@ public interface CommentMapper {
 	
 	public int total(CriteriaVO cri);
 	public int qtotal(qnaCriteriaVO qcri);
+	
+	public int commentremove(int commemt_cno);
+	public int qnaremove(int qna_qno);
 }

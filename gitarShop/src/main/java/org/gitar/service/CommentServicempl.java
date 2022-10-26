@@ -44,4 +44,11 @@ public class CommentServicempl implements CommentService{
 	public int qtotal(qnaCriteriaVO qcri) {
 		return CM.qtotal(qcri);
 	}
+	
+	public int commentremove(int commemt_cno) {
+		return CM.commentremove(commemt_cno);
+	}
+	public int qnaremove(int qna_qno) {
+		return CM.qnaremove(qna_qno);
+	}
 }

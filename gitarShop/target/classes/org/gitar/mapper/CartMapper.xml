@@ -10,4 +10,15 @@
   		values(#{guitar_no},#{guitar_name},#{guitar_price})
   	</insert>
   	
+  	<select id="cartlist" resultType="org.gitar.model.cartVO">
+  	
+  		select * from cart;
+  	
+  	</select>
+  	
+  	<delete id="cartremove">
+  		delete from cart
+  		where cart_cnt=#{cart_cnt}
+  	</delete>
+  	
   </mapper>

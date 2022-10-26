@@ -48,9 +48,18 @@
 		<div class="modal_basket hidden">
 			<div class="basket_bg"></div>
 			
-			<div class="basket_modalBox">
-				<p>You have no items in your shopping cart.</p>
-			</div>
+			
+				<div class="basket_modalBox">
+				<c:forEach var="cartlist" items="${cartlist}">
+					<div>
+					<input id="cart_cnt" type="hidden" value="${cartlist.cart_cnt}">
+					<span>${cartlist.guitar_name}</span>
+					<span>${cartlist.guitar_price}</span>
+					<button id="cartremove">삭제</button>
+					</div>
+				</c:forEach>
+				</div>
+			
 		</div>
 
 
@@ -305,11 +314,13 @@
 	
 	<tbody>
 	<c:forEach var="comment" items="${comment}">
+			<input id="commemt_cno" type="hidden" value="${comment.commemt_cno}">
 		<tr>
 			<td>${comment.commemt_cno}</td>
 			<td>${comment.commemt_content}</td>
 			<td>${comment.user_email}</td>
 			<td>${comment.commemt_regdate}</td>
+			<td><button id="comment_remove">후기삭제</button></td>
 		</tr>
 	</c:forEach>	
 		<tr>
@@ -352,11 +363,13 @@
 	
 		<tbody>
 	<c:forEach var="qna" items="${qna}">
+	<input id="qna_qno" type="hidden" value="${qna.qna_qno}">
 		<tr>
 			<td>${qna.qna_qno}</td>
 			<td>${qna.qna_content}</td>
 			<td>${qna.user_email}</td>
 			<td>${qna.qna_regdate}</td>
+			<td><button id="qna_remove">qna삭제</button></td>
 		</tr>
 	</c:forEach>
 			<tr>

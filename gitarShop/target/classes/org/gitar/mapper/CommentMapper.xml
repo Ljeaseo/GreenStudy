@@ -52,5 +52,15 @@
 		select count(*) from qna where guitar_no=${guitar_no}
 
 	</select>
+	
+	<delete id="commentremove">
+  		delete from comment
+  		where commemt_cno=#{commemt_cno}
+  	</delete>
+  	
+  	<delete id="qnaremove">
+  		delete from qna
+  		where qna_qno=#{qna_qno}
+  	</delete>
 
 </mapper>
