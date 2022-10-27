@@ -37,10 +37,13 @@
 	
 	
 		<div class="shopping_basket_box">
+				<a href="javascript:doDisplay()">
 			<button id="open_basket">
 				<img
-					src="${pageContext.request.contextPath}/resources/img/basket.png">
+					src="${pageContext.request.contextPath}/resources/img/basket.png"
+				>
 			</button>
+				</a>
 		</div>
 
 
@@ -50,14 +53,56 @@
 			
 			
 				<div class="basket_modalBox">
-				<c:forEach var="cartlist" items="${cartlist}">
+					<c:choose>
+					
+					<c:when test="${sessionScope.login eq null}">
 					<div>
-					<input id="cart_cnt" type="hidden" value="${cartlist.cart_cnt}">
-					<span>${cartlist.guitar_name}</span>
-					<span>${cartlist.guitar_price}</span>
-					<button id="cartremove">삭제</button>
+					<h3>Please log in first</h3>
 					</div>
-				</c:forEach>
+					</c:when>
+					
+					<c:otherwise>
+					<div>		
+					<ul style="list-style:none; padding: 0;">
+					
+					<c:forEach var="cartlist" items="${cartlist}">
+								
+					<input id="cart_cnt" type="hidden" value="${cartlist.cart_cnt}">
+					
+					<li id="listli">
+					<div class="cart_card">
+					<div class="cart_card1">
+					<img class="cartimg" src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
+					</div>
+					<div class="cart_card2">
+					<div>
+					<h3>yamaha-<span>${cartlist.guitar_name}</span></h3>
+					</div>
+					<div>
+					<h4>$<span>${cartlist.guitar_price}</span></h4>
+					</div>
+					</div>
+					<div class="cart_card3">
+					<button id="cartremove">Empty the product</button>
+					</div>
+					</div>
+					<hr>
+					</li>				
+					</c:forEach>	
+									
+					<li id="noitemli">
+					<h3 style="color:black;">Your shopping cart is empty</h3>
+					</li>
+					
+					</ul>
+					</div>
+					</c:otherwise>
+					
+					
+						
+				
+					
+					</c:choose>
 				</div>
 			
 		</div>
@@ -198,7 +243,7 @@
 </div>
 
 
-
+s
 
 
 

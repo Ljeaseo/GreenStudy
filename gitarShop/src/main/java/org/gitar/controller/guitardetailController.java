@@ -52,6 +52,7 @@ public class guitardetailController {
 		model.addAttribute("paging", new PageVO(cri, total));
 		model.addAttribute("qnapaging", new qnaPageVO(qcri, qtotal));
 		
+		
 		return "guitardetail/FG3";
 	}
 

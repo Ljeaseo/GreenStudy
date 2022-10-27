@@ -1,6 +1,7 @@
 /**
  * 
  */
+
 //장바구니 담기
 $(document).on("click","#in_basket",function(){
 	
@@ -83,9 +84,9 @@ function in_cart(cartvo){
 		contentType:"application/json; charset=utf-8",
 		success: function(result){
 			if(result=="SUCCESS"){
-				alert("장바구니 성공");
+				alert("I added an item to my shopping cart");
 			}else{
-				alert("안됨");
+				alert("fales");
 			}
 		}
 	})	
@@ -101,7 +102,7 @@ function cartremove(cart_cnt){
 
 		success:function(result){
 			if(result=="success"){
-				alert("제품이 삭제되었습니다.");
+				alert("You have removed a product from your shopping cart");
 				location.reload();
 			}
 		}
@@ -176,7 +177,23 @@ function qnaremove(qna_qno){
 
 
 
+function doDisplay(){ 	
+    
 
+    var noitemli = document.getElementById("noitemli"); 	
+    
+    
+    if(document.getElementById("cart_cnt")){
+    	
+    	noitemli.style.display = 'none'; 
+ 
+    }
+    else{ 		
+    	
+    	noitemli.style.display = 'block'; 		
+    	
+    } 
+}
 
 
 
