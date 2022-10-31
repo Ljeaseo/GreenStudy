@@ -2,6 +2,18 @@
  * 
  */
 
+/**
+ * 
+ */
+
+//결제
+$(document).on("click","#cartpayment",function(){
+	
+	alert("Payment function not added");
+	
+});
+
+
 //장바구니 담기
 $(document).on("click","#in_basket",function(){
 	
@@ -32,6 +44,12 @@ $(document).on("click","#cartremove",function(){
 //후기 쓰기
 $(document).on("click","#add_commemt",function(){
 	
+	var user_emailValue=$("#user_email").val();
+	
+	if(user_emailValue === ""){
+		alert("Please log in first");
+	}
+	else{
    		var guitar_noValue=$("input[name=g_no]").val();
    		
 	
@@ -41,11 +59,17 @@ $(document).on("click","#add_commemt",function(){
 		var user_emailValue=$("#user_email").val();
 		
 		add_commemt({guitar_no:guitar_noValue,commemt_content:commemtValue,user_email:user_emailValue});
+	}
 	
 });
 //qna 쓰기
 $(document).on("click","#add_qna",function(){
 	
+	var user_emailValue=$("#user_email").val();
+	
+	if(user_emailValue === ""){
+		alert("Please log in first");
+	}else{
    		var guitar_noValue=$("input[name=g_no]").val();
 	
 	
@@ -54,25 +78,49 @@ $(document).on("click","#add_qna",function(){
    		var user_emailValue=$("#user_email").val();
    		
    		add_qna({guitar_no:guitar_noValue,qna_content:qnaValue,user_email:user_emailValue});
-	
+	}
 });
 
 
 //후기 삭제
 $(document).on("click","#comment_remove",function(){
 	
-	var commemt_cno=$("#commemt_cno").val();
 
-	commentremove(commemt_cno);
+	var delete_permission_comment = $(this).text("#delete_permission_comment");
+	var user_emailValue=$("#user_email").val();
+    alert(delete_permission_comment);
+	
+//	if(user_emailValue == ""){
+//	alert("Please log in first")
+//	}
+//	else if(delete_permission_comment == user_emailValue){
+//		var commemt_cno=$("#commemt_cno").val();
+//		
+//		commentremove(commemt_cno);
+//	}
+//	else{
+//		alert("You do not have permission");
+//
+//	}
 });
 
 
 //qna 삭제
 $(document).on("click","#qna_remove",function(){
 	
-	var qna_qno=$("#qna_qno").val();
-
-	qnaremove(qna_qno);
+	var delete_permission_qna = $("#delete_permission_qna").val();
+	var user_emailValue=$("#user_email").val();
+	
+	if(user_emailValue == ""){
+		alert("Please log in first")
+		}
+	else if(delete_permission_qna == user_emailValue){
+		var qna_qno=$("#qna_qno").val();
+		
+		qnaremove(qna_qno);
+	}else{
+		alert("You do not have permission");
+	}
 });
 
 function in_cart(cartvo){
@@ -85,6 +133,7 @@ function in_cart(cartvo){
 		success: function(result){
 			if(result=="SUCCESS"){
 				alert("I added an item to my shopping cart");
+				location.reload();
 			}else{
 				alert("fales");
 			}
@@ -118,9 +167,10 @@ function add_commemt(commentvo){
 		contentType:"application/json; charset=utf-8",
 		success: function(result){
 			if(result=="SUCCESS"){
-				alert("후기쓰기 성공");
+				alert("Review completed");
+				location.reload();
 			}else{
-				alert("안됨");
+				alert("Failed to write a review");
 			}
 		}
 	})	
@@ -135,9 +185,10 @@ function add_qna(qnavo){
 		contentType:"application/json; charset=utf-8",
 		success: function(result){
 			if(result=="SUCCESS"){
-				alert("QNA쓰기 성공");
+				alert("Q&A completed");
+				location.reload();
 			}else{
-				alert("안됨");
+				alert("Failed to write a QNA");
 			}
 		}
 	})	
@@ -152,7 +203,7 @@ function commentremove(commemt_cno){
 
 		success:function(result){
 			if(result=="success"){
-				alert("후기가 삭제되었습니다.");
+				alert("Review has been deleted");
 				location.reload();
 			}
 		}
@@ -167,7 +218,7 @@ function qnaremove(qna_qno){
 
 		success:function(result){
 			if(result=="success"){
-				alert("qna가 삭제되었습니다.");
+				alert("Q&A has been deleted");
 				location.reload();
 			}
 		}
@@ -181,15 +232,16 @@ function doDisplay(){
     
 
     var noitemli = document.getElementById("noitemli"); 	
+    var paymentli = document.getElementById("paymentli");
     
     
     if(document.getElementById("cart_cnt")){
-    	
+    	paymentli.style.display = 'block'; 
     	noitemli.style.display = 'none'; 
  
     }
     else{ 		
-    	
+    	paymentli.style.display = 'none'; 
     	noitemli.style.display = 'block'; 		
     	
     } 

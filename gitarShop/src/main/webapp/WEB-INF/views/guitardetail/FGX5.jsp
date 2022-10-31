@@ -27,28 +27,80 @@
 		</a>
 	</div>
 
-	<div class="search_box">
-		<input type="text" placeholder="search">
-		<button><img src="${pageContext.request.contextPath}/resources/img/lens200.png"></button>
-	</div>
+
 	
 	
 		<div class="shopping_basket_box">
+				<a href="javascript:doDisplay()">
 			<button id="open_basket">
 				<img
-					src="${pageContext.request.contextPath}/resources/img/basket.png">
+					src="${pageContext.request.contextPath}/resources/img/basket.png"
+				>
 			</button>
+				</a>
 		</div>
+
 
 
 		<!-- 모달 장바구니 -->
 		<div class="modal_basket hidden">
 			<div class="basket_bg"></div>
 			
-			<div class="basket_modalBox">
-				<p>You have no items in your shopping cart.</p>
-			</div>
+			
+				<div class="basket_modalBox">
+					<c:choose>
+					
+					<c:when test="${sessionScope.login eq null}">
+					<div>
+					<h3><span style="color:red;">P</span>lease log in first</h3>
+					</div>
+					</c:when>
+					
+					<c:otherwise>
+					<div>		
+					<ul style="list-style:none; padding: 0;">
+					<div>
+					<c:forEach var="cartlist" items="${cartlist}">
+					
+					<input id="cart_cnt" type="hidden" value="${cartlist.cart_cnt}">
+					
+					
+					<li id="listli">
+					<div class="cart_card">
+					<div class="cart_card1">
+					<img class="cartimg" src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
+					</div>
+					<div class="cart_card2">
+					<div>
+					<h3>yamaha-<span>${cartlist.guitar_name}</span></h3>
+					</div>
+					<div>
+					<h4>$<span>${cartlist.guitar_price}</span></h4>
+					</div>
+					</div>
+					<div class="cart_card3">
+					<button id="cartremove">Empty the <span style="color:red;">P</span>roduct</button>
+					</div>
+					</div>
+					<hr>
+					</li>	
+						
+					</c:forEach>	
+					</div>
+					<li id="paymentli">
+					<button id="cartpayment">make a payment</button>
+					</li>
+					<li id="noitemli">
+					<h3 style="color:black;">Your shopping cart is <span style="color:red;">e</span>mpty</h3>
+					</li>
+					
+					</ul>
+					</div>
+					</c:otherwise>				
+					</c:choose>
+				</div>
 		</div>
+
 
 
 
@@ -100,7 +152,7 @@
 				<div class="login_modalBox_content"> 
 				<div>
 				<div>
-				<h1>welcome back! ${sessionScope.login.user_email}!</h1>
+				<h1><span style="color:red;">W</span>elcome back! ${sessionScope.login.user_email}!</h1>
 				</div>
 				<div>
 				<a href="logout" style="color:black; font-size: 15px;">logout</a>
@@ -179,39 +231,49 @@
 				  }
 				  
 			  })
-		
+					 $(document).ready(function() {
+					var msg = '${msg}';
+	
+					if(msg === "fail"){
+						alert("Login failed");
+					}
+					if(msg === "success"){
+						alert("Login succeed");
+					}
+					
+			})
 </script>
 	
 </div>
 
 <div class="container">
-		<div class="guitar_menu">
+	<div class="guitar_menu">
 		<div class="FG_Lines">
 			<h4>RED <span style="color:red;">L</span>ines</h4>
 			<ul>
 				<li>
-					<a href="http://localhost:8080/FG3?guitar_no=1">FG3</a>
+					<a href="/FG3?guitar_no=1"><span style="color:red;">F</span>G3</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FGX3?guitar_no=2">FGX3</a>
+					<a href="/FGX3?guitar_no=2">F<span style="color:red;">G</span>X3</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FG5?guitar_no=3">FG5</a>
+					<a href="/FG5?guitar_no=3"><span style="color:red;">F</span>G5</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FGX5?guitar_no=4">FGX5</a>
+					<a href="/FGX5?guitar_no=4">FG<span style="color:red;">X</span>5</a>
 				</li>	
 				<li>
-					<a href="http://localhost:8080/FS3?guitar_no=5">FS3</a>
+					<a href="/FS3?guitar_no=5">F<span style="color:red;">S</span>3</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FSX3?guitar_no=6">FSX3</a>
+					<a href="/FSX3?guitar_no=6"><span style="color:red;">F</span>SX3</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FS5?guitar_no=7">FS5</a>
+					<a href="/FS5?guitar_no=7"><span style="color:red;">F</span>S5</a>
 				</li>
 				<li>
-					<a href="http://localhost:8080/FSX5?guitar_no=8">FSX5</a>
+					<a href="/FSX5?guitar_no=8">FS<span style="color:red;">X</span>5</a>
 				</li>	
 			</ul>
 		</div>	
@@ -221,8 +283,8 @@
 			<img src="${pageContext.request.contextPath}/resources/img/FGX5.jpg">
 		</div>
 		<div class="detail_box_content">
-			<h3>FGX5</h3>
-			<h5>$2,651.40</h5>
+			<h3>FG<span style="color:red;">X</span>5</h3><input type="hidden" id="gi_name" value="FGX5">
+			<h5>$2,651</h5><input type="hidden" id="gi_price" value=2651>
 			<div class="detail_box_content_span">
 			<span>The original Yamaha FG body delivers a full, punchy low end,<br>
 			well-suited for strumming and flatpicking, and 1960s aesthetics and<br> 
@@ -243,7 +305,7 @@
 			</div>
 			
 			<div class="detail_box_content_button">
-				<button>shopping basket</button>
+				<button id="in_basket">shopping basket</button>
 				<button id="left_button">Buy now</button>
 			</div>
 		</div>
@@ -262,57 +324,53 @@
 			<img src="${pageContext.request.contextPath}/resources/img/red_spec.jpg">
 		</div>	
 </div>
-<div class="detail_more_service">
-	<ul>
-		<li>상품 설명</li>
-		<li>상품 후기</li>
-		<li>상품 Q&A</li>
-		<li>배송/교환/반품 안내</li>
-	</ul>
-</div>
+
 
 <div class="table_review">
 	<table>
-	<caption>상품후기</caption>
+	<caption class="caption"><span style="color:red;">P</span>roduct review</caption>
 		<tr>
 	<!-- 후기 작성 -->
-		<td colspan=4>
+		<td colspan=5 class="user_wirtebox">
 			<input type="hidden" name="g_no" value=4>
 			<input type="hidden" id="user_email" value="${sessionScope.login.user_email}">
-			<textarea style="width: 880px;height: 25px;" id="commemt_content"></textarea>
-			<input type="button" id="add_commemt" value="후기작성">
+			<textarea class="qnatextarea" style="width: 860px;height: 25px;" 
+			id="commemt_content" placeholder="Please enter your review"></textarea>
+			<input class="wrtie_add_button" type="button" id="add_commemt" value="Write a review">
 		</td>
 		</tr>
 	
 		<tr>
-			<th>번호</th>
-			<th>후기</th>
-			<th>작성자</th>
-			<th>등록일</th>
+			<th><span style="color:red;">N</span>o.</th>
+			<th>Q&<span style="color:red;">A</span></th>
+			<th>W<span style="color:red;">r</span>iter</th>
+			<th>re<span style="color:red;">d</span>ate</th>
 		</tr>
 	
 	
 	<tbody>
 	<c:forEach var="comment" items="${comment}">
+			<input id="commemt_cno" type="hidden" value="${comment.commemt_cno}">
 		<tr>
-			<td>${comment.commemt_cno}</td>
-			<td>${comment.commemt_content}</td>
-			<td>${comment.user_email}</td>
-			<td>${comment.commemt_regdate}</td>
+			<td class="notd">${comment.commemt_cno}</td>
+			<td class="contenttd">${comment.commemt_content}</td>
+			<td class="emailtd">${comment.user_email}</td>
+			<td class="regdatetd">${comment.commemt_regdate}</td>
+			<td class="buttontd"><button id="comment_remove">delete</button></td>
 		</tr>
 	</c:forEach>	
 		<tr>
 				<td colspan = 5 style='letter-spacing:10px' id="page">
 					<c:if test="${paging.prev}">
-						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" style="color:black;">이전</a>
+						<a href="/FGX5?guitar_no=4&type=${paging.cri.type}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" style="color:black;">이전</a>
 					</c:if>
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
- 						<a href="/FG3?type=${paging.cri.type}&pageNum=${num}&amount=${paging.cri.amount}" style="color:black;">${num}</a>
+ 						<a href="/FGX5?guitar_no=4&type=${paging.cri.type}&pageNum=${num}&amount=${paging.cri.amount}" style="color:black;">${num}</a>
 					</c:forEach>
 					
 					<c:if test="${paging.next}">
-						<a href="/FG3?type=${paging.cri.type}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" style="color:black;">다음</a>
+						<a href="/FGX5?guitar_no=4&type=${paging.cri.type}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" style="color:black;">다음</a>
 					</c:if>
 				</td>
 			</tr>
@@ -322,44 +380,47 @@
 
 <div class="table_qna">
 	<table>
-		<caption>상품Q&A</caption>
+		<caption class="caption">Product <span style="color:red;">Q</span>&A</caption>
 		<!-- QNA 작성 -->
 		<tr>
-		<td colspan=4>	
-			<textarea style="width: 880px;height: 25px;" id="qna_content"></textarea>
-			<input type="button" id="add_qna" value="QNA작성">
+		<td colspan=5 class="user_wirtebox">	
+			<textarea style="width: 860px;height: 25px;" id="qna_content" class="qnatextarea"
+			placeholder="Please enter your Q&A"></textarea>
+			<input class="wrtie_add_button" type="button" id="add_qna" value="Write a Q&A">
 		</td>
 		</tr>
 		
 		<tr>
-			<th>번호</th>
-			<th>Q&A</th>
-			<th>작성자</th>
-			<th>등록일</th>
+			<th><span style="color:red;">N</span>o.</th>
+			<th>Q&<span style="color:red;">A</span></th>
+			<th>W<span style="color:red;">r</span>iter</th>
+			<th>re<span style="color:red;">d</span>ate</th>
 		</tr>
 		
 	
 		<tbody>
 	<c:forEach var="qna" items="${qna}">
+	<input id="qna_qno" type="hidden" value="${qna.qna_qno}">
 		<tr>
-			<td>${qna.qna_qno}</td>
-			<td>${qna.qna_content}</td>
-			<td>${qna.user_email}</td>
-			<td>${qna.qna_regdate}</td>
+			<td class="notd">${qna.qna_qno}</td>
+			<td class="contenttd">${qna.qna_content}</td>
+			<td class="emailtd">${qna.user_email}</td>
+			<td class="regdatetd">${qna.qna_regdate}</td>
+			<td class="buttontd"><button id="qna_remove">delete</button></td>
 		</tr>
 	</c:forEach>
 			<tr>
 				<td colspan = 5 style='letter-spacing:10px' id="qnapage">
 					<c:if test="${qnapaging.qprev}">
-						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qstartPage-1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">이전</a>
+						<a href="/FGX5?guitar_no=4&qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qstartPage-1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">이전</a>
 					</c:if>
 
 					<c:forEach begin="${qnapaging.qstartPage}" end="${qnapaging.qendPage}" var="num">
- 						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${num}&qamount=${qnapaging.qcri.qamount}" style="color:black;">${num}</a>
+ 						<a href="/FGX5?guitar_no=4&qtype=${qnapaging.qcri.qtype}&qpageNum=${num}&qamount=${qnapaging.qcri.qamount}" style="color:black;">${num}</a>
 					</c:forEach>
 					
 					<c:if test="${qnapaging.qnext}">
-						<a href="/FG3?qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qendPage+1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">다음</a>
+						<a href="/FGX5?guitar_no=4&qtype=${qnapaging.qcri.qtype}&qpageNum=${qnapaging.qendPage+1}&qamount=${qnapaging.qcri.qamount}" style="color:black;">다음</a>
 					</c:if>
 				</td>
 			</tr>	
@@ -371,41 +432,29 @@
 	<h3>교환 | 반품 | 환불 안내</h3>
 	<img src="${pageContext.request.contextPath}/resources/img/교환_반품_환불.PNG">
 </div>
+	<!-- 푸터 -->
+	<div class="footer">
+		<div class="footer_logo">
+			<a href="#"> <img
+				src="${pageContext.request.contextPath}/resources/img/yamaha_redlabel_logo.png">
+			</a>
+		</div>
+		<div class="footer_container">
+			<div class="footer_container1">
+				<a href="https://github.com/Ljeaseo/GreenStudy/tree/main/gitarShop" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/git_hib_img.png">
+				</a>
+				<a href="https://sixth-belly-f2c.notion.site/LEE-NOTION-4dfb18bc4e9d4024b2dac4094328fc77" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/notion_img.png">
+				</a>
+				<a href="https://www.instagram.com/j______s94/" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/instagram_img.png">
+				</a>
+				<p style="color:white;">Lee jea-seo . personal project . YAMAHA redline shop!</p>
+			</div>
+		</div>
+	</div>
 
-<!-- 푸터 -->
-<div class="footer">
-	<div class="footer_logo">
-		<a href="#">
-		<img src="${pageContext.request.contextPath}/resources/img/yamaha_redlabel_logo.png">
-		</a>
-	</div>
-	<div class="footer_container">
-		<div class="footer_container1">
-		<h4>SING UP</h4>
-		<P>Get updates on our latest releases and sales</P>
-		<input type="text" placeholder="ENTER EMAIL">
-		</div>
-		<div class="footer_container2">
-		<h4>ul title</h4>
-		<ul>
-		
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-		</ul>
-		</div>
-		<div class="footer_container3">
-		<h4>ul title</h4>
-		<ul>
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-			<li>1833 SHOP</li>
-		</ul>
-		</div>
-	</div>
-</div>
 
 </body>
 </html>

@@ -59,11 +59,11 @@ public class guitardetailController {
 		
 	
 	@RequestMapping(value = "/FGX3", method = RequestMethod.GET)
-	public String FGX3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FGX3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -74,11 +74,11 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FG5", method = RequestMethod.GET)
-	public String FG5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FG5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -89,12 +89,12 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FGX5", method = RequestMethod.GET)
-	public String FGX5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FGX5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -105,11 +105,11 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FS3", method = RequestMethod.GET)
-	public String FS3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FS3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -120,11 +120,11 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FSX3", method = RequestMethod.GET)
-	public String FSX3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FSX3 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -135,11 +135,11 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FS5", method = RequestMethod.GET)
-	public String FS5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FS5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		
@@ -150,11 +150,11 @@ public class guitardetailController {
 	}
 	
 	@RequestMapping(value = "/FSX5", method = RequestMethod.GET)
-	public String FSX5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri) {
+	public String FSX5 (Model model,  CriteriaVO cri, qnaCriteriaVO qcri, cartVO cartvo) {
 		
 		model.addAttribute("comment", CS.comment(cri));
 		model.addAttribute("qna", CS.qna(qcri));
-		
+		model.addAttribute("cartlist", CTS.cartlist(cartvo));
 		int total = CS.total(cri);
 		int qtotal = CS.qtotal(qcri);
 		

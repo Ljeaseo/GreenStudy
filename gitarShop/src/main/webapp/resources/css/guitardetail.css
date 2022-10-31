@@ -23,7 +23,7 @@ a{
 /* 헤더 */
 .header{
 	display: grid;
-	grid-template-columns: 7fr 1fr 1fr 1fr;
+	grid-template-columns: 7fr 1fr 1fr;
 	background-color: black;
 	width: 100%;
 	height: 80px;	
@@ -48,44 +48,14 @@ a{
 	margin-left: 700px;
 }
 
-.search_box{
-	float: left;
-	clear:both;
-	width: auto;
-	height: 80px;
-	
-}
 
-.search_box input{
-	width: 101px;
-	height: 24px;
-	padding:3px 4px 3px 4px;
-	margin-top: 21px;
-	border:1px solid white;
-	
-}
-
-.search_box button{
-	width: 32px;
-	height: 32px;
-	margin-top: 21px;
-	padding: 0;
-	border:1px solid white;
-	background-color: black;
-	position: absolute;
-	cursor: pointer;
-}
-
-.search_box button > img{
-	width: 100%;
-	height: 100%;
-}
 
 .shopping_basket_box{
 	float: left; 
 	clear:both;
 	width: auto;
 	height: 80px;
+	
 }
 
 .shopping_basket_box button{
@@ -111,7 +81,10 @@ a{
 	width: 70px;
 	height: 140px;
 }
-
+.cartcartcart{
+	overFlow-y : scroll;
+	
+}
 .cart_card{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -130,20 +103,31 @@ a{
 	float: left; 
 }
 #cartremove{
-	margin-top: 100px;
+	margin-top: 90px;
 	background-color: black;
 	color: white;
 }
 #noitemli{
 	display: none;	
 }
+#paymentli{
+	display: none;	
+}
 
+#cartpayment{
+	width: 400px;
+	font-size: 20px;
+	background-color: black;
+	color: white;
+	margin-top: 25px;
+}
 
 .login_box{
 	float: left; 
 	clear:both;
 	width: auto;
 	height: 80px;
+	
 }
 
 .login_box button{
@@ -180,6 +164,7 @@ a{
 	position: fixed;
  	top: 80;
  	left: 0;
+ 	z-index: 2;
 }
 
 .guitar_menu ul{
@@ -266,8 +251,9 @@ a{
 	margin-top: 40px;	
 	width: 200px;
 	font-size: 20px;
-	background-color: black;
-	color: white;
+	border: 1px solid black;
+	background-color: white;
+	color: black;
 }
 
 #left_button{
@@ -291,18 +277,6 @@ a{
 }
 
 
-
-.detail_more_service ul{
-	width:800px;
-	height: 40px;
-	list-style: none;
-	text-align: bottom;
-	margin-left: 500px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding-left: 200px;
-	border-bottom: 1px solid #eee;
-}
 
 .detail_more_service li{
 	display: inline-block;
@@ -360,14 +334,12 @@ a{
 	background-color: black;
 	width: 100%;
 	height: 50px;
-	padding-left: 150px;
 }
 
 .footer_logo{
 	background-color: black;
 	text-align: center;
-	padding-top:20px;
-	padding-right: 200px;
+	padding-top:40px;
 }
 
 .footer_logo img{
@@ -376,57 +348,30 @@ a{
 }
 
 .footer_container{
-	display: grid;
-	grid-template-columns: 2fr 1fr 1fr;
+	display: flex;
+	
 	width: 100%;
 	height: 100%;
 	position: sticky;
 }
 
 .footer_container1{
+	width:100%;
 	background-color: black;
-	padding-left: 150px;
-	padding-bottom: 20px;
+	height: 100px;
+	text-align: center;
+	padding-bottom: 70px;
+	padding-top: 80px;
+	position: sticky;
 }
 
-.footer_container1 h4{
-	color: white;
+
+.footer_container1 img{
+	width: 50px;
+	height: 50px;
+	padding: 0px 20px 0px 20px;
 }
 
-.footer_container1 p{
-	color: white;
-}
-
-.footer_container1 input{
-	color: white;
-}
-
-.footer_container2{
-	background-color: black;
-	padding-left: 100px;
-	padding-bottom: 20px;
-}
-
-.footer_container2 h4{
-	color: white;
-}
-
-.footer_container2 ul{
-	color: white;
-}
-
-.footer_container3{
-	background-color: black;
-	padding-bottom: 20px;
-}
-
-.footer_container3 h4{
-	color: white;
-}
-
-.footer_container3 ul{
-	color: white;
-}
 
 /* 모달 */
 .modal_basket {
@@ -617,4 +562,61 @@ a{
 
 .hidden {
 	display: none;
+}
+
+.qnatextarea{
+	width: 100%;
+    height: 30px;
+    border: none;
+    resize: none;
+    margin-top: 20px;
+}
+
+#page{
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+#qnapage{
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+.user_wirtebox{
+	padding-bottom: 25px;
+}
+
+.notd{
+	width: 50px;
+}
+.regdatetd{
+	width: 150px;
+}
+.emailtd{
+	width: 250px;
+}
+.contenttd{
+	width: 447px;
+}
+.buttontd{
+	margin-right: 15px;
+	padding-left: 20px;
+	padding-right: 10px;
+
+}
+.buttontd button{
+		background-color: black;
+	color: white;
+}
+.caption{
+	padding-top:15px;
+	font-size: 25px;
+	font-style: bold;
+}
+.wrtie_add_button{
+	background-color: black;
+	color: white;
+	float: right;
+	margin-top: 25px;
+	margin-right: 10px;
 }

@@ -63,7 +63,7 @@
 	<!-- 헤더 -->
 	<div class="header">
 		<div class="mainpage_logo">
-			<a href="#"> <img
+			<a href="/"> <img
 				src="${pageContext.request.contextPath}/resources/img/yamaha_redlabel_logo.png">
 			</a>
 		</div>
@@ -71,39 +71,82 @@
 			<ul>
 				<li class="header_menu_li"><a href="#menu1" id="a_menu1">
 						Product Features </a></li>
-				<li class="header_menu_li"><a href="#menu2" id="a_menu2">
-						Sound Samples </a></li>
 				<li class="header_menu_li"><a href="#menu3" id="a_menu3">
 						RED Lines </a></li>
+				<li class="header_menu_li"><a href="#menu2" id="a_menu2">
+						Sound Samples </a></li>
 				
 			</ul>
 		</div>
 
-		<div class="search_box">
-			<input type="text" placeholder="search">
-			<button>
-				<img
-					src="${pageContext.request.contextPath}/resources/img/lens200.png">
-			</button>
-		</div>
 
 
 		<div class="shopping_basket_box">
+				<a href="javascript:doDisplay()">
 			<button id="open_basket">
 				<img
-					src="${pageContext.request.contextPath}/resources/img/basket.png">
+					src="${pageContext.request.contextPath}/resources/img/basket.png"
+				>
 			</button>
+				</a>
 		</div>
 
 
-		<!-- 모달 장바구니 -->
+<!-- 모달 장바구니 -->
 		<div class="modal_basket hidden">
 			<div class="basket_bg"></div>
-			<div class="basket_modalBox">
-				<p>You have no items in your shopping cart.</p>
-			</div>
+			
+			
+				<div class="basket_modalBox">
+					<c:choose>
+					
+					<c:when test="${sessionScope.login eq null}">
+					<div>
+					<h3><span style="color:red;">P</span>lease log in first</h3>
+					</div>
+					</c:when>
+					
+					<c:otherwise>
+					<div>		
+					<ul style="list-style:none; padding: 0;">
+					
+					<c:forEach var="cartlist" items="${cartlist}">
+								
+					<input id="cart_cnt" type="hidden" value="${cartlist.cart_cnt}">
+					
+					<li id="listli">
+					<div class="cart_card">
+					<div class="cart_card1">
+					<img class="cartimg" src="${pageContext.request.contextPath}/resources/img/FG5.jpg">
+					</div>
+					<div class="cart_card2">
+					<div>
+					<h3>yamaha-<span>${cartlist.guitar_name}</span></h3>
+					</div>
+					<div>
+					<h4>$<span>${cartlist.guitar_price}</span></h4>
+					</div>
+					</div>
+					<div class="cart_card3">
+					<button id="cartremove">Empty the <span style="color:red;">P</span>roduct</button>
+					</div>
+					</div>
+					<hr>
+					</li>				
+					</c:forEach>	
+					<li id="paymentli">
+					<button id="cartpayment">make a payment</button>
+					</li>
+					<li id="noitemli">
+					<h3 style="color:black;">Your shopping cart is <span style="color:red;">e</span>mpty</h3>
+					</li>
+					
+					</ul>
+					</div>
+					</c:otherwise>				
+					</c:choose>
+				</div>
 		</div>
-
 
 
 		<div class="login_box">
@@ -154,7 +197,7 @@
 				<div class="login_modalBox_content"> 
 				<div>
 				<div>
-				<h1>welcome back! ${sessionScope.login.user_email}!</h1>
+				<h1><span style="color:red;">W</span>elcome back! ${sessionScope.login.user_email}!</h1>
 				</div>
 				<div>
 				<a href="logout" style="color:black; font-size: 15px;">logout</a>
@@ -233,6 +276,19 @@
 				  }
 				  
 			  })
+			  
+			  
+			  $(document).ready(function() {
+					var msg = '${msg}';
+	
+					if(msg === "fail"){
+						alert("Login failed");
+					}
+					if(msg === "success"){
+						alert("Login succeed");
+					}
+					
+			})
 		
 </script>
 </div>
@@ -383,7 +439,39 @@
 				</div>
 			</div>
 		</div>
+		
+		
+	<!-- FG Lines -->
+		<div class="guitar_lines" id="menu3">
+			<h1 style="background-color: white; color: black;">
+				RED <span style="color: red;">L</span>ines
+			</h1>
+			<div class="guitar_lines_box">
+				<c:forEach var="GSline" items="${GSline}">
+				<div class="guitar_lines_box1">
+					<a href="/${GSline.guitar_name}?guitar_no=${GSline.guitar_no}"> <img
+						src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
+					<p style="color:black;">YAMAHA <td>${GSline.guitar_name}</td></p>
+					</a>
 
+					<h3>$<td>${GSline.guitar_price}</td></h3>
+				</div>
+				</c:forEach>
+				
+				
+				<c:forEach var="GSXline" items="${GSXline}">
+				<div class="guitar_lines_box2">
+					<a href="/${GSXline.guitar_name}?guitar_no=${GSXline.guitar_no}"> <img
+						src="${pageContext.request.contextPath}/resources/img/FGX3.jpg">
+					<p  style="color:black;">YAMAHA  <td>${GSXline.guitar_name}</td></p>
+					</a>
+
+					<h3>$<td>${GSXline.guitar_price}</td></h3>
+				</div>
+				</c:forEach>
+			</div>
+			<p style="color:#C6C6C6; padding-left: 20px;">Actual product may differ from the picture</p>
+		</div>
 		<!-- 사운드 샘플 -->
 
 		<div class="Sound_Samples" id="menu2">
@@ -446,38 +534,6 @@
 			</div>
 		</div>
 
-
-
-		<!-- FG Lines -->
-		<div class="guitar_lines" id="menu3">
-			<h1 style="background-color: white; color: black;">
-				RED <span style="color: red;">L</span>ines
-			</h1>
-			<div class="guitar_lines_box">
-				<c:forEach var="GSline" items="${GSline}">
-				<div class="guitar_lines_box1">
-					<a href="/${GSline.guitar_name}?guitar_no=${GSline.guitar_no}"> <img
-						src="${pageContext.request.contextPath}/resources/img/FG3.jpg">
-					<p style="color:black;">YAMAHA <td>${GSline.guitar_name}</td></p>
-					</a>
-
-					<h3>$<td>${GSline.guitar_price}</td></h3>
-				</div>
-				</c:forEach>
-				<c:forEach var="GSXline" items="${GSXline}">
-				<div class="guitar_lines_box2">
-					<a href="/${GSXline.guitar_name}?guitar_no=${GSXline.guitar_no}"> <img
-						src="${pageContext.request.contextPath}/resources/img/FGX3.jpg">
-					<p  style="color:black;">YAMAHA  <td>${GSXline.guitar_name}</td></p>
-					</a>
-
-					<h3>$<td>${GSXline.guitar_price}</td></h3>
-				</div>
-				</c:forEach>
-			</div>
-		</div>
-
-
 	</div>
 	<!-- 푸터 -->
 	<div class="footer">
@@ -488,28 +544,16 @@
 		</div>
 		<div class="footer_container">
 			<div class="footer_container1">
-				<h4>SING UP</h4>
-				<P>Get updates on our latest releases and sales</P>
-				<input type="text" placeholder="ENTER EMAIL">
-			</div>
-			<div class="footer_container2">
-				<h4>ul title</h4>
-				<ul>
-
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-				</ul>
-			</div>
-			<div class="footer_container3">
-				<h4>ul title</h4>
-				<ul>
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-					<li>1833 SHOP</li>
-				</ul>
+				<a href="https://github.com/Ljeaseo/GreenStudy/tree/main/gitarShop" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/git_hib_img.png">
+				</a>
+				<a href="https://sixth-belly-f2c.notion.site/LEE-NOTION-4dfb18bc4e9d4024b2dac4094328fc77" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/notion_img.png">
+				</a>
+				<a href="https://www.instagram.com/j______s94/" target="_blank">
+				<img src="${pageContext.request.contextPath}/resources/img/instagram_img.png">
+				</a>
+				<p style="color:white;">Lee jea-seo . personal project . YAMAHA redline shop!</p>
 			</div>
 		</div>
 	</div>

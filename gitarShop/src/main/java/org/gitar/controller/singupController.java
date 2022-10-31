@@ -23,7 +23,7 @@ public class singupController {
 	 @RequestMapping (value = "/memberinfoPost", method = RequestMethod.POST)
 		public String memberinfoPost (MemberVO member) {
 			 MS.memberjoin(member);
-			 return  "redirect:/";
+			 return  "mainpage/mainpage";
 	 }
 	
 }
