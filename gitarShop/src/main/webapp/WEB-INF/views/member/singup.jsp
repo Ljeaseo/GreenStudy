@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Sing-up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="stylesheet"
@@ -53,10 +57,14 @@
 					<input type="text" id="account_lastname" placeholder="Enter last name" name="user_lastname">
 				</div>
 				<div class="signup_modalBox_checkbox">
-					<input type="checkbox"><label>I am at least 18
-						years old.</label><br> <input type="checkbox"><label>I agree
+						<input type="checkbox" class="order_chks"><label>I am at least 18
+						years old.</label><br> 
+						
+						<input type="checkbox" class="order_chks"><label>I agree
 						to the terms of the <a href="/privacypolicy" target='_blank' style="color:red;">Privacy Policy</a>, which I have read and
-						understood. </label><br> <input type="checkbox"><label>I want
+						understood. </label><br> 
+						
+						<input type="checkbox" class="order_chks"><label>I want
 						to receive updates from Yamaha Corporation    of America on the
 						latest products, services and    marketing promotions. </label>
 				</div>

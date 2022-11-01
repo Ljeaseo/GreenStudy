@@ -1,6 +1,13 @@
 @charset "UTF-8";
 
 /* 헤더 */
+html{
+	display: block;
+	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
+	width: 100%;
+	height: auto;
+}
 .header{
 	display: flex;
 	position: absolute;

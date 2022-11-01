@@ -3,6 +3,10 @@
 /* 바디 */
 html{
 	display: block;
+	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
+	width: 100%;
+	height: auto;
 
 }
 
@@ -361,7 +365,7 @@ a{
 	height: 100px;
 	text-align: center;
 	padding-bottom: 70px;
-	padding-top: 80px;
+	padding-top: 40px;
 	position: sticky;
 }
 

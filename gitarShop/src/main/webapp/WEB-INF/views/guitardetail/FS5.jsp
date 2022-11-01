@@ -5,6 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Noto+Sans:wght@200&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/guitardetail.css">
@@ -140,8 +144,8 @@
 				<div class="social_login">
 					<h1>Sign in or <span style="color: red;">S</span>ign Up via <span style="color: red;">S</span>ocial</h1>
 					<div class="social_login_button_box">
-					<button class="facebook">facebook</button>
-					<button class="google">google</button>
+					<button class="facebook" onclick="window.open('https://ko-kr.facebook.com/')">facebook</button>
+					<button class="google" onclick="window.open('https://accounts.google.com/v3/signin/identifier?dsh=S-670272427%3A1667273705470259&continue=https%3A%2F%2Fcontacts.google.com%2F%3Fhl%3Dko&followup=https%3A%2F%2Fcontacts.google.com%2F%3Fhl%3Dko&hl=ko&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWqr7_0LOikvBuZVHQ1NoGi-BM6kAE_6wwyzmg5qtL-ZfIs1i6V-oiWS1-L_cRIak9zHOvegzQ')">google</button>
 					</div>					
 				</div>
 				</c:when>
@@ -450,7 +454,7 @@
 				<a href="https://www.instagram.com/j______s94/" target="_blank">
 				<img src="${pageContext.request.contextPath}/resources/img/instagram_img.png">
 				</a>
-				<p style="color:white;">Lee jea-seo . personal project . YAMAHA redline shop!</p>
+				<p style="color:white;">Lee jea-seo . personal project . YAMAHA <span style="color:red;">R</span>edline Shop!</p>
 			</div>
 		</div>
 	</div>

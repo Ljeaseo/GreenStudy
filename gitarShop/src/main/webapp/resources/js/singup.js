@@ -30,14 +30,14 @@ $(document).ready(function() { 
 			  $('#account_password').focusout(function(){
 				  
 			  	var acpassword = $('#account_password').val();
-			    var acpasswordJ = /^[A-Za-z0-9]{8,20}$/;
+			    var acpasswordJ = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/;
 			  	
 			    if(acpassword == ""){	
 			  		$('#error_msg_account_password').text("Required");
 			  		$('#error_msg_account_password').css("color","red");	
 			  	}
 			  	else if(acpasswordJ.test(acpassword) == false) {
-			  		$('#error_msg_account_password').text("Must be 8-20 characters");
+			  		$('#error_msg_account_password').text("8-20 characters, one letter, number, special character");
 			  		$('#error_msg_account_password').css("color","red");		
 			  	}if(acpasswordJ.test(acpassword) == true){
 			  		$('#error_msg_account_password').text("success");
@@ -74,23 +74,38 @@ $(document).ready(function() { 
     		   });
 			
 
-$(document).ready(function() {
 
-	
-	$('#btn_singup').click(function (){
+
+$(document).ready(function() {
+// 모든 체크박스를 클릭하면 버튼 활성화시키기
+$('#btn_singup').click(function(){
+	 
+	var tt = $(".order_chks").length;
+	var ss = $(".order_chks:checked").length;
+    
+
+
+    	var err_email = $('#error_msg_account_email').html();
+    	var err_password = $('#error_msg_account_password').html();
+    	var err_firstname = $('#error_msg_account_firstname').html();
+    	var err_lastname = $('#error_msg_account_lastname').html();
     	
-		var err_email = $('#error_msg_account_email').html();
-		var err_password = $('#error_msg_account_password').html();
-		var err_firstname = $('#error_msg_account_firstname').html();
-		var err_lastname = $('#error_msg_account_lastname').html();
-		
-		if(err_email == "success" && err_password == "success" && err_firstname == "success" && err_lastname == "success"){
-			alert("thanks sing up");
-			return true;
-		}else{
-			alert("Please enter member information");
-			return false;
-		}
+    	if(tt != ss && err_email == "success" && err_password == "success" && err_firstname == "success" && err_lastname == "success"){
+    		alert("Please check the checkbox");
+    		return false;
+    	}
+    	if(tt != ss || err_email != "success" || err_password != "success" || err_firstname != "success" || err_lastname != "success"){
+    		alert("Please enter member information");
+    		return false;
+    	}
+    	if(tt == ss && err_email == "success" && err_password == "success" && err_firstname == "success" && err_lastname == "success"){
+    		alert("thanks sing up");
+    		return true;
+    	}
+    
 	})
-			});
+
+});
+
+
 		

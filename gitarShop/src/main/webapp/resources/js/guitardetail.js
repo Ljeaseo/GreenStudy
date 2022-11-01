@@ -7,6 +7,13 @@
  */
 
 //결제
+
+$(document).on("click","#left_button",function(){
+	
+	alert("Payment function not added");
+	
+});
+
 $(document).on("click","#cartpayment",function(){
 	
 	alert("Payment function not added");
@@ -85,36 +92,39 @@ $(document).on("click","#add_qna",function(){
 //후기 삭제
 $(document).on("click","#comment_remove",function(){
 	
-
-	var delete_permission_comment = $(this).text("#delete_permission_comment");
-	var user_emailValue=$("#user_email").val();
-    alert(delete_permission_comment);
+	var thisRow = $(this).closest('tr'); 
 	
-//	if(user_emailValue == ""){
-//	alert("Please log in first")
-//	}
-//	else if(delete_permission_comment == user_emailValue){
-//		var commemt_cno=$("#commemt_cno").val();
-//		
-//		commentremove(commemt_cno);
-//	}
-//	else{
-//		alert("You do not have permission");
-//
-//	}
+	var writer_emailValue = thisRow.find('td:eq(2)').text();
+	var user_emailValue=$("#user_email").val();
+   
+	
+	if(user_emailValue == ""){
+	alert("Please log in first")
+	}
+	else if(writer_emailValue == user_emailValue){
+		var commemt_cno=$("#commemt_cno").val();
+		
+		commentremove(commemt_cno);
+	}
+	else{
+		alert("You do not have permission");
+
+	}
 });
 
 
 //qna 삭제
 $(document).on("click","#qna_remove",function(){
 	
-	var delete_permission_qna = $("#delete_permission_qna").val();
+	var thisRow = $(this).closest('tr'); 
+	
+	var writer_emailValue = thisRow.find('td:eq(2)').text();
 	var user_emailValue=$("#user_email").val();
 	
 	if(user_emailValue == ""){
 		alert("Please log in first")
 		}
-	else if(delete_permission_qna == user_emailValue){
+	else if(writer_emailValue == user_emailValue){
 		var qna_qno=$("#qna_qno").val();
 		
 		qnaremove(qna_qno);
