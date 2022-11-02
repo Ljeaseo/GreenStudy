@@ -482,7 +482,7 @@
 			<h1>Sound Samples</h1>
 			<div class="Sound_Samples_box">
 				<div class="Sound_Samples_box1">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/DZ-VIj3EpOo"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -490,7 +490,7 @@
 					<p>Yamaha Folk Guitar Series | About FG Red Label</p>
 				</div>
 				<div class="Sound_Samples_box2">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/LCuTF1dx7-c"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -501,7 +501,7 @@
 
 			<div class="Sound_Samples_box">
 				<div class="Sound_Samples_box1">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/4jMSb8HyJ8A"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -509,7 +509,7 @@
 					<p>Yamaha Folk Guitar Series | About FG Red Label</p>
 				</div>
 				<div class="Sound_Samples_box2">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/BNPj6SppSeM"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -520,7 +520,7 @@
 
 			<div class="Sound_Samples_box">
 				<div class="Sound_Samples_box1">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/FI44WHCA4uk"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -528,7 +528,7 @@
 					<p>Yamaha Folk Guitar Series | About FG Red Label</p>
 				</div>
 				<div class="Sound_Samples_box2">
-					<iframe width="560" height="315"
+					<iframe 
 						src="https://www.youtube.com/embed/mONHRm5L4Sw"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

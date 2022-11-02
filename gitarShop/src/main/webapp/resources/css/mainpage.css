@@ -1,7 +1,9 @@
 @charset "UTF-8";
 /* 바디 */
+@media all and (min-width: 1024px){
+
 html{
-	display: block;
+
 	font-family: 'Noto Sans', sans-serif;
 	font-family: 'Noto Sans KR', sans-serif;
 	width: 100%;
@@ -9,7 +11,7 @@ html{
 }
 
 body{
-	margin: 0% auto;
+	margin:0;
 	width: 100%;
 	height: auto;
 	overflow-x: hidden;
@@ -182,6 +184,7 @@ a{
 
 /* 메인사진배너 */
 .adv{
+	width:100%;
 	height:800px;
 	background-color: black;
 	text-align: center;
@@ -228,7 +231,7 @@ a{
 
 .Product_Features_box{
 	display: grid;
-	grid-template-columns: 3fr 4fr;
+	grid-template-columns: 3fr 5fr;
 	background-color: black;
 	width: auto;
 	height: 300px;
@@ -238,21 +241,21 @@ a{
 
 .Product_Features_box_img{
 	background-color: black;
-	float: left;
-	width: auto;
-	height: 100%;
-	padding-left: 350px;
+    float: left;
+    width: auto;
+    height: 100%;
+    padding-left: 30%;
 }
 
 
 .Product_Features_box_content{
 	background-color: black;
-	float: left;
-	width: 100%;
-	height: 100%;
-	color: white;
-	padding-left: 30px;
-	overflow: hidden;
+    float: left;
+    width: auto;
+    height: 100%;
+    color: white;
+    padding-left: 50px;
+    overflow: hidden;
 }
 
 .Product_Features_box_content h3{
@@ -286,7 +289,7 @@ a{
 }
 
 .Sound_Samples_box1{
-	padding-left: 200px;
+	
 	float: left;
 	width: auto;
 	height: 90%;
@@ -295,24 +298,34 @@ a{
 .Sound_Samples_box1 p{
 	color: white;
 	font-size: 20px;
-	width: 100%;
+	width: auto;
 	height: 10%;
-	padding-left: 40px;
+	margin-left: 180px;
 }
 
 .Sound_Samples_box2{
-	padding-left: 150px;
+	
 	float: left;
 	width: auto;
 	height: 90%;
 }
-
+.Sound_Samples_box1 iframe{
+	width: 70%;
+	height: 60%;
+	padding-left: 22%
+	
+}
+.Sound_Samples_box2 iframe{
+	width: 70%;
+	height: 60%;
+	padding-left: 12%
+}
 .Sound_Samples_box2 p{
 	color: white;
 	font-size: 20px;
-	width: 100%;
+	width: auto;
 	height: 10%;
-	padding-left: 40px;
+	margin-left: 100px;
 }
 
 /* 기타 목록 */
@@ -636,4 +649,530 @@ a{
 
 .hidden {
 	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+@media all and (max-width: 1024px){
+html{
+	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
+	display: block;
+	color:black;
+}
+
+body{
+	margin:0;
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	z-index: 1;	
+}
+
+/* a태그 */
+a{
+	text-decoration: none;
+	color: white;
+}
+.header{
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr ;
+	background-color: black;
+	width: 100%;
+	height: 80px;
+ 	position: absolute;	
+ 	position: sticky;
+ 	z-index: 2;
+	top: 0;
+	clear:both;
+}
+.mainpage_logo{
+	float: left; 
+	clear:both;
+	width: auto;
+	height: 80px;
+}
+
+.mainpage_logo img{
+	width: 220px;
+	height: 80px;
+	margin-left: 360px;
+}
+
+.header_menu{
+	display:none;
+	
+}
+.header_menu ul{
+	list-style: none;
+	width: auto;
+	height: 80px;
+}
+.header_menu li{
+	display: inline-block;
+	width: auto;
+	height: 80px;
+	color: white;
+	list-style-type: none; 
+	font-size:20px;
+	margin-left: 40px;
+	padding-top: 5px;
+	text-transform:uppercase;
+}
+
+.header_menu_li:after a{
+	display:block;
+  	content: '';
+ 	border-bottom: solid 3px #ea2129;  
+  	transform: scaleX(0);  
+  	transition: transform 250ms ease-in-out;
+}
+
+.header_menu_li:hover:after a{	
+ 	 transform: scaleX(1); 
+}
+
+
+
+.shopping_basket_box{
+	float: left; 
+	clear:both;
+	width: auto;
+	height: 80px;
+}
+
+.shopping_basket_box button{
+	width: 35px;
+	height: 35px;
+	margin-top: 19px;
+	padding: 0;
+	margin-left: 100px;
+	border:1px solid white;
+	background-color: white;
+	position: absolute;
+	cursor: pointer;
+	border-radius: 25px 25px 25px 25px;
+}
+
+.shopping_basket_box button > img{
+	width: 75%;
+	height: 75%;
+}
+
+
+.login_box{
+	float: left; 
+	clear:both;
+	width: auto;
+	height: 80px;
+}
+
+.login_box button{
+	width: 35px;
+	height: 35px;
+	margin-top: 19px;
+	padding: 0;
+	border:1px solid white;
+	background-color: white;
+	position: absolute;
+	cursor: pointer;
+	border-radius: 25px 25px 25px 25px;
+}
+
+.login_box button > img{
+	width: 75%;
+	height: 75%;
+}
+
+.guitar_lines_box1 img{
+	width: 200px;
+}
+.guitar_lines_box2 img{
+	width: 200px;
+}
+
+/* 모달 */
+.modal_basket {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_basket .basket_bg {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.basket_modalBox {
+	position: absolute;
+	background-color: #fff;
+	width: 400px;
+	height: auto;
+	padding: 15px;
+	text-align: center;
+}
+
+.basket_modalBox button {
+	display: block;
+	width: 80px;
+	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}
+
+
+.modal_login {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_login .login_bg {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login_modalBox {
+	position: absolute;
+	background-color: #fff;
+	width: 600px;
+	height: auto;
+	padding: 25px;
+	padding-bottom: 46px;
+}
+
+.login_modalBox p{
+	font-size: 25px;
+}
+
+.login_modalBox input{
+	max-width: 592px;
+	overflow: visible;
+	width: 592px;
+	height: 30px;
+	border: 1px solid #eee;
+}
+
+
+
+.singin_button{
+	width: 592px;
+	padding: 4px 6px 4px 6px;
+	font-size: 20px;
+	background: none;
+	border: 1px solid black;
+}
+
+.forgot_button{
+	width: 130px;
+	margin: 15px 470px 30px 0px;
+	background: none;		
+	border: none;
+}
+
+.account_box{
+	border-top: 1px solid #eee;
+	margin-top: 30px;
+}
+
+.account_box_button{
+	width: 592px;
+	padding: 4px 6px 4px 6px;
+	font-size: 20px;
+	background: none;
+	border: 1px solid black;
+}
+
+.social_login{
+	border-top: 1px solid #eee;
+	margin-top: 30px;
+}
+
+.facebook{
+	width: 250px;
+	background: none;
+	border: 1px solid black;
+	margin-right: 45px;
+	margin-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 20px;
+}
+
+.google{
+	width: 250px;
+	background: none;
+	border: 1px solid black;
+	font-size: 20px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.hidden {
+	display: none;
+}
+.adv{
+	width:100%;
+	height:520px;
+	background-color: black;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+.slider_img{
+	width: 900px;
+	height: 509px;
+}
+/* 컨테이너 시작 */
+.container{
+	
+	width: 100%;
+	height: auto;
+}
+
+
+/* 컨테이너 타이틀 */
+.container h1{
+	color: white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 45px;
+    background-color: black;
+	
+}
+
+.Product_Features{
+	display: block;
+	background-color: black;
+	width: 100%;
+	height: auto;
+}
+
+.Product_Features_box{
+	display: grid;
+	grid-template-columns: 3fr 4fr;
+	background-color: black;
+	width: auto;
+	height: 300px;
+	position: sticky;
+	padding-bottom: 40px;
+} 
+
+.Product_Features_box_img{
+	background-color: black;
+	float: left;
+	width: auto;
+	height: 100%;
+	padding-left: 50px;
+}
+
+
+.Product_Features_box_content{
+	background-color: black;
+	float: left;
+	width: 400px;
+	height: 100%;
+	color: white;
+	padding-left: 30px;
+	overflow: hidden;
+}
+
+
+.guitar_lines{
+	width: 100%;
+	height: auto;
+}
+
+.guitar_lines_box{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	height: 100%;
+	position: sticky;
+}
+
+.guitar_lines_box1{
+	float: left;
+	width: auto;
+	height: 650px;
+	border-bottom: 1px solid #eee;
+	text-align: center;	
+	padding-top: 40px;
+}
+
+.guitar_lines_box2{
+	float: left;
+	width: auto;
+	height: 650px;
+	border-bottom: 1px solid #eee;	
+	text-align: center;
+	padding-top: 40px;
+}
+.guitar_lines_box1:hover img{
+	transform: scale(1.05);
+}
+
+.guitar_lines_box2:hover img{
+	transform: scale(1.05);
+}
+
+.guitar_lines_box1 p{
+	width:auto;
+	margin-top : 0;
+	padding-top : 20px;
+	font-size: 20px;
+	
+}
+
+.guitar_lines_box2 p{
+	margin-top : 0;
+	padding-top : 20px;
+	font-size: 20px;
+	
+}
+
+.guitar_lines_box1 h3{
+	
+	margin-top : 25px;
+	padding-top : 15px;
+	font-size: 30px;
+}
+
+.guitar_lines_box2 h3{
+	
+	margin-top : 25px;
+	padding-top : 15px;
+	font-size: 30px;
+}
+
+/* 사운드 샘플 */
+.Sound_Samples{
+	background-color: black;
+	width: 100%;
+	height: auto;
+}
+
+.Sound_Samples_box{
+	background-color: black;
+	width: 100%;
+	height: 500px;
+	position: sticky;
+}
+
+.Sound_Samples_box1{
+	
+	
+	width: 100%;
+	height: auto;
+}
+
+.Sound_Samples_box1 p{
+	color: white;
+	font-size: 20px;
+	width: auto;
+	height: 10%;
+		text-align: center;
+	
+}
+
+.Sound_Samples_box2{
+
+	width: 100%;
+	height: auto;
+}
+
+.Sound_Samples_box2 p{
+	color: white;
+	font-size: 20px;
+	width: auto;
+	height: 10%;
+		text-align: center;
+	
+}
+
+.Sound_Samples_box1 iframe{
+	width: 50%;
+	height: 200px;
+	padding-left: 25%
+	
+	
+	
+}
+.Sound_Samples_box2 iframe{
+	width: 50%;
+	height: 200px;
+	padding-left: 25%
+}
+/* 푸터 */
+.footer{
+	background-color: black;
+	width: 100%;
+	height: 50px;
+}
+
+.footer_logo{
+	background-color: black;
+	text-align: center;
+	padding-top:80px;
+}
+
+.footer_logo img{
+	width: 250px;
+	height: auto;
+}
+
+.footer_container{
+	display: flex;
+	
+	width: 100%;
+	height: 100%;
+	position: sticky;
+}
+
+.footer_container1{
+	width:100%;
+	background-color: black;
+	height: 100px;
+	text-align: center;
+	padding-bottom: 70px;
+	padding-top: 40px;
+}
+
+
+.footer_container1 img{
+	width: 50px;
+	height: 50px;
+	padding: 0px 20px 0px 20px;
+}
+
 }

@@ -26,11 +26,11 @@
 <body>
 <!-- 헤더 -->
 <div class="header">
-	<div class="mainpage_logo">
+	
 		<a href="/">
 		<img src="${pageContext.request.contextPath}/resources/img/yamaha_redlabel_logo.png">
 		</a>
-	</div>
+	
 </div>
 
 <form action="/memberinfoPost" method="post" id="joinform">
@@ -68,7 +68,7 @@
 						to receive updates from Yamaha Corporation    of America on the
 						latest products, services and    marketing promotions. </label>
 				</div>
-				<div>
+				<div style="text-align: center;">
 					<button type="submit" class="signup_modalBox_button" id="btn_singup">Sign Up to My Account</button>
 				</div>
 			</div>
